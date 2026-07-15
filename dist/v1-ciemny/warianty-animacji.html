@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warianty animacji implantu (do wyboru)</title>
+<meta name="description" content="Robocza strona z pięcioma wersjami animacji implantu do wyboru.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#003D47">
+<!-- TODO przy wdrożeniu: uzupełnij docelową domenę i odkomentuj -->
+<!-- <link rel="canonical" href="https://TWOJA-DOMENA.pl/warianty-animacji.html"> -->
+<!-- <meta property="og:locale" content="pl_PL"><meta property="og:type" content="website">
+     <meta property="og:title" content="Warianty animacji implantu (do wyboru)">
+     <meta property="og:description" content="Robocza strona z pięcioma wersjami animacji implantu do wyboru.">
+     <meta property="og:url" content="https://TWOJA-DOMENA.pl/warianty-animacji.html"> -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='9' fill='%23003D47'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='32' fill='%23FEFBF9' text-anchor='middle'%3EiP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&family=Schibsted+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   IMPLANT PRĄCIA — dr Anna Bonder-Nowicka
+   Design system: „dokumentacja medyczna klasy premium"
+   Paleta: porcelana gabinetowa / butelkowa zieleń / petrol / ochra
+   Typografia: STIX Two Text (display, serif naukowy)
+               Schibsted Grotesk (tekst)
+               Spline Sans Mono (adnotacje techniczne)
+   ============================================================ */
+
+:root{
+  /* Paleta z oficjalnej strony klientki: turbourolog.pl */
+  --paper:      #FEFBF9;
+  --paper-2:    #F3EEE9;
+  --paper-3:    #E8E0D9;
+  --ink:        #012A31;
+  --ink-2:      #3C5960;
+  --petrol:     #0D6D86;
+  --petrol-2:   #003D47;
+  --petrol-3:   #021419;
+  --ochre:      #3EABF0;
+  --ochre-2:    #1E86C7;
+  --line:       rgba(0,61,71,.16);
+  --line-soft:  rgba(0,61,71,.09);
+  --line-inv:   rgba(251,247,244,.22);
+  --paper-inv:  #FBF7F4;
+
+  --serif: "STIX Two Text", "Georgia", "Times New Roman", serif;
+  --sans:  "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --mono:  "Spline Sans Mono", "SFMono-Regular", "Consolas", monospace;
+
+  --wrap: 1160px;
+  --pad: clamp(20px, 4vw, 44px);
+  --r: 3px;
+
+  --sh-btn: 0 10px 24px -12px rgba(0,61,71,.45);
+  --sh-card: 0 18px 44px -30px rgba(15,33,30,.35);
+}
+
+/* ---------- reset ---------- */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html:focus-within{ scroll-behavior:smooth; }
+body{
+  font-family:var(--sans);
+  font-size:17px; line-height:1.68;
+  color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img,svg,video{ display:block; max-width:100%; }
+a{ color:var(--petrol); text-decoration:none; }
+a:hover{ text-decoration:underline; text-underline-offset:3px; }
+ul,ol{ list-style:none; }
+button{ font:inherit; cursor:pointer; background:none; border:0; color:inherit; }
+strong{ font-weight:700; }
+::selection{ background:var(--petrol); color:var(--paper); }
+
+:focus-visible{ outline:2px solid var(--ochre); outline-offset:3px; border-radius:2px; }
+
+.skip-link{
+  position:absolute; left:-999px; top:10px; z-index:200;
+  background:var(--ink); color:var(--paper); padding:10px 18px; border-radius:var(--r);
+  font-family:var(--mono); font-size:13px;
+}
+.skip-link:focus{ left:10px; }
+
+.wrap{ max-width:var(--wrap); margin-inline:auto; padding-inline:var(--pad); }
+
+/* ---------- typografia ---------- */
+h1,h2,h3,.h-serif{
+  font-family:var(--serif); font-weight:600; line-height:1.14;
+  letter-spacing:-0.012em; color:var(--ink);
+}
+h1{ font-size:clamp(33px, 4.6vw, 56px); }
+h2{ font-size:clamp(26px, 3.2vw, 38px); letter-spacing:-0.01em; }
+h3{ font-size:clamp(19px, 2vw, 23px); line-height:1.3; }
+h1 em, h2 em{ font-style:italic; font-weight:600; color:var(--petrol); }
+
+.lead{ font-size:clamp(17.5px, 1.6vw, 20px); line-height:1.65; color:var(--ink-2); max-width:62ch; }
+
+.eyebrow{
+  display:none;
+  align-items:center; gap:10px;
+  font-family:var(--mono); font-size:11.5px; font-weight:500;
+  letter-spacing:.17em; text-transform:uppercase; color:var(--petrol);
+}
+.eyebrow::before{ content:""; width:26px; height:1px; background:var(--petrol); }
+.eyebrow--bare::before{ display:none; }
+.on-dark .eyebrow, .eyebrow--inv{ color:var(--ochre); }
+.on-dark .eyebrow::before, .eyebrow--inv::before{ background:var(--ochre); }
+
+.mono{ font-family:var(--mono); }
+.muted{ color:var(--ink-2); }
+.small{ font-size:14.5px; }
+
+/* ---------- pasek górny + nagłówek ---------- */
+.topbar{
+  background:var(--petrol-3); color:var(--paper-inv);
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.06em;
+}
+.topbar .wrap{
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding-block:8px;
+}
+.topbar a{ color:var(--paper-inv); opacity:.85; }
+.topbar a:hover{ opacity:1; }
+.topbar .tb-right{ display:flex; gap:22px; }
+@media (max-width:760px){ .topbar .tb-right span.tb-mail{ display:none; } }
+
+.site-header{
+  position:sticky; top:0; z-index:100;
+  background:var(--petrol-2); color:var(--paper-inv);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease, box-shadow .25s ease;
+}
+.site-header.scrolled{ border-bottom-color:rgba(255,255,255,.10); box-shadow:0 10px 30px -20px rgba(0,0,0,.55); }
+.site-header .wrap{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding-block:14px;
+}
+
+.brand{ display:flex; flex-direction:column; line-height:1.12; color:var(--paper-inv); }
+.brand:hover{ text-decoration:none; }
+.brand .b-name{ font-family:var(--serif); font-weight:600; font-size:21px; letter-spacing:-.01em; }
+.brand .b-sub{ font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ochre); margin-top:3px; }
+
+.main-nav{ display:flex; align-items:center; gap:6px; }
+.main-nav a{
+  color:rgba(237,239,232,.82); font-size:15px; font-weight:500;
+  padding:9px 12px; border-radius:var(--r);
+  transition:color .15s ease, background .15s ease;
+}
+.main-nav a:hover{ color:var(--paper-inv); background:rgba(255,255,255,.08); text-decoration:none; }
+.main-nav a[aria-current="page"]{ color:var(--paper-inv); position:relative; }
+.main-nav a[aria-current="page"]::after{
+  content:""; position:absolute; left:12px; right:12px; bottom:4px;
+  height:2px; background:var(--ochre);
+}
+.nav-cta{ margin-left:10px; }
+.site-header .nav-cta.btn--primary{ background:var(--ochre); color:var(--ink); box-shadow:none; }
+.site-header .nav-cta.btn--primary:hover{ background:var(--ochre-2); color:var(--ink); }
+
+.burger{
+  display:none; flex-direction:column; gap:5px; padding:10px; border-radius:var(--r);
+}
+.burger span{ width:24px; height:2px; background:var(--paper-inv); transition:transform .25s ease, opacity .2s ease; }
+.burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+@media (max-width:980px){
+  .burger{ display:flex; }
+  .main-nav{
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; align-items:stretch; gap:2px;
+    background:var(--petrol-2); border-bottom:1px solid rgba(255,255,255,.10);
+    padding:12px var(--pad) 22px;
+    box-shadow:0 30px 50px -20px rgba(0,0,0,.55);
+    display:none;
+  }
+  .main-nav.open{ display:flex; }
+  .main-nav a{ padding:13px 12px; font-size:16px; border-bottom:1px solid rgba(255,255,255,.08); }
+  .main-nav a[aria-current="page"]::after{ display:none; }
+  .main-nav a[aria-current="page"]{ color:var(--paper-inv); background:rgba(255,255,255,.06); }
+  .nav-cta{ margin:12px 0 0; }
+}
+
+/* ---------- przyciski ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:48px; padding:12px 26px;
+  font-weight:600; font-size:15.5px; letter-spacing:.01em;
+  border-radius:var(--r); border:1px solid transparent;
+  transition:transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease;
+  text-align:center;
+}
+.btn:hover{ text-decoration:none; transform:translateY(-1px); }
+.btn:active{ transform:translateY(0); }
+.btn--primary{ background:var(--petrol-2); color:#fff; box-shadow:var(--sh-btn); }
+.btn--primary:hover{ background:var(--petrol-3); }
+.btn--ghost{ background:transparent; color:var(--ink); border-color:var(--ink); }
+.btn--ghost:hover{ background:var(--ink); color:var(--paper); }
+.btn--inv{ background:var(--paper); color:var(--ink); }
+.btn--inv:hover{ background:#fff; }
+.btn--ghost-inv{ background:transparent; color:var(--paper-inv); border-color:var(--line-inv); }
+.btn--ghost-inv:hover{ border-color:var(--paper-inv); background:rgba(241,242,237,.08); }
+.btn .arr{ font-family:var(--mono); font-weight:400; }
+
+.btn-note{
+  margin-top:10px; font-size:13px; color:var(--ink-2);
+  font-family:var(--mono); letter-spacing:.02em;
+}
+.on-dark .btn-note{ color:var(--line-inv); color:rgba(241,242,237,.65); }
+
+/* ---------- sekcje ---------- */
+.section{ padding-block:clamp(40px, 5.5vw, 72px); }
+.section--tight{ padding-block:clamp(28px, 4vw, 48px); }
+.section--paper2{ background:var(--paper-2); }
+.section--dark{ background:var(--ink); color:var(--paper-inv); }
+.section--dark h2,.section--dark h3{ color:var(--paper-inv); }
+.section--dark .lead,.section--dark p{ color:rgba(237,239,232,.82); }
+.on-dark{ color:var(--paper-inv); }
+
+.sec-head{ max-width:760px; margin-bottom:clamp(34px, 5vw, 56px); }
+.sec-head .eyebrow{ margin-bottom:16px; }
+.sec-head p{ margin-top:16px; color:var(--ink-2); }
+.section--dark .sec-head p{ color:rgba(237,239,232,.78); }
+
+.hr{ border:0; border-top:1px solid var(--line); }
+
+/* ---------- HERO ---------- */
+.hero{ position:relative; overflow:hidden; }
+.hero .wrap{ padding-block:clamp(28px, 4vw, 56px); }
+.hero-head{ margin-bottom:clamp(34px, 5vw, 58px); }
+.hero-head .eyebrow{ margin-bottom:20px; }
+.hero-head h1{ max-width:none; }
+.hero-copy .eyebrow{ margin-bottom:20px; }
+.hero-lower{
+  display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(30px, 5vw, 72px); align-items:center;
+}
+.hero-copy h1{ margin-bottom:22px; max-width:15ch; }
+.hero-copy .lead{ margin-bottom:32px; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+.hero-trust{
+  margin-top:26px; display:flex; align-items:center; gap:12px;
+  font-size:14px; color:var(--ink-2);
+}
+.hero-trust .dot{ width:7px; height:7px; border-radius:50%; background:var(--ochre); flex:none; }
+
+.hero--sub .wrap{ padding-block:clamp(28px, 4vw, 52px); }
+.hero--sub .hero-head{ margin-bottom:0; }
+.hero--sub h1{ max-width:22ch; }
+
+@media (max-width:900px){
+  .hero-lower{ grid-template-columns:1fr; }
+  .hero-fig{ order:-1; max-width:420px; }
+}
+
+/* ---------- figury „patentowe" ---------- */
+.fig{
+  position:relative;
+  background:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size:28px 28px;
+  background-color:color-mix(in srgb, var(--paper) 65%, #fff 35%);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:clamp(18px, 3vw, 34px);
+  box-shadow:var(--sh-card);
+}
+.fig svg{ width:100%; height:auto; color:var(--petrol-2); }
+.fig .fig-cap{
+  display:flex; justify-content:space-between; gap:14px;
+  margin-top:16px; padding-top:12px; border-top:1px solid var(--line);
+  font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink-2);
+}
+.fig .fig-cap b{ color:var(--petrol-2); font-weight:500; }
+.fig-corner{
+  position:absolute; top:10px; right:12px;
+  font-family:var(--mono); font-size:10px; letter-spacing:.14em;
+  color:var(--ink-2); opacity:.7;
+}
+.section--dark .fig{
+  background-color:rgba(241,242,237,.05);
+  background-image:
+    linear-gradient(rgba(241,242,237,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241,242,237,.07) 1px, transparent 1px);
+  border-color:var(--line-inv); box-shadow:none;
+}
+.section--dark .fig svg{ color:var(--paper-inv); }
+.section--dark .fig .fig-cap{ border-top-color:var(--line-inv); color:rgba(237,239,232,.65); }
+.section--dark .fig .fig-cap b{ color:var(--ochre); }
+
+/* ---------- pasek liczb ---------- */
+.statband{ border-block:1px solid var(--petrol-3); background:var(--petrol-2); color:var(--paper-inv); }
+.statband .wrap{
+  display:grid; grid-template-columns:repeat(4, 1fr);
+  padding-block:0;
+}
+.stat{ padding:clamp(22px, 3vw, 34px) clamp(10px, 2vw, 28px); border-left:1px solid rgba(255,255,255,.12); }
+.stat:first-child{ border-left:0; padding-left:0; }
+.stat .s-num{
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(30px, 3.6vw, 46px); line-height:1; color:var(--paper-inv);
+}
+.stat .s-num sup{ font-size:.45em; color:var(--ochre); }
+.stat .s-lab{
+  margin-top:10px; font-family:var(--mono); font-size:11.5px;
+  letter-spacing:.1em; text-transform:uppercase; color:rgba(237,239,232,.72); line-height:1.5;
+}
+.stat .s-src{ margin-top:6px; font-size:12px; color:rgba(237,239,232,.6); }
+@media (max-width:820px){
+  .statband .wrap{ grid-template-columns:1fr 1fr; }
+  .stat:nth-child(3){ border-left:0; padding-left:0; }
+  .stat{ border-top:1px solid rgba(255,255,255,.12); }
+  .stat:nth-child(-n+2){ border-top:0; }
+}
+
+/* ---------- karty / siatki ---------- */
+.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px, 2.6vw, 30px); }
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px, 2.6vw, 30px); }
+@media (max-width:940px){ .grid-3{ grid-template-columns:1fr 1fr; } }
+@media (max-width:660px){ .grid-2,.grid-3{ grid-template-columns:1fr; } }
+
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--r);
+  padding:clamp(22px, 3vw, 34px);
+  box-shadow:var(--sh-card);
+  display:flex; flex-direction:column; gap:14px;
+}
+.card .c-tag{
+  align-self:flex-start;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--petrol-2); background:var(--paper-2);
+  padding:5px 10px; border-radius:2px;
+}
+.card h3{ margin-top:2px; }
+.card p{ color:var(--ink-2); font-size:15.5px; }
+.card .c-more{ margin-top:auto; font-weight:600; font-size:15px; }
+.card .c-more .arr{ font-family:var(--mono); }
+
+.pain-list{ display:grid; gap:0; border-top:1px solid var(--line); }
+.pain-list li{
+  display:grid; grid-template-columns:56px 1fr; gap:18px; align-items:baseline;
+  padding-block:20px; border-bottom:1px solid var(--line);
+}
+.pain-list .p-i{
+  font-family:var(--mono); font-size:12px; letter-spacing:.1em; color:var(--ochre);
+}
+.pain-list p{ color:var(--ink-2); max-width:64ch; }
+.pain-list b{ color:var(--ink); font-weight:700; display:block; margin-bottom:9px; font-size:clamp(20px, 2vw, 24px); line-height:1.25; }
+
+/* wskazania */
+.ind-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; }
+.ind-grid li{ background:var(--paper); padding:24px 22px; display:flex; flex-direction:column; gap:10px; }
+.ind-grid .ico{ color:var(--petrol); }
+.ind-grid b{ font-size:16.5px; }
+.ind-grid p{ font-size:14.5px; color:var(--ink-2); }
+@media (max-width:940px){ .ind-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:620px){ .ind-grid{ grid-template-columns:1fr; } }
+
+/* ---------- kroki / protokół ---------- */
+.steps{ display:grid; gap:0; counter-reset:krok; }
+.step{
+  display:grid; grid-template-columns:120px 1fr; gap:clamp(18px, 3vw, 44px);
+  padding-block:clamp(26px, 4vw, 40px);
+  border-top:1px solid var(--line);
+}
+.step:last-child{ border-bottom:1px solid var(--line); }
+.step .st-no{
+  font-family:var(--mono); font-size:12px; letter-spacing:.12em; color:var(--ink-2);
+  display:flex; flex-direction:column; gap:6px;
+}
+.step .st-no .n{
+  font-family:var(--serif); font-size:clamp(30px,3vw,40px); font-weight:600;
+  color:var(--petrol-2); line-height:1;
+}
+.step h3{ margin-bottom:10px; }
+.step p{ color:var(--ink-2); max-width:66ch; }
+.step p + p{ margin-top:10px; }
+.step .st-meta{
+  margin-top:14px; display:flex; flex-wrap:wrap; gap:8px;
+}
+.step .st-meta span{
+  font-family:var(--mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+  border:1px solid var(--line); border-radius:2px; padding:5px 10px; color:var(--ink-2);
+}
+@media (max-width:680px){
+  .step{ grid-template-columns:1fr; gap:10px; }
+}
+
+/* ---------- sekcja „uczciwość" (ciemna) ---------- */
+.honest-list{ border-top:1px solid var(--line-inv); }
+.honest-list li{
+  display:grid; grid-template-columns:64px 1fr; gap:20px; align-items:baseline;
+  padding-block:clamp(20px,3vw,28px);
+  border-bottom:1px solid var(--line-inv);
+}
+.honest-list .h-x{
+  font-family:var(--mono); color:var(--ochre); font-size:13px; letter-spacing:.1em;
+}
+.honest-list b{
+  font-family:var(--serif); font-weight:600; font-size:clamp(19px, 2vw, 24px);
+  color:var(--paper-inv); display:block; margin-bottom:6px; line-height:1.3;
+}
+.honest-list p{ color:rgba(237,239,232,.75); max-width:66ch; font-size:15.5px; }
+@media (max-width:640px){ .honest-list li{ grid-template-columns:1fr; gap:6px; } }
+
+/* ---------- porównanie (tabela) ---------- */
+.cmp-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--r); background:#fff; box-shadow:var(--sh-card); }
+table.cmp{ width:100%; border-collapse:collapse; min-width:640px; }
+.cmp th,.cmp td{ padding:16px 20px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line-soft); font-size:15px; }
+.cmp thead th{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--paper-inv); background:var(--ink); border-bottom:1px solid var(--ink);
+}
+.cmp tbody th{
+  font-weight:600; color:var(--ink); width:26%;
+  font-size:14.5px; background:var(--paper);
+}
+.cmp td{ color:var(--ink-2); width:37%; }
+.cmp td b{ color:var(--ink); }
+.cmp tr:last-child td, .cmp tr:last-child th{ border-bottom:0; }
+
+/* ---------- akordeon (details) ---------- */
+.faq-list{ border-top:1px solid var(--line); }
+details.qa{ border-bottom:1px solid var(--line); }
+details.qa summary{
+  list-style:none; cursor:pointer;
+  display:grid; grid-template-columns:52px 1fr 40px; gap:14px; align-items:baseline;
+  padding-block:20px;
+  font-family:var(--serif); font-weight:600; font-size:clamp(17px, 1.8vw, 20px); line-height:1.35;
+}
+details.qa summary::-webkit-details-marker{ display:none; }
+details.qa summary .q-i{
+  font-family:var(--mono); font-weight:500; font-size:11.5px; letter-spacing:.12em; color:var(--ochre);
+}
+details.qa summary .q-m{
+  justify-self:end; font-family:var(--mono); font-weight:400; font-size:20px;
+  color:var(--petrol); transition:transform .25s ease; line-height:1;
+}
+details.qa[open] summary .q-m{ transform:rotate(45deg); }
+details.qa .qa-body{ padding:0 0 26px 66px; max-width:72ch; }
+details.qa .qa-body p{ color:var(--ink-2); }
+details.qa .qa-body p + p{ margin-top:10px; }
+details.qa summary:hover{ color:var(--petrol-2); }
+@media (max-width:620px){
+  details.qa summary{ grid-template-columns:1fr 30px; }
+  details.qa summary .q-i{ display:none; }
+  details.qa .qa-body{ padding-left:0; }
+}
+.qa .verdict{
+  display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.13em;
+  text-transform:uppercase; padding:4px 9px; border-radius:2px; margin-bottom:10px;
+}
+.verdict--myth{ background:var(--ink); color:var(--ochre); }
+.verdict--fact{ background:var(--petrol-2); color:#fff; }
+.verdict--half{ background:var(--paper-3); color:var(--ink); }
+
+/* ---------- zdjęcia (sloty) ---------- */
+.photo{
+  position:relative; border:1px solid var(--line); border-radius:var(--r);
+  background-color:var(--paper-3);
+  background-size:cover; background-position:center;
+  min-height:340px; box-shadow:var(--sh-card); overflow:hidden;
+}
+.photo::after{
+  content:""; position:absolute; inset:0;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);
+  pointer-events:none;
+}
+.photo .ph-cap{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:10px 14px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--paper-inv); background:linear-gradient(transparent, rgba(15,33,30,.82));
+}
+.photo--tall{ min-height:460px; }
+
+/* ---------- media dwukolumnowe ---------- */
+.split{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(26px, 4.5vw, 64px); align-items:start;
+}
+.split .sp-copy h2{ margin-bottom:18px; }
+.split .sp-copy p{ color:var(--ink-2); }
+.split .sp-copy p + p{ margin-top:12px; }
+.split .sp-copy ul.ticks{ margin-top:18px; }
+@media (max-width:880px){ .split{ grid-template-columns:1fr; } }
+
+ul.ticks li{
+  position:relative; padding-left:30px; margin-bottom:12px; color:var(--ink-2);
+}
+ul.ticks li::before{
+  content:"—"; position:absolute; left:0; top:0;
+  font-family:var(--mono); color:var(--ochre);
+}
+ul.ticks li b{ color:var(--ink); }
+
+/* ---------- CTA końcowe ---------- */
+.cta-band{ background:var(--petrol-3); color:var(--paper-inv); }
+.cta-band .wrap{
+  display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+  gap:clamp(24px,4vw,60px); align-items:center;
+  padding-block:clamp(56px, 8vw, 96px);
+}
+.cta-band h2{ color:#fff; margin-bottom:14px; }
+.cta-band p{ color:rgba(237,239,232,.82); max-width:56ch; }
+.cta-band .cta-actions{ display:flex; flex-direction:column; align-items:flex-start; gap:0; }
+@media (max-width:840px){ .cta-band .wrap{ grid-template-columns:1fr; } }
+
+/* ---------- formularz ---------- */
+.form-card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--r);
+  padding:clamp(24px,3.4vw,40px); box-shadow:var(--sh-card);
+}
+.f-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:640px){ .f-row{ grid-template-columns:1fr; } }
+.f-field{ display:flex; flex-direction:column; gap:7px; margin-bottom:16px; }
+.f-field label{
+  font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-2);
+}
+.f-field input,.f-field select,.f-field textarea{
+  font:inherit; font-size:15.5px; color:var(--ink);
+  border:1px solid var(--line); border-radius:var(--r);
+  background:var(--paper); padding:13px 14px; width:100%;
+  transition:border-color .15s ease, background .15s ease;
+}
+.f-field input:focus,.f-field select:focus,.f-field textarea:focus{
+  outline:none; border-color:var(--petrol); background:#fff;
+}
+.f-field textarea{ min-height:140px; resize:vertical; }
+.f-consent{ display:flex; gap:12px; align-items:flex-start; margin:6px 0 20px; }
+.f-consent input{ margin-top:5px; accent-color:var(--petrol-2); width:16px; height:16px; flex:none; }
+.f-consent label{ font-size:13px; color:var(--ink-2); line-height:1.55; }
+
+/* ---------- kontakt: karty danych ---------- */
+.info-list li{
+  display:grid; grid-template-columns:120px 1fr; gap:16px;
+  padding-block:16px; border-bottom:1px solid var(--line);
+  font-size:15.5px;
+}
+.info-list li:first-child{ border-top:1px solid var(--line); }
+.info-list .i-k{
+  font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-2); padding-top:4px;
+}
+@media (max-width:520px){ .info-list li{ grid-template-columns:1fr; gap:4px; } }
+
+/* ---------- stopka ---------- */
+.site-footer{ background:var(--ink); color:rgba(237,239,232,.78); font-size:14.5px; }
+.site-footer .wrap{ padding-block:clamp(44px,6vw,72px) 28px; }
+.f-grid{
+  display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:clamp(24px,3vw,44px);
+  padding-bottom:38px; border-bottom:1px solid var(--line-inv);
+}
+@media (max-width:900px){ .f-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .f-grid{ grid-template-columns:1fr; } }
+.f-grid h4{
+  font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--ochre); margin-bottom:16px;
+}
+.f-grid a{ color:rgba(237,239,232,.78); }
+.f-grid a:hover{ color:#fff; }
+.f-grid li{ margin-bottom:9px; }
+.f-brand .b-name{ font-family:var(--serif); font-size:22px; color:var(--paper-inv); font-weight:600; }
+.f-brand .b-sub{ font-family:var(--mono); font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--ochre); margin:5px 0 16px; }
+.f-brand p{ max-width:38ch; font-size:14px; color:rgba(237,239,232,.6); }
+.f-legal{
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px;
+  padding-top:22px; font-family:var(--mono); font-size:11.5px; letter-spacing:.04em;
+  color:rgba(237,239,232,.5);
+}
+.f-legal a{ color:rgba(237,239,232,.6); }
+.f-disclaimer{
+  margin-top:22px; padding-top:18px; border-top:1px solid var(--line-inv);
+  font-size:12.5px; color:rgba(237,239,232,.5); max-width:100ch; line-height:1.6;
+}
+
+/* ---------- reveal ---------- */
+[data-reveal]{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+[data-reveal].in{ opacity:1; transform:none; }
+[data-reveal="2"]{ transition-delay:.12s; }
+[data-reveal="3"]{ transition-delay:.24s; }
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  [data-reveal]{ opacity:1; transform:none; transition:none; }
+  .btn, .burger span, details.qa summary .q-m{ transition:none; }
+}
+
+/* ---------- drobiazgi ---------- */
+.note{
+  border-left:2px solid var(--ochre); background:var(--paper-2);
+  padding:16px 20px; border-radius:0 var(--r) var(--r) 0;
+  font-size:15px; color:var(--ink-2);
+}
+.note b{ color:var(--ink); }
+.inline-links a{ font-weight:600; }
+.mt-1{ margin-top:14px; } .mt-2{ margin-top:26px; } .mt-3{ margin-top:44px; }
+.mb-1{ margin-bottom:14px; } .mb-2{ margin-bottom:26px; }
+.center{ text-align:center; }
+
+/* ---------- oś czasu (mini) ---------- */
+.tl{ display:flex; margin-top:36px; border-top:1px solid var(--line); }
+.tl li{ flex:1; padding:18px 18px 0 0; position:relative; }
+.tl li::before{
+  content:""; position:absolute; top:-5px; left:0;
+  width:9px; height:9px; border-radius:50%; background:var(--ochre);
+}
+.tl .tl-k{
+  display:block; margin-bottom:4px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--petrol-2);
+}
+.tl .tl-v{ font-size:14px; color:var(--ink-2); line-height:1.5; }
+@media (max-width:720px){
+  .tl{ flex-direction:column; border-top:0; border-left:1px solid var(--line); margin-left:4px; }
+  .tl li{ padding:0 0 20px 20px; }
+  .tl li::before{ top:3px; left:-5px; }
+}
+
+/* ---------- ikony liniowe ---------- */
+.ico svg{
+  width:26px; height:26px;
+  stroke:currentColor; fill:none;
+  stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;
+}
+
+/* ---------- cytat ---------- */
+blockquote.pull{
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(20px, 2.4vw, 27px); line-height:1.42; color:var(--ink);
+  border-left:2px solid var(--ochre); padding-left:24px; margin-block:10px;
+}
+blockquote.pull footer{
+  margin-top:14px;
+  font-family:var(--mono); font-weight:500; font-size:11.5px;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--ink-2);
+}
+.section--dark blockquote.pull{ color:var(--paper-inv); }
+
+/* ---------- strona wyboru wariantów ---------- */
+.var-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:clamp(22px, 3vw, 34px); }
+.var-card{ display:flex; flex-direction:column; gap:16px; }
+.var-card .fig{ margin:0; }
+.var-card .var-tag{
+  display:inline-flex; align-items:center; gap:9px; align-self:flex-start;
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:#fff; background:var(--petrol-2); padding:6px 12px; border-radius:2px;
+}
+.var-card h3{ margin:0; }
+.var-card p{ color:var(--ink-2); font-size:15px; margin:0; }
+.var-card .var-note{
+  font-family:var(--mono); font-size:12px; letter-spacing:.02em; color:var(--ink-2);
+  border-top:1px dashed var(--line); padding-top:12px;
+}
+.var-banner{
+  background:var(--ink); color:var(--paper-inv); border-radius:var(--r);
+  padding:clamp(20px,3vw,30px) clamp(22px,3.4vw,36px); margin-bottom:clamp(32px,5vw,50px);
+}
+.var-banner h2{ color:#fff; margin-bottom:10px; }
+.var-banner p{ color:rgba(237,239,232,.82); max-width:70ch; margin:0; }
+.var-banner .vb-legend{ display:flex; flex-wrap:wrap; gap:18px; margin-top:16px; font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; color:rgba(237,239,232,.7); }
+.var-banner .vb-legend span{ display:inline-flex; align-items:center; gap:7px; }
+.var-banner .vb-legend i{ width:11px; height:11px; border-radius:3px; display:inline-block; }
+
+/* ---------- animowane figury patentowe ---------- */
+.fig-anim .cyl-fluid{
+  transform-box:fill-box; transform-origin:bottom; transform:scaleY(0);
+  animation:fillCyl 9s ease-in-out infinite;
+}
+.fig-anim .res-fluid{
+  transform-box:fill-box; transform-origin:bottom; opacity:.92;
+  animation:drainRes 9s ease-in-out infinite;
+}
+.fig-anim .pump{
+  transform-box:fill-box; transform-origin:center;
+  animation:pumpPulse 9s ease-in-out infinite;
+}
+.fig-anim .flow{ opacity:0; animation:flowMove 9s linear infinite; }
+.fig-anim .lbl-erect{ opacity:0; }
+
+/* kierunki napełniania dla wariantów anatomicznych */
+.fig-anim .cyl-fluid.dir-down{ transform-origin:top; }
+.fig-anim .cyl-fluid.dir-right{ transform-origin:left; animation-name:fillCylX; }
+.fig-anim .cyl-fluid.dir-left{ transform-origin:right; animation-name:fillCylX; }
+@keyframes fillCylX{
+  0%,10%{ transform:scaleX(0); }
+  34%{ transform:scaleX(1); }
+  72%{ transform:scaleX(1); }
+  84%{ transform:scaleX(0); }
+  100%{ transform:scaleX(0); }
+}
+
+.fig-hydro .lbl-flaccid{ animation:labelFlaccid 9s ease-in-out infinite; }
+.fig-hydro .lbl-erect{ animation:labelErect 9s ease-in-out infinite; }
+
+.fig-semi .rod-move{
+  transform-box:view-box; transform-origin:84px 206px;
+  animation:rodSwing 6s ease-in-out infinite;
+}
+.fig-semi .lbl-flaccid{ animation:labelFlaccid 6s ease-in-out infinite; }
+.fig-semi .lbl-erect{ animation:labelErect 6s ease-in-out infinite; }
+
+/* unoszenie trzonu prącia (wiotki -> wzwód), zsynchronizowane z napełnianiem */
+.fig-anim .penis-move{
+  transform-box:view-box; transform-origin:212px 252px;
+  animation:penisRise 9s ease-in-out infinite;
+}
+@keyframes penisRise{
+  0%,10%{ transform:rotate(40deg); }
+  34%{ transform:rotate(-16deg); }
+  72%{ transform:rotate(-16deg); }
+  84%{ transform:rotate(40deg); }
+  100%{ transform:rotate(40deg); }
+}
+
+@keyframes fillCyl{
+  0%,10%{ transform:scaleY(0); }
+  34%{ transform:scaleY(1); }
+  72%{ transform:scaleY(1); }
+  84%{ transform:scaleY(0); }
+  100%{ transform:scaleY(0); }
+}
+@keyframes drainRes{
+  0%,10%{ transform:scaleY(1); }
+  34%{ transform:scaleY(.16); }
+  72%{ transform:scaleY(.16); }
+  84%{ transform:scaleY(1); }
+  100%{ transform:scaleY(1); }
+}
+@keyframes pumpPulse{
+  0%,10%{ transform:scale(1); }
+  14%{ transform:scale(1.09,.84); }
+  18%{ transform:scale(1); }
+  22%{ transform:scale(1.09,.84); }
+  26%{ transform:scale(1); }
+  30%{ transform:scale(1.09,.84); }
+  34%,100%{ transform:scale(1); }
+}
+@keyframes flowMove{
+  0%,10%{ opacity:0; stroke-dashoffset:0; }
+  13%{ opacity:.95; }
+  33%{ opacity:.95; stroke-dashoffset:-200; }
+  40%{ opacity:0; stroke-dashoffset:-200; }
+  100%{ opacity:0; stroke-dashoffset:-200; }
+}
+@keyframes rodSwing{
+  0%,16%{ transform:rotate(0deg); }
+  40%{ transform:rotate(-36deg); }
+  70%{ transform:rotate(-36deg); }
+  92%{ transform:rotate(0deg); }
+  100%{ transform:rotate(0deg); }
+}
+@keyframes labelFlaccid{
+  0%,14%{ opacity:1; } 28%{ opacity:0; }
+  76%{ opacity:0; } 90%,100%{ opacity:1; }
+}
+@keyframes labelErect{
+  0%,20%{ opacity:0; } 34%{ opacity:1; }
+  72%{ opacity:1; } 86%{ opacity:0; } 100%{ opacity:0; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .fig-anim .cyl-fluid,.fig-anim .res-fluid,.fig-anim .pump,
+  .fig-anim .flow,.fig-anim .rod-move,
+  .fig-anim .lbl-flaccid,.fig-anim .lbl-erect{ animation:none; }
+  /* nieruchoma, ale informacyjna klatka: stan aktywny */
+  .fig-hydro .cyl-fluid{ transform:scaleY(1); }
+  .fig-hydro .cyl-fluid.dir-right,.fig-hydro .cyl-fluid.dir-left{ transform:scaleX(1); }
+  .fig-hydro .res-fluid{ transform:scaleY(.3); }
+  .fig-hydro .penis-move{ transform:rotate(-16deg); }
+  .fig-hydro .flow{ opacity:0; }
+  .fig-hydro .lbl-flaccid{ opacity:0; }
+  .fig-hydro .lbl-erect{ opacity:1; }
+  .fig-semi .rod-move{ transform:rotate(-36deg); }
+  .fig-semi .lbl-flaccid{ opacity:0; }
+  .fig-semi .lbl-erect{ opacity:1; }
+}
+
+
+/* THEME: v1-ciemny */
+
+:root{
+  --paper:#0A2540; --paper-2:#0E2D4E; --paper-3:#123457;
+  --ink:#EAF1F8; --ink-2:#9FB4C6;
+  --petrol:#3EABF0; --petrol-2:#071A2E; --petrol-3:#04101D;
+  --ochre:#3EABF0; --ochre-2:#7CC4F5;
+  --line:rgba(255,255,255,.13); --line-soft:rgba(255,255,255,.06); --line-inv:rgba(255,255,255,.14);
+  --paper-inv:#EAF1F8;
+  --sh-card:0 22px 50px -30px rgba(0,0,0,.65);
+  --sh-btn:0 10px 24px -12px rgba(0,0,0,.6);
+}
+body{ background:var(--paper); color:var(--ink); }
+.section--dark{ background:#071A2E; }
+.site-footer{ background:#071A2E; }
+.skip-link{ background:#071A2E; color:#EAF1F8; }
+.section--paper2{ background:#0E2D4E; }
+.btn--primary{ background:var(--ochre); color:#071A2E; }
+.btn--primary:hover{ background:var(--ochre-2); color:#071A2E; }
+.btn--inv{ background:#EAF1F8; color:#0A2540; }
+.btn--inv:hover{ background:#fff; }
+.btn--ghost{ border-color:rgba(255,255,255,.5); color:var(--ink); }
+.btn--ghost:hover{ background:var(--ochre); color:#071A2E; border-color:var(--ochre); }
+.card{ background:#0E2D4E; border-color:rgba(255,255,255,.10); }
+.card .c-tag{ color:var(--ochre); background:rgba(255,255,255,.06); }
+.fig{ background-color:rgba(255,255,255,.03); }
+.fig svg{ color:#CFE3F4; }
+.fig .fig-cap b{ color:var(--ochre); }
+.fig-corner{ color:#9FB4C6; }
+.photo{ background-color:#123457; }
+details.qa summary:hover{ color:var(--ochre); }
+.pain-list .p-i{ color:var(--ochre); }
+.stat .s-num sup{ color:var(--ochre); }
+h1 em, h2 em{ color:var(--ochre); }
+.hero-trust .dot{ background:var(--ochre); }
+.verdict--myth{ background:rgba(255,255,255,.08); color:var(--ochre); }
+::selection{ background:var(--ochre); color:#071A2E; }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<div class="topbar">
+  <div class="wrap">
+    <span>Praktyka Lekarska Anna Bonder&#8209;Nowicka</span>
+    <span class="tb-right"><span>Warszawa · ul. Żelazna 67/29</span><span class="tb-mail"><a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a></span></span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Implant prącia — strona główna">
+      <span class="b-name">Implant prącia</span>
+      <span class="b-sub">dr Anna Bonder&#8209;Nowicka</span>
+    </a>
+    <button class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="site-nav" aria-label="Nawigacja główna">
+      <a href="rodzaje-implantow.html">Rodzaje implantów</a>
+      <a href="przebieg-leczenia.html">Przebieg leczenia</a>
+      <a href="zycie-z-implantem.html">Życie z implantem</a>
+      <a href="o-lekarce.html">O lekarce</a>
+      <a href="fakty-i-mity.html">Fakty i mity</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a class="btn btn--primary nav-cta" href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Umów konsultację</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero hero--sub">
+  <div class="wrap">
+    <div class="hero-copy" data-reveal>
+      <p class="eyebrow" data-ef="warianty-animacji.html" data-eo="V2Vyc2phIHJvendpbmnEmXRhIMK3IEEgKyBF">Wersja rozwinięta · A + E</p>
+      <h1 data-ef="warianty-animacji.html" data-eo="UHJ6ZWtyw7NqIGJvY3pueSB6IHByYXdkeml3xIUgc3RydWt0dXLEhSBhbmF0b21pY3puxIU=">Przekrój boczny z prawdziwą strukturą anatomiczną</h1>
+      <p class="lead mt-1" data-ef="warianty-animacji.html" data-eo="UG/FgsSFY3p5xYJlbSB0bywgbyBjbyBwcm9zacWCZcWbOiBwcnpla3LDs2ogeiBwcm9maWx1IHogd2FyaWFudHUgQSBpIHBvamVkeW5jenksIGNpxIVnxYJ5IGtvbnR1ciBjaWHFgmEgeiB3YXJpYW50dSBFLiBUZXJheiB0cnpvbiBwcsSFY2lhIHJlYWxuaWUgc2nEmSB1bm9zaTogdyBzcG9jenlua3Ugb3BhZGEsIGEgcHJ6eSB3endvZHppZSBwb2Rub3NpIHNpxJkgdyBtaWFyxJkgbmFwZcWCbmlhbmlhIGN5bGluZHJhIHDFgnluZW0gemUgemJpb3JuaWthLiBEb2vFgmFkbmllIHRhaywgamFrIGR6aWHFgmEgaW1wbGFudCBoeWRyYXVsaWN6bnku">Połączyłem to, o co prosiłeś: przekrój z profilu z wariantu A i pojedynczy, ciągły kontur ciała z wariantu E. Teraz trzon prącia realnie się unosi: w spoczynku opada, a przy wzwodzie podnosi się w miarę napełniania cylindra płynem ze zbiornika. Dokładnie tak, jak działa implant hydrauliczny.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" id="rozwiniety">
+  <div class="wrap">
+    <figure class="fig" data-reveal style="max-width:780px; margin-inline:auto;"><svg viewBox="56 18 452 480" class="fig-anim fig-hydro" role="img" aria-label="Przekrój boczny męskiej miednicy z trzyczęściowym implantem hydraulicznym. Podczas wzwodu trzon prącia unosi się, a cylinder wypełnia się płynem ze zbiornika.">
+  <defs>
+    <clipPath id="ae_cyl"><rect x="216" y="240" width="222" height="22" rx="11"/></clipPath>
+    <clipPath id="ae_res"><circle cx="166" cy="200" r="30"/></clipPath>
+  </defs>
+
+  <!-- płaszczyzna cięcia -->
+  <g stroke="currentColor" opacity=".38" stroke-width="1.1">
+    <line x1="112" y1="64" x2="112" y2="392"/>
+    <g stroke-width=".9" opacity=".7">
+      <line x1="112" y1="84" x2="100" y2="74"/><line x1="112" y1="116" x2="100" y2="106"/>
+      <line x1="112" y1="148" x2="100" y2="138"/><line x1="112" y1="180" x2="100" y2="170"/>
+      <line x1="112" y1="212" x2="100" y2="202"/><line x1="112" y1="244" x2="100" y2="234"/>
+      <line x1="112" y1="276" x2="100" y2="266"/><line x1="112" y1="308" x2="100" y2="298"/>
+      <line x1="112" y1="340" x2="100" y2="330"/><line x1="112" y1="372" x2="100" y2="362"/>
+    </g>
+  </g>
+
+  <!-- KONTUR CIAŁA (statyczny): brzuch, spojenie, moszna -->
+  <path d="M112 64
+           C150 82 190 158 204 226
+           C208 244 210 250 214 256
+           C240 274 256 306 260 346
+           C264 388 240 418 198 418
+           C156 418 138 380 146 346
+           C152 316 148 304 128 304
+           L112 304 Z"
+        fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+
+  <!-- pęcherz moczowy (delikatnie) -->
+  <path d="M132 168 C132 140 200 140 200 168 C200 192 180 202 166 202 C146 202 132 188 132 168 Z"
+        fill="none" stroke="currentColor" stroke-width="1.3" opacity=".26"/>
+
+  <!-- ZBIORNIK (płyn + kontur) -->
+  <g style="fill: var(--ochre)">
+    <g clip-path="url(#ae_res)"><rect class="res-fluid" x="136" y="170" width="60" height="60"/></g>
+  </g>
+  <circle cx="166" cy="200" r="30" fill="none" stroke="currentColor" stroke-width="2.3"/>
+  <path d="M146 218 L188 176 M142 206 L178 172 M154 222 L192 186" opacity=".32" stroke="currentColor" stroke-width="1.1"/>
+
+  <!-- dreny (statyczne, wychodzą z nasady = z osi obrotu) -->
+  <g fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M212 262 C196 292 194 322 200 342"/>
+    <path d="M200 344 C176 296 168 244 166 230"/>
+  </g>
+  <path class="flow" d="M166 230 C168 286 186 330 200 346 C201 330 204 288 210 262" fill="none" stroke="var(--ochre)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 15"/>
+
+  <!-- POMPKA w mosznie -->
+  <ellipse class="pump" cx="204" cy="360" rx="19" ry="23" fill="none" stroke="currentColor" stroke-width="2.3"/>
+
+  <!-- RUCHOMY TRZON PRĄCIA (obraca się wokół nasady 212,252) -->
+  <g class="penis-move">
+    <!-- kontur trzonu + żołądź -->
+    <path d="M212 238 L444 238 C472 238 472 266 444 266 L212 266 A14 14 0 0 1 212 238 Z"
+          fill="var(--paper)" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- drugie ciało jamiste (za płaszczyzną) -->
+    <rect x="216" y="234" width="214" height="16" rx="8" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".3"/>
+    <!-- cewka moczowa pod cylindrem -->
+    <g stroke="currentColor" fill="none" opacity=".5">
+      <path d="M220 271 C320 269 400 267 458 266" stroke-width="1.2"/>
+      <path d="M220 276 C320 274 400 272 456 271" stroke-width="1.2"/>
+    </g>
+    <!-- płyn w cylindrze -->
+    <g style="fill: var(--ochre)">
+      <g clip-path="url(#ae_cyl)"><rect class="cyl-fluid dir-right" x="216" y="240" width="222" height="22"/></g>
+    </g>
+    <!-- kontur cylindra -->
+    <rect x="216" y="240" width="222" height="22" rx="11" fill="none" stroke="currentColor" stroke-width="2.3"/>
+  </g>
+
+  <!-- nasada / kość łonowa (na wierzchu, maskuje przegub) -->
+  <circle cx="212" cy="252" r="16" fill="var(--paper)" stroke="none"/>
+  <ellipse cx="210" cy="274" rx="14" ry="18" fill="var(--paper-3)" stroke="currentColor" stroke-width="1.6"/>
+  <g stroke="currentColor" stroke-width="1" opacity=".5">
+    <line x1="200" y1="264" x2="220" y2="284"/><line x1="198" y1="272" x2="218" y2="288"/><line x1="204" y1="260" x2="222" y2="276"/>
+  </g>
+
+  <!-- odnośniki + etykiety implantu (poza strefą ruchu trzonu: x186-463, y165-433) -->
+  <g stroke="currentColor" stroke-width="1.1" opacity=".8" fill="none">
+    <path d="M152 60 L166 172"/>
+    <path d="M356 116 L356 180"/>
+    <path d="M198 448 L204 384"/>
+  </g>
+  <g fill="currentColor"><circle cx="166" cy="172" r="2.8"/><circle cx="356" cy="180" r="2.8"/><circle cx="204" cy="384" r="2.8"/></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="60" y="38" font-size="19" font-weight="600" letter-spacing="1.2">3 / ZBIORNIK</text><text x="60" y="56" font-size="15" opacity=".72" letter-spacing=".6">za spojeniem łonowym</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="middle"><text x="356" y="88" font-size="19" font-weight="600" letter-spacing="1.2">1 / CYLINDER</text><text x="356" y="106" font-size="15" opacity=".72" letter-spacing=".6">w ciele jamistym</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="150" y="456" font-size="19" font-weight="600" letter-spacing="1.2">2 / POMPKA</text><text x="150" y="474" font-size="15" opacity=".72" letter-spacing=".6">w mosznie</text></g>
+
+  <g font-family="'Spline Sans Mono',monospace" font-size="19" font-weight="600" letter-spacing="1.6" text-anchor="middle"><text class="lbl-flaccid" x="436" y="60" fill="currentColor">&#9679; SPOCZYNEK</text><text class="lbl-erect" x="436" y="60" style="fill: var(--ochre)">&#9679; WZW&Oacute;D</text></g>
+</svg></figure>
+    <div class="note mt-2" data-reveal style="max-width:780px; margin-inline:auto;">
+      <p data-ef="warianty-animacji.html" data-eo="PGI+Q28gcG9rYXp1amUgcHJ6ZWtyw7NqLjwvYj4gQ2llbmthIHBvZHfDs2puYSBsaW5pYSBwb2QgY3lsaW5kcmVtIHRvIGNld2thIG1vY3pvd2E6IGltcGxhbnQgYmllZ25pZSBuYWQgbmnEhSwgdyBjaWHFgmFjaCBqYW1pc3R5Y2gsIGkgamVqIG5pZSBuYXJ1c3phLiBPd2FsbmEga2/Fm8SHIHBvbmnFvGVqIG5hc2FkeSB0byBzcG9qZW5pZSDFgm9ub3dlLCBhIHpiaW9ybmlrIGNob3dhIHNpxJkgdHXFvCB6YSBuaW0uIERlbGlrYXRueSBvd2FsIHd5xbxlaiB0byBwxJljaGVyeiBtb2N6b3d5LiBLcmF3xJlkxbogeiBrcmVza2FtaSBwbyBsZXdlaiBvem5hY3phIHDFgmFzemN6eXpuxJkgY2nEmWNpYS4="><b>Co pokazuje przekrój.</b> Cienka podwójna linia pod cylindrem to cewka moczowa: implant biegnie nad nią, w ciałach jamistych, i jej nie narusza. Owalna kość poniżej nasady to spojenie łonowe, a zbiornik chowa się tuż za nim. Delikatny owal wyżej to pęcherz moczowy. Krawędź z kreskami po lewej oznacza płaszczyznę cięcia.</p>
+      <p class="mt-1" data-ef="warianty-animacji.html" data-eo="PGI+VG8gd2Vyc2phIHJvYm9jemEga2llcnVua3UuPC9iPiBOYXBpc3osIGNvIGRvc3Ryb2nEhzogemFrcmVzIHVub3N6ZW5pYSwgdGVtcG8sIHdpxJljZWogbHViIG1uaWVqIHN0cnVrdHVyIG1pZWRuaWN5Lg=="><b>To wersja robocza kierunku.</b> Napisz, co dostroić: zakres unoszenia, tempo, więcej lub mniej struktur miednicy.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--paper2" id="warianty">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow" data-ef="warianty-animacji.html" data-eo="RGxhIHBvcsOzd25hbmlh">Dla porównania</p>
+      <h2 data-ef="warianty-animacji.html" data-eo="UGnEmcSHIHd5asWbY2lvd3ljaCB3YXJpYW50w7N3">Pięć wyjściowych wariantów</h2>
+      <p data-ef="warianty-animacji.html" data-eo="UG9uacW8ZWogcGnEmcSHIHBvZGVqxZvEhywgeiBrdMOzcnljaCBwb3dzdGHFgmEgd2Vyc2phIHJvendpbmnEmXRhLiBab3N0YXdpYW0gamUgZG8gcG9yw7N3bmFuaWEu">Poniżej pięć podejść, z których powstała wersja rozwinięta. Zostawiam je do porównania.</p>
+    </div>
+
+    <div class="var-grid">
+      <article class="var-card" data-reveal>
+        <span class="var-tag">Wariant A</span>
+        <h3 data-ef="warianty-animacji.html" data-eo="UHJ6ZWtyw7NqIGJvY3pueQ==">Przekrój boczny</h3>
+        <p data-ef="warianty-animacji.html" data-eo="V2lkb2sgeiBwcm9maWx1LCBqYWsgdyBwb2RyxJljem5pa3UgdXJvbG9naWk6IHByxIVjaWUgcG96aW9tbywgbW9zem5hIHogcG9tcGvEhSBwb2Qgc3BvZGVtLCB6Ymlvcm5payB3IGfFgsSZYmkgbWllZG5pY3kuIE5hamJhcmR6aWVqIOKAnm1lZHljem55Ii4=">Widok z profilu, jak w podręczniku urologii: prącie poziomo, moszna z pompką pod spodem, zbiornik w głębi miednicy. Najbardziej „medyczny".</p>
+        <figure class="fig"><svg viewBox="0 0 480 430" class="fig-anim fig-hydro" role="img" aria-label="Wariant A: przekrój boczny. Cylindry w prąciu, pompka w mosznie, zbiornik w miednicy.">
+  <defs>
+    <clipPath id="a_cyt"><rect x="176" y="190" width="244" height="28" rx="14"/></clipPath>
+    <clipPath id="a_cyb"><rect x="176" y="226" width="244" height="28" rx="14"/></clipPath>
+    <clipPath id="a_res"><circle cx="104" cy="126" r="38"/></clipPath>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M64 26 C50 118 56 196 128 236"/>
+    <path d="M150 210 C150 250 156 268 160 286"/>
+  </g>
+  <g style="fill: var(--ochre)">
+    <g clip-path="url(#a_cyt)"><rect class="cyl-fluid dir-right" x="176" y="190" width="244" height="28"/></g>
+    <g clip-path="url(#a_cyb)"><rect class="cyl-fluid dir-right" x="176" y="226" width="244" height="28"/></g>
+    <g clip-path="url(#a_res)"><rect class="res-fluid" x="66" y="88" width="76" height="76"/></g>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="176" y="190" width="244" height="28" rx="14"/>
+    <rect x="176" y="226" width="244" height="28" rx="14"/>
+    <circle cx="104" cy="126" r="38"/>
+    <path d="M82 146 L128 100 M76 132 L116 94 M92 154 L134 112" opacity=".4" stroke-width="1"/>
+    <path d="M160 266 C122 274 116 342 156 372 C186 394 236 390 256 356 C276 322 258 276 220 268 Z" stroke-width="1.6"/>
+    <rect x="196" y="284" width="20" height="14" rx="3"/>
+    <ellipse class="pump" cx="206" cy="328" rx="20" ry="24"/>
+    <path d="M188 254 C184 266 192 278 200 284"/>
+    <path d="M212 254 C216 266 212 278 212 284"/>
+    <path d="M118 160 C150 224 176 282 196 310"/>
+  </g>
+  <path class="flow" d="M118 160 C150 224 176 282 196 310" fill="none" stroke="var(--ochre)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="2 15"/>
+  <g stroke="currentColor" stroke-width="1" opacity=".85" fill="none">
+    <path d="M300 150 L300 200"/><path d="M104 60 L104 84"/><path d="M300 300 L240 330"/>
+  </g>
+  <g fill="currentColor"><circle cx="300" cy="200" r="2.6"/><circle cx="104" cy="86" r="2.6"/><circle cx="240" cy="330" r="2.6"/></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="middle"><text x="272" y="132" font-size="19" font-weight="600" letter-spacing="1.2">1 / CYLINDRY</text><text x="272" y="150" font-size="15" opacity=".72" letter-spacing=".6">w prąciu</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="middle"><text x="104" y="52" font-size="19" font-weight="600" letter-spacing="1.2">3 / ZBIORNIK</text><text x="104" y="70" font-size="15" opacity=".72" letter-spacing=".6">w miednicy</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="316" y="306" font-size="19" font-weight="600" letter-spacing="1.2">2 / POMPKA</text><text x="316" y="324" font-size="15" opacity=".72" letter-spacing=".6">w mosznie</text></g>
+  <g font-family="'Spline Sans Mono',monospace" font-size="19" font-weight="600" letter-spacing="1.6" text-anchor="middle"><text class="lbl-flaccid" x="330" y="40" fill="currentColor">&#9679; SPOCZYNEK</text><text class="lbl-erect" x="330" y="40" style="fill: var(--ochre)">&#9679; WZW&Oacute;D</text></g>
+</svg></figure>
+        <p class="var-note" data-ef="warianty-animacji.html" data-eo="TW9jbmU6IGN6eXRlbG5hIGFuYXRvbWlhIGkgdHJhc2EgZHJlbsOzdy4gRG8gcm96d2HFvGVuaWE6IHdpxJljZWogbGluaWku">Mocne: czytelna anatomia i trasa drenów. Do rozważenia: więcej linii.</p>
+      </article>
+
+      <article class="var-card" data-reveal>
+        <span class="var-tag">Wariant B</span>
+        <h3 data-ef="warianty-animacji.html" data-eo="U3lsd2V0a2Egb2QgcHJ6b2R1">Sylwetka od przodu</h3>
+        <p data-ef="warianty-animacji.html" data-eo="TWnEmWtrYSBzeWx3ZXRrYSBjaWHFgmEgdyB0bGUgbG9rYWxpenVqZSB3c3p5c3RraWUgZWxlbWVudHkgbmFyYXouIFByxIVjaWUgd3puaWVzaW9uZSwgbW9zem5hIHogcG9tcGvEhSB1IGRvxYJ1LCB6Ymlvcm5payB3IG1pZWRuaWN5Lg==">Miękka sylwetka ciała w tle lokalizuje wszystkie elementy naraz. Prącie wzniesione, moszna z pompką u dołu, zbiornik w miednicy.</p>
+        <figure class="fig"><svg viewBox="0 0 400 470" class="fig-anim fig-hydro" role="img" aria-label="Wariant B: widok od przodu z sylwetką ciała. Cylindry we wzniesionym prąciu, pompka w mosznie, zbiornik w miednicy.">
+  <defs>
+    <clipPath id="b_cyl"><rect x="168" y="96" width="64" height="212" rx="30"/></clipPath>
+    <clipPath id="b_res"><circle cx="300" cy="336" r="32"/></clipPath>
+  </defs>
+  <path d="M120 300 C120 250 150 244 168 242 L168 128 C168 96 232 96 232 128 L232 242 C250 244 280 250 280 300 C300 306 312 356 286 388 C300 404 296 436 262 440 C246 456 210 456 200 438 C190 456 154 456 138 440 C104 436 100 404 114 388 C88 356 100 306 120 300 Z"
+        fill="var(--paper-3)" stroke="none" opacity=".85"/>
+  <g style="fill: var(--ochre)">
+    <g clip-path="url(#b_cyl)"><rect class="cyl-fluid" x="168" y="96" width="30" height="212"/></g>
+    <g clip-path="url(#b_cyl)"><rect class="cyl-fluid" x="202" y="96" width="30" height="212"/></g>
+    <g clip-path="url(#b_res)"><rect class="res-fluid" x="268" y="304" width="64" height="64"/></g>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="168" y="96" width="30" height="212" rx="15"/>
+    <rect x="202" y="96" width="30" height="212" rx="15"/>
+    <circle cx="300" cy="336" r="32"/>
+    <path d="M280 352 L322 310 M276 340 L312 304 M288 358 L326 320" opacity=".4" stroke-width="1"/>
+    <path d="M150 360 C120 372 122 418 156 432 C182 444 218 444 244 432 C278 418 280 372 250 360" stroke-width="1.6"/>
+    <ellipse class="pump" cx="200" cy="398" rx="22" ry="26"/>
+    <path d="M186 308 C182 330 190 350 196 366"/>
+    <path d="M214 308 C218 330 210 350 204 366"/>
+    <path d="M282 352 C250 372 224 384 214 392"/>
+  </g>
+  <path class="flow" d="M282 352 C250 372 224 384 214 392" fill="none" stroke="var(--ochre)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="2 15"/>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="120" y="150" font-size="19" font-weight="600" letter-spacing="1.2">1 / CYLINDRY</text><text x="120" y="168" font-size="15" opacity=".72" letter-spacing=".6">w prąciu</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="320" y="300" font-size="19" font-weight="600" letter-spacing="1.2">3 / ZBIORNIK</text><text x="320" y="318" font-size="15" opacity=".72" letter-spacing=".6">w miednicy</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="60" y="404" font-size="19" font-weight="600" letter-spacing="1.2">2 / POMPKA</text><text x="60" y="422" font-size="15" opacity=".72" letter-spacing=".6">w mosznie</text></g>
+  <g font-family="'Spline Sans Mono',monospace" font-size="19" font-weight="600" letter-spacing="1.6" text-anchor="middle"><text class="lbl-flaccid" x="200" y="44" fill="currentColor">&#9679; SPOCZYNEK</text><text class="lbl-erect" x="200" y="44" style="fill: var(--ochre)">&#9679; WZW&Oacute;D</text></g>
+</svg></figure>
+        <p class="var-note" data-ef="warianty-animacji.html" data-eo="TW9jbmU6IG9kIHJhenUgd2lkYcSHLCDFvGUgdG8gY2lhxYJvLiBEbyByb3p3YcW8ZW5pYTogbW5pZWog4oCeaWx1c3RyYWN5am5lIi4=">Mocne: od razu widać, że to ciało. Do rozważenia: mniej „ilustracyjne".</p>
+      </article>
+
+      <article class="var-card" data-reveal>
+        <span class="var-tag">Wariant C</span>
+        <h3 data-ef="warianty-animacji.html" data-eo="U2NoZW1hdCB6IHd5cmHFum7EhSBtb3N6bsSF">Schemat z wyraźną moszną</h3>
+        <p data-ef="warianty-animacji.html" data-eo="TmFqYmxpxbxlaiBvYmVjbmVqIHdlcnNqaSwgYWxlIGvFgm9wb3RsaXd5IHByb3N0b2vEhXQgeiBrw7PFgmtpZW0gemFzdMSFcGlvbnkgY3p5dGVsbnltIHdvcmtpZW0gbW9zem5vd3ltLCB3IGt0w7NyeW0gc2llZHppIHBvbXBrYS4=">Najbliżej obecnej wersji, ale kłopotliwy prostokąt z kółkiem zastąpiony czytelnym workiem mosznowym, w którym siedzi pompka.</p>
+        <figure class="fig"><svg viewBox="0 0 460 430" class="fig-anim fig-hydro" role="img" aria-label="Wariant C: schemat z wyraźnym workiem mosznowym. Cylindry, pompka w mosznie, zbiornik.">
+  <defs>
+    <clipPath id="c_cyL"><rect x="150" y="90" width="40" height="248" rx="20"/></clipPath>
+    <clipPath id="c_cyR"><rect x="204" y="90" width="40" height="248" rx="20"/></clipPath>
+    <clipPath id="c_res"><circle cx="400" cy="120" r="40"/></clipPath>
+  </defs>
+  <g style="fill: var(--ochre)">
+    <g clip-path="url(#c_cyL)"><rect class="cyl-fluid" x="150" y="90" width="40" height="248"/></g>
+    <g clip-path="url(#c_cyR)"><rect class="cyl-fluid" x="204" y="90" width="40" height="248"/></g>
+    <g clip-path="url(#c_res)"><rect class="res-fluid" x="360" y="80" width="80" height="80"/></g>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="150" y="90" width="40" height="248" rx="20"/>
+    <rect x="204" y="90" width="40" height="248" rx="20"/>
+    <circle cx="400" cy="120" r="40"/>
+    <path d="M378 142 L426 94 M372 128 L414 88 M388 150 L430 108" opacity=".4" stroke-width="1"/>
+    <path d="M150 350 C104 360 96 410 128 396" opacity="0"/>
+    <path d="M166 344 C120 356 110 418 152 402 C150 430 210 442 228 414 C250 442 306 420 296 388 C330 372 322 320 280 336 C300 300 236 300 236 336 C230 320 176 320 174 348 Z" stroke-width="1.6"/>
+    <ellipse class="pump" cx="212" cy="384" rx="24" ry="28"/>
+    <path d="M170 338 C168 352 176 366 190 372"/>
+    <path d="M224 338 C226 354 220 366 214 372"/>
+    <path d="M368 150 C320 250 270 330 250 360"/>
+  </g>
+  <path class="flow" d="M368 150 C320 250 270 330 250 360" fill="none" stroke="var(--ochre)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="2 15"/>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="120" y="60" font-size="19" font-weight="600" letter-spacing="1.2">1 / CYLINDRY</text><text x="120" y="78" font-size="15" opacity=".72" letter-spacing=".6">w prąciu</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="middle"><text x="400" y="50" font-size="19" font-weight="600" letter-spacing="1.2">3 / ZBIORNIK</text><text x="400" y="68" font-size="15" opacity=".72" letter-spacing=".6">w miednicy</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="300" y="404" font-size="19" font-weight="600" letter-spacing="1.2">2 / MOSZNA</text><text x="300" y="422" font-size="15" opacity=".72" letter-spacing=".6">z pompką</text></g>
+  <g font-family="'Spline Sans Mono',monospace" font-size="19" font-weight="600" letter-spacing="1.6" text-anchor="middle"><text class="lbl-flaccid" x="230" y="42" fill="currentColor">&#9679; SPOCZYNEK</text><text class="lbl-erect" x="230" y="42" style="fill: var(--ochre)">&#9679; WZW&Oacute;D</text></g>
+</svg></figure>
+        <p class="var-note" data-ef="warianty-animacji.html" data-eo="TW9jbmU6IG1pbmltYWxuYSB6bWlhbmEsIG1ha3N5bWFsbmEgY3p5c3RvxZvEhy4gRG8gcm96d2HFvGVuaWE6IG1uaWVqIGRvc8WCb3duYSBhbmF0b21pYS4=">Mocne: minimalna zmiana, maksymalna czystość. Do rozważenia: mniej dosłowna anatomia.</p>
+      </article>
+
+      <article class="var-card" data-reveal>
+        <span class="var-tag">Wariant D</span>
+        <h3 data-ef="warianty-animacji.html" data-eo="UHJ6ZXJ5d2FueSBrb250dXIgY2lhxYJh">Przerywany kontur ciała</h3>
+        <p data-ef="warianty-animacji.html" data-eo="SW1wbGFudCBuYXJ5c293YW55IHBlxYJuxIUga3Jlc2vEhSwgYSB3b2vDs8WCIG5pZWdvIGRlbGlrYXRueSwgcHJ6ZXJ5d2FueSB6YXJ5cyBhbmF0b21paS4gQ2lhxYJvIGplc3Qg4oCeemF6bmFjem9uZSIsIG5pZSBkb21pbnVqZS4=">Implant narysowany pełną kreską, a wokół niego delikatny, przerywany zarys anatomii. Ciało jest „zaznaczone", nie dominuje.</p>
+        <figure class="fig"><svg viewBox="0 0 440 450" class="fig-anim fig-hydro" role="img" aria-label="Wariant D: przerywany kontur anatomii z implantem w środku.">
+  <defs>
+    <clipPath id="d_cyL"><rect x="176" y="100" width="30" height="190" rx="15"/></clipPath>
+    <clipPath id="d_cyR"><rect x="210" y="100" width="30" height="190" rx="15"/></clipPath>
+    <clipPath id="d_res"><circle cx="320" cy="250" r="32"/></clipPath>
+  </defs>
+  <path d="M168 292 L168 138 A40 40 0 0 1 248 138 L248 292 C284 306 292 372 256 402 C232 424 184 424 160 402 C124 372 132 306 168 292 Z"
+        fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="5 6" opacity=".33"/>
+  <g style="fill: var(--ochre)">
+    <g clip-path="url(#d_cyL)"><rect class="cyl-fluid" x="176" y="100" width="30" height="190"/></g>
+    <g clip-path="url(#d_cyR)"><rect class="cyl-fluid" x="210" y="100" width="30" height="190"/></g>
+    <g clip-path="url(#d_res)"><rect class="res-fluid" x="288" y="218" width="64" height="64"/></g>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="176" y="100" width="30" height="190" rx="15"/>
+    <rect x="210" y="100" width="30" height="190" rx="15"/>
+    <circle cx="320" cy="250" r="32"/>
+    <path d="M300 266 L342 224 M296 254 L332 218" opacity=".4" stroke-width="1"/>
+    <ellipse class="pump" cx="208" cy="360" rx="22" ry="26"/>
+    <path d="M192 290 C188 314 196 334 200 344"/>
+    <path d="M224 290 C228 314 220 334 216 344"/>
+    <path d="M302 266 C270 300 236 332 222 348"/>
+  </g>
+  <path class="flow" d="M302 266 C270 300 236 332 222 348" fill="none" stroke="var(--ochre)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="2 15"/>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="120" y="150" font-size="19" font-weight="600" letter-spacing="1.2">1 / CYLINDRY</text><text x="120" y="168" font-size="15" opacity=".72" letter-spacing=".6">w prąciu</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="340" y="214" font-size="19" font-weight="600" letter-spacing="1.2">3 / ZBIORNIK</text><text x="340" y="232" font-size="15" opacity=".72" letter-spacing=".6">w miednicy</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="60" y="366" font-size="19" font-weight="600" letter-spacing="1.2">2 / POMPKA</text><text x="60" y="384" font-size="15" opacity=".72" letter-spacing=".6">w mosznie</text></g>
+  <g font-family="'Spline Sans Mono',monospace" font-size="19" font-weight="600" letter-spacing="1.6" text-anchor="middle"><text class="lbl-flaccid" x="208" y="44" fill="currentColor">&#9679; SPOCZYNEK</text><text class="lbl-erect" x="208" y="44" style="fill: var(--ochre)">&#9679; WZW&Oacute;D</text></g>
+</svg></figure>
+        <p class="var-note" data-ef="warianty-animacji.html" data-eo="TW9jbmU6IGxla2tvxZvEhywgaW1wbGFudCBuYSBwaWVyd3N6eW0gcGxhbmllLiBEbyByb3p3YcW8ZW5pYToga29udHVyIHN1YnRlbG55Lg==">Mocne: lekkość, implant na pierwszym planie. Do rozważenia: kontur subtelny.</p>
+      </article>
+
+      <article class="var-card" data-reveal>
+        <span class="var-tag">Wariant E</span>
+        <h3 data-ef="warianty-animacji.html" data-eo="SmVkZW4gY2nEhWfFgnkga29udHVy">Jeden ciągły kontur</h3>
+        <p data-ef="warianty-animacji.html" data-eo="Tm93b2N6ZXNueSwgaWtvbmljem55IHphcnlzOiBwcsSFY2llIGkgbW9zem5hIGpha28gamVkbmEgcMWCeW5uYSBsaW5pYS4gRWxlbWVudHkgaW1wbGFudHUgdyDFm3JvZGt1LCBtaW5pbXVtIG96ZG9ibmlrw7N3Lg==">Nowoczesny, ikoniczny zarys: prącie i moszna jako jedna płynna linia. Elementy implantu w środku, minimum ozdobników.</p>
+        <figure class="fig"><svg viewBox="0 0 420 450" class="fig-anim fig-hydro" role="img" aria-label="Wariant E: jeden ciągły kontur ciała, styl ikoniczny, z implantem.">
+  <defs>
+    <clipPath id="e_cyL"><rect x="166" y="104" width="28" height="182" rx="14"/></clipPath>
+    <clipPath id="e_cyR"><rect x="198" y="104" width="28" height="182" rx="14"/></clipPath>
+    <clipPath id="e_res"><circle cx="312" cy="256" r="30"/></clipPath>
+  </defs>
+  <path d="M156 288 L156 140 A40 40 0 0 1 236 140 L236 288 C270 300 278 366 244 396 C220 418 172 418 148 396 C114 366 122 300 156 288 Z"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M188 300 C188 340 204 340 204 300" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".35"/>
+  <g style="fill: var(--ochre)">
+    <g clip-path="url(#e_cyL)"><rect class="cyl-fluid" x="166" y="104" width="28" height="182"/></g>
+    <g clip-path="url(#e_cyR)"><rect class="cyl-fluid" x="198" y="104" width="28" height="182"/></g>
+    <g clip-path="url(#e_res)"><rect class="res-fluid" x="282" y="226" width="60" height="60"/></g>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="166" y="104" width="28" height="182" rx="14"/>
+    <rect x="198" y="104" width="28" height="182" rx="14"/>
+    <circle cx="312" cy="256" r="30"/>
+    <path d="M294 270 L332 232 M290 258 L326 224" opacity=".4" stroke-width="1"/>
+    <ellipse class="pump" cx="196" cy="360" rx="20" ry="24"/>
+    <path d="M184 286 C180 312 188 334 190 344"/>
+    <path d="M212 286 C216 312 206 334 202 344"/>
+    <path d="M294 270 C262 302 228 334 214 348"/>
+  </g>
+  <path class="flow" d="M294 270 C262 302 228 334 214 348" fill="none" stroke="var(--ochre)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="2 15"/>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="110" y="154" font-size="19" font-weight="600" letter-spacing="1.2">1 / CYLINDRY</text><text x="110" y="172" font-size="15" opacity=".72" letter-spacing=".6">w prąciu</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="332" y="220" font-size="19" font-weight="600" letter-spacing="1.2">3 / ZBIORNIK</text><text x="332" y="238" font-size="15" opacity=".72" letter-spacing=".6">w miednicy</text></g>
+  <g font-family="'Spline Sans Mono',monospace" fill="currentColor" text-anchor="start"><text x="52" y="366" font-size="19" font-weight="600" letter-spacing="1.2">2 / POMPKA</text><text x="52" y="384" font-size="15" opacity=".72" letter-spacing=".6">w mosznie</text></g>
+  <g font-family="'Spline Sans Mono',monospace" font-size="19" font-weight="600" letter-spacing="1.6" text-anchor="middle"><text class="lbl-flaccid" x="196" y="46" fill="currentColor">&#9679; SPOCZYNEK</text><text class="lbl-erect" x="196" y="46" style="fill: var(--ochre)">&#9679; WZW&Oacute;D</text></g>
+</svg></figure>
+        <p class="var-note" data-ef="warianty-animacji.html" data-eo="TW9jbmU6IGVsZWdhbmNqYSBpIHNww7Nqbm/Fm8SHIHogcmVzenTEhSBsYXlvdXR1LiBEbyByb3p3YcW8ZW5pYTogbmFqYmFyZHppZWogdXByb3N6Y3pvbnku">Mocne: elegancja i spójność z resztą layoutu. Do rozważenia: najbardziej uproszczony.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="b-name">Implant prącia</div>
+        <div class="b-sub">dr Anna Bonder&#8209;Nowicka</div>
+        <p>Serwis informacyjny o leczeniu ciężkich zaburzeń erekcji metodą wszczepienia implantu. Część praktyki <a href="https://turbourolog.pl/" target="_blank" rel="noopener">turbourolog.pl</a>.</p>
+      </div>
+      <div>
+        <h4>Na tej stronie</h4>
+        <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="rodzaje-implantow.html">Rodzaje implantów</a></li>
+        <li><a href="przebieg-leczenia.html">Przebieg leczenia</a></li>
+        <li><a href="zycie-z-implantem.html">Życie z implantem</a></li>
+        <li><a href="o-lekarce.html">O lekarce</a></li>
+        <li><a href="fakty-i-mity.html">Fakty i mity</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Praktyka</h4>
+        <ul>
+          <li>ul. Żelazna 67/29<br>00&#8209;871 Warszawa</li>
+          <li><a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a></li>
+          <li><a href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Rejestracja online (ZnanyLekarz)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Obserwuj</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/turbourolog/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61569814723670&amp;locale=pl_PL" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.linkedin.com/in/anna-bonder-nowicka-a73193344/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-legal">
+      <span>© 2026 Praktyka Lekarska Anna Bonder&#8209;Nowicka · NIP 5252152491</span>
+      <span><a href="https://turbourolog.pl/doc/polityka_prywatnosci_i_plikow_cookies.pdf" target="_blank" rel="noopener">Polityka prywatności i plików cookies</a></span>
+    </div>
+    <p class="f-disclaimer">Treści na tej stronie mają charakter informacyjny i edukacyjny. Nie zastępują konsultacji lekarskiej ani indywidualnej kwalifikacji do zabiegu; decyzja o leczeniu operacyjnym zawsze zapada podczas wizyty, po badaniu i omówieniu ryzyka. Dane o satysfakcji pacjentów pochodzą z badań dotyczących nowoczesnych implantów prącia. Indywidualne wyniki leczenia mogą się różnić.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var h=document.querySelector('.site-header');
+  var onScroll=function(){ h.classList.toggle('scrolled', window.scrollY>8); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var b=document.querySelector('.burger'), n=document.getElementById('site-nav');
+  if(b&&n){ b.addEventListener('click', function(){
+    var open=n.classList.toggle('open');
+    b.setAttribute('aria-expanded', open);
+    b.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+  }); }
+
+  var items=document.querySelectorAll('[data-reveal]');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Formularz kontaktowy: tryb mailto. DEV: przy wdrożeniu podłącz własny endpoint. */
+  var f=document.getElementById('contact-form');
+  if(f){ f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if(!f.reportValidity()) return;
+    var v=function(id){ var el=document.getElementById(id); return el?el.value:''; };
+    var subject='Wiadomość ze strony: '+v('f-topic');
+    var body='Imię: '+v('f-name')+'\nE-mail: '+v('f-mail')+'\n\n'+v('f-msg');
+    location.href='mailto:kontakt@turbourolog.pl?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  }); }
+})();
+</script>
+<style>
+#ed-bar{position:fixed;right:16px;bottom:16px;z-index:9999;display:none;gap:8px;
+  align-items:center;background:#003D47;color:#FBF7F4;padding:8px 10px;border-radius:6px;
+  font-family:system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+body.ed-ready #ed-bar{display:flex}
+#ed-bar button{background:#3EABF0;color:#012A31;border:0;border-radius:4px;padding:7px 12px;
+  font-weight:600;cursor:pointer;font-size:14px}
+#ed-bar button#ed-cancel{background:transparent;color:#EDEFE8;text-decoration:underline;padding:7px 6px}
+#ed-msg{opacity:.9;font-size:13px;max-width:240px}
+body.ed-on [data-ef]{outline:2px dashed rgba(169,123,34,.7);outline-offset:3px;cursor:text}
+body.ed-on [data-ef]:focus{outline:2px solid #A97B22;background:rgba(169,123,34,.08)}
+</style>
+<div id="ed-bar" aria-hidden="true">
+  <button id="ed-toggle" type="button">&#9998; Edytuj tre&#347;&#263;</button>
+  <span id="ed-actions" hidden>
+    <button id="ed-save" type="button">&#128190; Zapisz</button>
+    <button id="ed-cancel" type="button">Anuluj</button>
+  </span>
+  <span id="ed-msg"></span>
+</div>
+<script>
+(function(){
+  fetch('/__ping').then(function(r){if(r.ok)init();}).catch(function(){});
+  function init(){
+    document.body.classList.add('ed-ready');
+    var nodes=[].slice.call(document.querySelectorAll('[data-ef]'));
+    var editing=false;
+    var toggle=document.getElementById('ed-toggle');
+    var actions=document.getElementById('ed-actions');
+    var msgEl=document.getElementById('ed-msg');
+    function msg(t){msgEl.textContent=t||'';}
+    function mark(e){e.currentTarget.setAttribute('data-dirty','1');}
+    function setEdit(on){
+      editing=on;
+      document.body.classList.toggle('ed-on',on);
+      actions.hidden=!on; toggle.hidden=on;
+      nodes.forEach(function(n){
+        n.contentEditable=on?'true':'false';
+        if(on)n.addEventListener('input',mark);
+      });
+      msg(on?'Klikaj w teksty i pisz. Potem Zapisz.':'');
+    }
+    toggle.onclick=function(){setEdit(true);};
+    document.getElementById('ed-cancel').onclick=function(){location.reload();};
+    document.getElementById('ed-save').onclick=function(){
+      var dirty=nodes.filter(function(n){return n.getAttribute('data-dirty');});
+      if(!dirty.length){msg('Nic nie zmieniono.');return;}
+      msg('Zapisywanie…');
+      fetch('/__save',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({edits:dirty.map(function(n){
+          return {file:n.getAttribute('data-ef'),eo:n.getAttribute('data-eo'),html:n.innerHTML};
+        })})})
+        .then(function(r){return r.json();})
+        .then(function(res){
+          if(res.failed&&res.failed.length)
+            msg('Zapisano '+res.saved+', nie udało się '+res.failed.length+'. Przeładuj i spróbuj ponownie.');
+          else{msg('Zapisano ✓ przeładowuję…');setTimeout(function(){location.reload();},700);}
+        })
+        .catch(function(){msg('Błąd zapisu.');});
+    };
+  }
+})();
+</script>
+</body>
+</html>
