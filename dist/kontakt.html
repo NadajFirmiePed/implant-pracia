@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt i umawianie konsultacji | Implant prącia</title>
+<meta name="description" content="Umów konsultację w sprawie implantu prącia w Warszawie: rejestracja online przez ZnanyLekarz, ul. Żelazna 67/29. Pełna dyskrecja, odpowiedź osobista.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0F211E">
+<!-- TODO przy wdrożeniu: uzupełnij docelową domenę i odkomentuj -->
+<!-- <link rel="canonical" href="https://TWOJA-DOMENA.pl/kontakt.html"> -->
+<!-- <meta property="og:locale" content="pl_PL"><meta property="og:type" content="website">
+     <meta property="og:title" content="Kontakt i umawianie konsultacji | Implant prącia">
+     <meta property="og:description" content="Umów konsultację w sprawie implantu prącia w Warszawie: rejestracja online przez ZnanyLekarz, ul. Żelazna 67/29. Pełna dyskrecja, odpowiedź osobista.">
+     <meta property="og:url" content="https://TWOJA-DOMENA.pl/kontakt.html"> -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='9' fill='%230E413B'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='32' fill='%23F1F2ED' text-anchor='middle'%3EiP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&family=Schibsted+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Physician",
+ "name": "dr Anna Bonder-Nowicka",
+ "description": "Urolog i seksuolog. Leczenie ciężkich zaburzeń erekcji, wszczepianie implantów prącia. Warszawa.",
+ "medicalSpecialty": "Urologic",
+ "url": "https://turbourolog.pl/",
+ "email": "mailto:kontakt@turbourolog.pl",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "ul. Żelazna 67/29",
+  "postalCode": "00-871",
+  "addressLocality": "Warszawa",
+  "addressCountry": "PL"
+ },
+ "sameAs": [
+  "https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa",
+  "https://www.instagram.com/turbourolog/",
+  "https://www.facebook.com/profile.php?id=61569814723670&locale=pl_PL",
+  "https://www.linkedin.com/in/anna-bonder-nowicka-a73193344/"
+ ]
+}
+</script>
+<style>
+/* ============================================================
+   IMPLANT PRĄCIA — dr Anna Bonder-Nowicka
+   Design system: „dokumentacja medyczna klasy premium"
+   Paleta: porcelana gabinetowa / butelkowa zieleń / petrol / ochra
+   Typografia: STIX Two Text (display, serif naukowy)
+               Schibsted Grotesk (tekst)
+               Spline Sans Mono (adnotacje techniczne)
+   ============================================================ */
+
+:root{
+  --paper:      #F1F2ED;
+  --paper-2:    #E7EAE1;
+  --paper-3:    #DFE3D8;
+  --ink:        #0F211E;
+  --ink-2:      #3A4A45;
+  --petrol:     #175C54;
+  --petrol-2:   #0E413B;
+  --petrol-3:   #0A302C;
+  --ochre:      #A97B22;
+  --ochre-2:    #8A6217;
+  --line:       rgba(15,33,30,.16);
+  --line-soft:  rgba(15,33,30,.09);
+  --line-inv:   rgba(241,242,237,.22);
+  --paper-inv:  #EDEFE8;
+
+  --serif: "STIX Two Text", "Georgia", "Times New Roman", serif;
+  --sans:  "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --mono:  "Spline Sans Mono", "SFMono-Regular", "Consolas", monospace;
+
+  --wrap: 1160px;
+  --pad: clamp(20px, 4vw, 44px);
+  --r: 3px;
+
+  --sh-btn: 0 10px 24px -12px rgba(14,65,59,.55);
+  --sh-card: 0 18px 44px -30px rgba(15,33,30,.35);
+}
+
+/* ---------- reset ---------- */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html:focus-within{ scroll-behavior:smooth; }
+body{
+  font-family:var(--sans);
+  font-size:17px; line-height:1.68;
+  color:var(--ink); background:var(--paper);
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img,svg,video{ display:block; max-width:100%; }
+a{ color:var(--petrol); text-decoration:none; }
+a:hover{ text-decoration:underline; text-underline-offset:3px; }
+ul,ol{ list-style:none; }
+button{ font:inherit; cursor:pointer; background:none; border:0; color:inherit; }
+strong{ font-weight:700; }
+::selection{ background:var(--petrol); color:var(--paper); }
+
+:focus-visible{ outline:2px solid var(--ochre); outline-offset:3px; border-radius:2px; }
+
+.skip-link{
+  position:absolute; left:-999px; top:10px; z-index:200;
+  background:var(--ink); color:var(--paper); padding:10px 18px; border-radius:var(--r);
+  font-family:var(--mono); font-size:13px;
+}
+.skip-link:focus{ left:10px; }
+
+.wrap{ max-width:var(--wrap); margin-inline:auto; padding-inline:var(--pad); }
+
+/* ---------- typografia ---------- */
+h1,h2,h3,.h-serif{
+  font-family:var(--serif); font-weight:600; line-height:1.14;
+  letter-spacing:-0.012em; color:var(--ink);
+}
+h1{ font-size:clamp(33px, 4.6vw, 56px); }
+h2{ font-size:clamp(26px, 3.2vw, 38px); letter-spacing:-0.01em; }
+h3{ font-size:clamp(19px, 2vw, 23px); line-height:1.3; }
+h1 em, h2 em{ font-style:italic; font-weight:600; color:var(--petrol); }
+
+.lead{ font-size:clamp(17.5px, 1.6vw, 20px); line-height:1.65; color:var(--ink-2); max-width:62ch; }
+
+.eyebrow{
+  display:none;
+  align-items:center; gap:10px;
+  font-family:var(--mono); font-size:11.5px; font-weight:500;
+  letter-spacing:.17em; text-transform:uppercase; color:var(--petrol);
+}
+.eyebrow::before{ content:""; width:26px; height:1px; background:var(--petrol); }
+.eyebrow--bare::before{ display:none; }
+.on-dark .eyebrow, .eyebrow--inv{ color:var(--ochre); }
+.on-dark .eyebrow::before, .eyebrow--inv::before{ background:var(--ochre); }
+
+.mono{ font-family:var(--mono); }
+.muted{ color:var(--ink-2); }
+.small{ font-size:14.5px; }
+
+/* ---------- pasek górny + nagłówek ---------- */
+.topbar{
+  background:var(--petrol-3); color:var(--paper-inv);
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.06em;
+}
+.topbar .wrap{
+  display:flex; justify-content:space-between; align-items:center; gap:16px;
+  padding-block:8px;
+}
+.topbar a{ color:var(--paper-inv); opacity:.85; }
+.topbar a:hover{ opacity:1; }
+.topbar .tb-right{ display:flex; gap:22px; }
+@media (max-width:760px){ .topbar .tb-right span.tb-mail{ display:none; } }
+
+.site-header{
+  position:sticky; top:0; z-index:100;
+  background:var(--petrol-2); color:var(--paper-inv);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease, box-shadow .25s ease;
+}
+.site-header.scrolled{ border-bottom-color:rgba(255,255,255,.10); box-shadow:0 10px 30px -20px rgba(0,0,0,.55); }
+.site-header .wrap{
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding-block:14px;
+}
+
+.brand{ display:flex; flex-direction:column; line-height:1.12; color:var(--paper-inv); }
+.brand:hover{ text-decoration:none; }
+.brand .b-name{ font-family:var(--serif); font-weight:600; font-size:21px; letter-spacing:-.01em; }
+.brand .b-sub{ font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ochre); margin-top:3px; }
+
+.main-nav{ display:flex; align-items:center; gap:6px; }
+.main-nav a{
+  color:rgba(237,239,232,.82); font-size:15px; font-weight:500;
+  padding:9px 12px; border-radius:var(--r);
+  transition:color .15s ease, background .15s ease;
+}
+.main-nav a:hover{ color:var(--paper-inv); background:rgba(255,255,255,.08); text-decoration:none; }
+.main-nav a[aria-current="page"]{ color:var(--paper-inv); position:relative; }
+.main-nav a[aria-current="page"]::after{
+  content:""; position:absolute; left:12px; right:12px; bottom:4px;
+  height:2px; background:var(--ochre);
+}
+.nav-cta{ margin-left:10px; }
+.site-header .nav-cta.btn--primary{ background:var(--ochre); color:var(--ink); box-shadow:none; }
+.site-header .nav-cta.btn--primary:hover{ background:var(--ochre-2); color:var(--ink); }
+
+.burger{
+  display:none; flex-direction:column; gap:5px; padding:10px; border-radius:var(--r);
+}
+.burger span{ width:24px; height:2px; background:var(--ink); transition:transform .25s ease, opacity .2s ease; }
+.burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+@media (max-width:980px){
+  .burger{ display:flex; }
+  .main-nav{
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; align-items:stretch; gap:2px;
+    background:var(--paper); border-bottom:1px solid var(--line);
+    padding:12px var(--pad) 22px;
+    box-shadow:0 30px 50px -30px rgba(15,33,30,.4);
+    display:none;
+  }
+  .main-nav.open{ display:flex; }
+  .main-nav a{ padding:13px 12px; font-size:16px; border-bottom:1px solid var(--line-soft); }
+  .main-nav a[aria-current="page"]::after{ display:none; }
+  .main-nav a[aria-current="page"]{ color:var(--petrol-2); background:var(--paper-2); }
+  .nav-cta{ margin:12px 0 0; }
+}
+
+/* ---------- przyciski ---------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  min-height:48px; padding:12px 26px;
+  font-weight:600; font-size:15.5px; letter-spacing:.01em;
+  border-radius:var(--r); border:1px solid transparent;
+  transition:transform .15s ease, background .15s ease, box-shadow .15s ease, border-color .15s ease;
+  text-align:center;
+}
+.btn:hover{ text-decoration:none; transform:translateY(-1px); }
+.btn:active{ transform:translateY(0); }
+.btn--primary{ background:var(--petrol-2); color:#fff; box-shadow:var(--sh-btn); }
+.btn--primary:hover{ background:var(--petrol-3); }
+.btn--ghost{ background:transparent; color:var(--ink); border-color:var(--ink); }
+.btn--ghost:hover{ background:var(--ink); color:var(--paper); }
+.btn--inv{ background:var(--paper); color:var(--ink); }
+.btn--inv:hover{ background:#fff; }
+.btn--ghost-inv{ background:transparent; color:var(--paper-inv); border-color:var(--line-inv); }
+.btn--ghost-inv:hover{ border-color:var(--paper-inv); background:rgba(241,242,237,.08); }
+.btn .arr{ font-family:var(--mono); font-weight:400; }
+
+.btn-note{
+  margin-top:10px; font-size:13px; color:var(--ink-2);
+  font-family:var(--mono); letter-spacing:.02em;
+}
+.on-dark .btn-note{ color:var(--line-inv); color:rgba(241,242,237,.65); }
+
+/* ---------- sekcje ---------- */
+.section{ padding-block:clamp(40px, 5.5vw, 72px); }
+.section--tight{ padding-block:clamp(28px, 4vw, 48px); }
+.section--paper2{ background:var(--paper-2); }
+.section--dark{ background:var(--ink); color:var(--paper-inv); }
+.section--dark h2,.section--dark h3{ color:var(--paper-inv); }
+.section--dark .lead,.section--dark p{ color:rgba(237,239,232,.82); }
+.on-dark{ color:var(--paper-inv); }
+
+.sec-head{ max-width:760px; margin-bottom:clamp(34px, 5vw, 56px); }
+.sec-head .eyebrow{ margin-bottom:16px; }
+.sec-head p{ margin-top:16px; color:var(--ink-2); }
+.section--dark .sec-head p{ color:rgba(237,239,232,.78); }
+
+.hr{ border:0; border-top:1px solid var(--line); }
+
+/* ---------- HERO ---------- */
+.hero{ position:relative; overflow:hidden; }
+.hero .wrap{ padding-block:clamp(28px, 4vw, 56px); }
+.hero-head{ margin-bottom:clamp(34px, 5vw, 58px); }
+.hero-head .eyebrow{ margin-bottom:20px; }
+.hero-head h1{ max-width:none; }
+.hero-copy .eyebrow{ margin-bottom:20px; }
+.hero-lower{
+  display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(30px, 5vw, 72px); align-items:center;
+}
+.hero-copy h1{ margin-bottom:22px; max-width:15ch; }
+.hero-copy .lead{ margin-bottom:32px; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+.hero-trust{
+  margin-top:26px; display:flex; align-items:center; gap:12px;
+  font-size:14px; color:var(--ink-2);
+}
+.hero-trust .dot{ width:7px; height:7px; border-radius:50%; background:var(--ochre); flex:none; }
+
+.hero--sub .wrap{ padding-block:clamp(28px, 4vw, 52px); }
+.hero--sub .hero-head{ margin-bottom:0; }
+.hero--sub h1{ max-width:22ch; }
+
+@media (max-width:900px){
+  .hero-lower{ grid-template-columns:1fr; }
+  .hero-fig{ order:-1; max-width:420px; }
+}
+
+/* ---------- figury „patentowe" ---------- */
+.fig{
+  position:relative;
+  background:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size:28px 28px;
+  background-color:color-mix(in srgb, var(--paper) 65%, #fff 35%);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:clamp(18px, 3vw, 34px);
+  box-shadow:var(--sh-card);
+}
+.fig svg{ width:100%; height:auto; color:var(--petrol-2); }
+.fig .fig-cap{
+  display:flex; justify-content:space-between; gap:14px;
+  margin-top:16px; padding-top:12px; border-top:1px solid var(--line);
+  font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--ink-2);
+}
+.fig .fig-cap b{ color:var(--petrol-2); font-weight:500; }
+.fig-corner{
+  position:absolute; top:10px; right:12px;
+  font-family:var(--mono); font-size:10px; letter-spacing:.14em;
+  color:var(--ink-2); opacity:.7;
+}
+.section--dark .fig{
+  background-color:rgba(241,242,237,.05);
+  background-image:
+    linear-gradient(rgba(241,242,237,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(241,242,237,.07) 1px, transparent 1px);
+  border-color:var(--line-inv); box-shadow:none;
+}
+.section--dark .fig svg{ color:var(--paper-inv); }
+.section--dark .fig .fig-cap{ border-top-color:var(--line-inv); color:rgba(237,239,232,.65); }
+.section--dark .fig .fig-cap b{ color:var(--ochre); }
+
+/* ---------- pasek liczb ---------- */
+.statband{ border-block:1px solid var(--petrol-3); background:var(--petrol-2); color:var(--paper-inv); }
+.statband .wrap{
+  display:grid; grid-template-columns:repeat(4, 1fr);
+  padding-block:0;
+}
+.stat{ padding:clamp(22px, 3vw, 34px) clamp(10px, 2vw, 28px); border-left:1px solid rgba(255,255,255,.12); }
+.stat:first-child{ border-left:0; padding-left:0; }
+.stat .s-num{
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(30px, 3.6vw, 46px); line-height:1; color:var(--paper-inv);
+}
+.stat .s-num sup{ font-size:.45em; color:var(--ochre); }
+.stat .s-lab{
+  margin-top:10px; font-family:var(--mono); font-size:11.5px;
+  letter-spacing:.1em; text-transform:uppercase; color:rgba(237,239,232,.72); line-height:1.5;
+}
+.stat .s-src{ margin-top:6px; font-size:12px; color:rgba(237,239,232,.6); }
+@media (max-width:820px){
+  .statband .wrap{ grid-template-columns:1fr 1fr; }
+  .stat:nth-child(3){ border-left:0; padding-left:0; }
+  .stat{ border-top:1px solid rgba(255,255,255,.12); }
+  .stat:nth-child(-n+2){ border-top:0; }
+}
+
+/* ---------- karty / siatki ---------- */
+.grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px, 2.6vw, 30px); }
+.grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px, 2.6vw, 30px); }
+@media (max-width:940px){ .grid-3{ grid-template-columns:1fr 1fr; } }
+@media (max-width:660px){ .grid-2,.grid-3{ grid-template-columns:1fr; } }
+
+.card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--r);
+  padding:clamp(22px, 3vw, 34px);
+  box-shadow:var(--sh-card);
+  display:flex; flex-direction:column; gap:14px;
+}
+.card .c-tag{
+  align-self:flex-start;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--petrol-2); background:var(--paper-2);
+  padding:5px 10px; border-radius:2px;
+}
+.card h3{ margin-top:2px; }
+.card p{ color:var(--ink-2); font-size:15.5px; }
+.card .c-more{ margin-top:auto; font-weight:600; font-size:15px; }
+.card .c-more .arr{ font-family:var(--mono); }
+
+.pain-list{ display:grid; gap:0; border-top:1px solid var(--line); }
+.pain-list li{
+  display:grid; grid-template-columns:56px 1fr; gap:18px; align-items:baseline;
+  padding-block:20px; border-bottom:1px solid var(--line);
+}
+.pain-list .p-i{
+  font-family:var(--mono); font-size:12px; letter-spacing:.1em; color:var(--ochre);
+}
+.pain-list p{ color:var(--ink-2); max-width:64ch; }
+.pain-list b{ color:var(--ink); font-weight:700; display:block; margin-bottom:9px; font-size:clamp(20px, 2vw, 24px); line-height:1.25; }
+
+/* wskazania */
+.ind-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r); overflow:hidden; }
+.ind-grid li{ background:var(--paper); padding:24px 22px; display:flex; flex-direction:column; gap:10px; }
+.ind-grid .ico{ color:var(--petrol); }
+.ind-grid b{ font-size:16.5px; }
+.ind-grid p{ font-size:14.5px; color:var(--ink-2); }
+@media (max-width:940px){ .ind-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:620px){ .ind-grid{ grid-template-columns:1fr; } }
+
+/* ---------- kroki / protokół ---------- */
+.steps{ display:grid; gap:0; counter-reset:krok; }
+.step{
+  display:grid; grid-template-columns:120px 1fr; gap:clamp(18px, 3vw, 44px);
+  padding-block:clamp(26px, 4vw, 40px);
+  border-top:1px solid var(--line);
+}
+.step:last-child{ border-bottom:1px solid var(--line); }
+.step .st-no{
+  font-family:var(--mono); font-size:12px; letter-spacing:.12em; color:var(--ink-2);
+  display:flex; flex-direction:column; gap:6px;
+}
+.step .st-no .n{
+  font-family:var(--serif); font-size:clamp(30px,3vw,40px); font-weight:600;
+  color:var(--petrol-2); line-height:1;
+}
+.step h3{ margin-bottom:10px; }
+.step p{ color:var(--ink-2); max-width:66ch; }
+.step p + p{ margin-top:10px; }
+.step .st-meta{
+  margin-top:14px; display:flex; flex-wrap:wrap; gap:8px;
+}
+.step .st-meta span{
+  font-family:var(--mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+  border:1px solid var(--line); border-radius:2px; padding:5px 10px; color:var(--ink-2);
+}
+@media (max-width:680px){
+  .step{ grid-template-columns:1fr; gap:10px; }
+}
+
+/* ---------- sekcja „uczciwość" (ciemna) ---------- */
+.honest-list{ border-top:1px solid var(--line-inv); }
+.honest-list li{
+  display:grid; grid-template-columns:64px 1fr; gap:20px; align-items:baseline;
+  padding-block:clamp(20px,3vw,28px);
+  border-bottom:1px solid var(--line-inv);
+}
+.honest-list .h-x{
+  font-family:var(--mono); color:var(--ochre); font-size:13px; letter-spacing:.1em;
+}
+.honest-list b{
+  font-family:var(--serif); font-weight:600; font-size:clamp(19px, 2vw, 24px);
+  color:var(--paper-inv); display:block; margin-bottom:6px; line-height:1.3;
+}
+.honest-list p{ color:rgba(237,239,232,.75); max-width:66ch; font-size:15.5px; }
+@media (max-width:640px){ .honest-list li{ grid-template-columns:1fr; gap:6px; } }
+
+/* ---------- porównanie (tabela) ---------- */
+.cmp-wrap{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--r); background:#fff; box-shadow:var(--sh-card); }
+table.cmp{ width:100%; border-collapse:collapse; min-width:640px; }
+.cmp th,.cmp td{ padding:16px 20px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line-soft); font-size:15px; }
+.cmp thead th{
+  font-family:var(--mono); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--paper-inv); background:var(--ink); border-bottom:1px solid var(--ink);
+}
+.cmp tbody th{
+  font-weight:600; color:var(--ink); width:26%;
+  font-size:14.5px; background:var(--paper);
+}
+.cmp td{ color:var(--ink-2); width:37%; }
+.cmp td b{ color:var(--ink); }
+.cmp tr:last-child td, .cmp tr:last-child th{ border-bottom:0; }
+
+/* ---------- akordeon (details) ---------- */
+.faq-list{ border-top:1px solid var(--line); }
+details.qa{ border-bottom:1px solid var(--line); }
+details.qa summary{
+  list-style:none; cursor:pointer;
+  display:grid; grid-template-columns:52px 1fr 40px; gap:14px; align-items:baseline;
+  padding-block:20px;
+  font-family:var(--serif); font-weight:600; font-size:clamp(17px, 1.8vw, 20px); line-height:1.35;
+}
+details.qa summary::-webkit-details-marker{ display:none; }
+details.qa summary .q-i{
+  font-family:var(--mono); font-weight:500; font-size:11.5px; letter-spacing:.12em; color:var(--ochre);
+}
+details.qa summary .q-m{
+  justify-self:end; font-family:var(--mono); font-weight:400; font-size:20px;
+  color:var(--petrol); transition:transform .25s ease; line-height:1;
+}
+details.qa[open] summary .q-m{ transform:rotate(45deg); }
+details.qa .qa-body{ padding:0 0 26px 66px; max-width:72ch; }
+details.qa .qa-body p{ color:var(--ink-2); }
+details.qa .qa-body p + p{ margin-top:10px; }
+details.qa summary:hover{ color:var(--petrol-2); }
+@media (max-width:620px){
+  details.qa summary{ grid-template-columns:1fr 30px; }
+  details.qa summary .q-i{ display:none; }
+  details.qa .qa-body{ padding-left:0; }
+}
+.qa .verdict{
+  display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.13em;
+  text-transform:uppercase; padding:4px 9px; border-radius:2px; margin-bottom:10px;
+}
+.verdict--myth{ background:var(--ink); color:var(--ochre); }
+.verdict--fact{ background:var(--petrol-2); color:#fff; }
+.verdict--half{ background:var(--paper-3); color:var(--ink); }
+
+/* ---------- zdjęcia (sloty) ---------- */
+.photo{
+  position:relative; border:1px solid var(--line); border-radius:var(--r);
+  background-color:var(--paper-3);
+  background-size:cover; background-position:center;
+  min-height:340px; box-shadow:var(--sh-card); overflow:hidden;
+}
+.photo::after{
+  content:""; position:absolute; inset:0;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);
+  pointer-events:none;
+}
+.photo .ph-cap{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:10px 14px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--paper-inv); background:linear-gradient(transparent, rgba(15,33,30,.82));
+}
+.photo--tall{ min-height:460px; }
+
+/* ---------- media dwukolumnowe ---------- */
+.split{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(26px, 4.5vw, 64px); align-items:start;
+}
+.split .sp-copy h2{ margin-bottom:18px; }
+.split .sp-copy p{ color:var(--ink-2); }
+.split .sp-copy p + p{ margin-top:12px; }
+.split .sp-copy ul.ticks{ margin-top:18px; }
+@media (max-width:880px){ .split{ grid-template-columns:1fr; } }
+
+ul.ticks li{
+  position:relative; padding-left:30px; margin-bottom:12px; color:var(--ink-2);
+}
+ul.ticks li::before{
+  content:"—"; position:absolute; left:0; top:0;
+  font-family:var(--mono); color:var(--ochre);
+}
+ul.ticks li b{ color:var(--ink); }
+
+/* ---------- CTA końcowe ---------- */
+.cta-band{ background:var(--petrol-3); color:var(--paper-inv); }
+.cta-band .wrap{
+  display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);
+  gap:clamp(24px,4vw,60px); align-items:center;
+  padding-block:clamp(56px, 8vw, 96px);
+}
+.cta-band h2{ color:#fff; margin-bottom:14px; }
+.cta-band p{ color:rgba(237,239,232,.82); max-width:56ch; }
+.cta-band .cta-actions{ display:flex; flex-direction:column; align-items:flex-start; gap:0; }
+@media (max-width:840px){ .cta-band .wrap{ grid-template-columns:1fr; } }
+
+/* ---------- formularz ---------- */
+.form-card{
+  background:#fff; border:1px solid var(--line); border-radius:var(--r);
+  padding:clamp(24px,3.4vw,40px); box-shadow:var(--sh-card);
+}
+.f-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:640px){ .f-row{ grid-template-columns:1fr; } }
+.f-field{ display:flex; flex-direction:column; gap:7px; margin-bottom:16px; }
+.f-field label{
+  font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-2);
+}
+.f-field input,.f-field select,.f-field textarea{
+  font:inherit; font-size:15.5px; color:var(--ink);
+  border:1px solid var(--line); border-radius:var(--r);
+  background:var(--paper); padding:13px 14px; width:100%;
+  transition:border-color .15s ease, background .15s ease;
+}
+.f-field input:focus,.f-field select:focus,.f-field textarea:focus{
+  outline:none; border-color:var(--petrol); background:#fff;
+}
+.f-field textarea{ min-height:140px; resize:vertical; }
+.f-consent{ display:flex; gap:12px; align-items:flex-start; margin:6px 0 20px; }
+.f-consent input{ margin-top:5px; accent-color:var(--petrol-2); width:16px; height:16px; flex:none; }
+.f-consent label{ font-size:13px; color:var(--ink-2); line-height:1.55; }
+
+/* ---------- kontakt: karty danych ---------- */
+.info-list li{
+  display:grid; grid-template-columns:120px 1fr; gap:16px;
+  padding-block:16px; border-bottom:1px solid var(--line);
+  font-size:15.5px;
+}
+.info-list li:first-child{ border-top:1px solid var(--line); }
+.info-list .i-k{
+  font-family:var(--mono); font-size:11px; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-2); padding-top:4px;
+}
+@media (max-width:520px){ .info-list li{ grid-template-columns:1fr; gap:4px; } }
+
+/* ---------- stopka ---------- */
+.site-footer{ background:var(--ink); color:rgba(237,239,232,.78); font-size:14.5px; }
+.site-footer .wrap{ padding-block:clamp(44px,6vw,72px) 28px; }
+.f-grid{
+  display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:clamp(24px,3vw,44px);
+  padding-bottom:38px; border-bottom:1px solid var(--line-inv);
+}
+@media (max-width:900px){ .f-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .f-grid{ grid-template-columns:1fr; } }
+.f-grid h4{
+  font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--ochre); margin-bottom:16px;
+}
+.f-grid a{ color:rgba(237,239,232,.78); }
+.f-grid a:hover{ color:#fff; }
+.f-grid li{ margin-bottom:9px; }
+.f-brand .b-name{ font-family:var(--serif); font-size:22px; color:var(--paper-inv); font-weight:600; }
+.f-brand .b-sub{ font-family:var(--mono); font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--ochre); margin:5px 0 16px; }
+.f-brand p{ max-width:38ch; font-size:14px; color:rgba(237,239,232,.6); }
+.f-legal{
+  display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px;
+  padding-top:22px; font-family:var(--mono); font-size:11.5px; letter-spacing:.04em;
+  color:rgba(237,239,232,.5);
+}
+.f-legal a{ color:rgba(237,239,232,.6); }
+.f-disclaimer{
+  margin-top:22px; padding-top:18px; border-top:1px solid var(--line-inv);
+  font-size:12.5px; color:rgba(237,239,232,.5); max-width:100ch; line-height:1.6;
+}
+
+/* ---------- reveal ---------- */
+[data-reveal]{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+[data-reveal].in{ opacity:1; transform:none; }
+[data-reveal="2"]{ transition-delay:.12s; }
+[data-reveal="3"]{ transition-delay:.24s; }
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+  [data-reveal]{ opacity:1; transform:none; transition:none; }
+  .btn, .burger span, details.qa summary .q-m{ transition:none; }
+}
+
+/* ---------- drobiazgi ---------- */
+.note{
+  border-left:2px solid var(--ochre); background:var(--paper-2);
+  padding:16px 20px; border-radius:0 var(--r) var(--r) 0;
+  font-size:15px; color:var(--ink-2);
+}
+.note b{ color:var(--ink); }
+.inline-links a{ font-weight:600; }
+.mt-1{ margin-top:14px; } .mt-2{ margin-top:26px; } .mt-3{ margin-top:44px; }
+.mb-1{ margin-bottom:14px; } .mb-2{ margin-bottom:26px; }
+.center{ text-align:center; }
+
+/* ---------- oś czasu (mini) ---------- */
+.tl{ display:flex; margin-top:36px; border-top:1px solid var(--line); }
+.tl li{ flex:1; padding:18px 18px 0 0; position:relative; }
+.tl li::before{
+  content:""; position:absolute; top:-5px; left:0;
+  width:9px; height:9px; border-radius:50%; background:var(--ochre);
+}
+.tl .tl-k{
+  display:block; margin-bottom:4px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--petrol-2);
+}
+.tl .tl-v{ font-size:14px; color:var(--ink-2); line-height:1.5; }
+@media (max-width:720px){
+  .tl{ flex-direction:column; border-top:0; border-left:1px solid var(--line); margin-left:4px; }
+  .tl li{ padding:0 0 20px 20px; }
+  .tl li::before{ top:3px; left:-5px; }
+}
+
+/* ---------- ikony liniowe ---------- */
+.ico svg{
+  width:26px; height:26px;
+  stroke:currentColor; fill:none;
+  stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;
+}
+
+/* ---------- cytat ---------- */
+blockquote.pull{
+  font-family:var(--serif); font-weight:600;
+  font-size:clamp(20px, 2.4vw, 27px); line-height:1.42; color:var(--ink);
+  border-left:2px solid var(--ochre); padding-left:24px; margin-block:10px;
+}
+blockquote.pull footer{
+  margin-top:14px;
+  font-family:var(--mono); font-weight:500; font-size:11.5px;
+  letter-spacing:.13em; text-transform:uppercase; color:var(--ink-2);
+}
+.section--dark blockquote.pull{ color:var(--paper-inv); }
+
+/* ---------- strona wyboru wariantów ---------- */
+.var-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:clamp(22px, 3vw, 34px); }
+.var-card{ display:flex; flex-direction:column; gap:16px; }
+.var-card .fig{ margin:0; }
+.var-card .var-tag{
+  display:inline-flex; align-items:center; gap:9px; align-self:flex-start;
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:#fff; background:var(--petrol-2); padding:6px 12px; border-radius:2px;
+}
+.var-card h3{ margin:0; }
+.var-card p{ color:var(--ink-2); font-size:15px; margin:0; }
+.var-card .var-note{
+  font-family:var(--mono); font-size:12px; letter-spacing:.02em; color:var(--ink-2);
+  border-top:1px dashed var(--line); padding-top:12px;
+}
+.var-banner{
+  background:var(--ink); color:var(--paper-inv); border-radius:var(--r);
+  padding:clamp(20px,3vw,30px) clamp(22px,3.4vw,36px); margin-bottom:clamp(32px,5vw,50px);
+}
+.var-banner h2{ color:#fff; margin-bottom:10px; }
+.var-banner p{ color:rgba(237,239,232,.82); max-width:70ch; margin:0; }
+.var-banner .vb-legend{ display:flex; flex-wrap:wrap; gap:18px; margin-top:16px; font-family:var(--mono); font-size:11.5px; letter-spacing:.06em; color:rgba(237,239,232,.7); }
+.var-banner .vb-legend span{ display:inline-flex; align-items:center; gap:7px; }
+.var-banner .vb-legend i{ width:11px; height:11px; border-radius:3px; display:inline-block; }
+
+/* ---------- animowane figury patentowe ---------- */
+.fig-anim .cyl-fluid{
+  transform-box:fill-box; transform-origin:bottom; transform:scaleY(0);
+  animation:fillCyl 9s ease-in-out infinite;
+}
+.fig-anim .res-fluid{
+  transform-box:fill-box; transform-origin:bottom; opacity:.92;
+  animation:drainRes 9s ease-in-out infinite;
+}
+.fig-anim .pump{
+  transform-box:fill-box; transform-origin:center;
+  animation:pumpPulse 9s ease-in-out infinite;
+}
+.fig-anim .flow{ opacity:0; animation:flowMove 9s linear infinite; }
+.fig-anim .lbl-erect{ opacity:0; }
+
+/* kierunki napełniania dla wariantów anatomicznych */
+.fig-anim .cyl-fluid.dir-down{ transform-origin:top; }
+.fig-anim .cyl-fluid.dir-right{ transform-origin:left; animation-name:fillCylX; }
+.fig-anim .cyl-fluid.dir-left{ transform-origin:right; animation-name:fillCylX; }
+@keyframes fillCylX{
+  0%,10%{ transform:scaleX(0); }
+  34%{ transform:scaleX(1); }
+  72%{ transform:scaleX(1); }
+  84%{ transform:scaleX(0); }
+  100%{ transform:scaleX(0); }
+}
+
+.fig-hydro .lbl-flaccid{ animation:labelFlaccid 9s ease-in-out infinite; }
+.fig-hydro .lbl-erect{ animation:labelErect 9s ease-in-out infinite; }
+
+.fig-semi .rod-move{
+  transform-box:view-box; transform-origin:84px 206px;
+  animation:rodSwing 6s ease-in-out infinite;
+}
+.fig-semi .lbl-flaccid{ animation:labelFlaccid 6s ease-in-out infinite; }
+.fig-semi .lbl-erect{ animation:labelErect 6s ease-in-out infinite; }
+
+/* unoszenie trzonu prącia (wiotki -> wzwód), zsynchronizowane z napełnianiem */
+.fig-anim .penis-move{
+  transform-box:view-box; transform-origin:212px 252px;
+  animation:penisRise 9s ease-in-out infinite;
+}
+@keyframes penisRise{
+  0%,10%{ transform:rotate(40deg); }
+  34%{ transform:rotate(-16deg); }
+  72%{ transform:rotate(-16deg); }
+  84%{ transform:rotate(40deg); }
+  100%{ transform:rotate(40deg); }
+}
+
+@keyframes fillCyl{
+  0%,10%{ transform:scaleY(0); }
+  34%{ transform:scaleY(1); }
+  72%{ transform:scaleY(1); }
+  84%{ transform:scaleY(0); }
+  100%{ transform:scaleY(0); }
+}
+@keyframes drainRes{
+  0%,10%{ transform:scaleY(1); }
+  34%{ transform:scaleY(.16); }
+  72%{ transform:scaleY(.16); }
+  84%{ transform:scaleY(1); }
+  100%{ transform:scaleY(1); }
+}
+@keyframes pumpPulse{
+  0%,10%{ transform:scale(1); }
+  14%{ transform:scale(1.09,.84); }
+  18%{ transform:scale(1); }
+  22%{ transform:scale(1.09,.84); }
+  26%{ transform:scale(1); }
+  30%{ transform:scale(1.09,.84); }
+  34%,100%{ transform:scale(1); }
+}
+@keyframes flowMove{
+  0%,10%{ opacity:0; stroke-dashoffset:0; }
+  13%{ opacity:.95; }
+  33%{ opacity:.95; stroke-dashoffset:-200; }
+  40%{ opacity:0; stroke-dashoffset:-200; }
+  100%{ opacity:0; stroke-dashoffset:-200; }
+}
+@keyframes rodSwing{
+  0%,16%{ transform:rotate(0deg); }
+  40%{ transform:rotate(-36deg); }
+  70%{ transform:rotate(-36deg); }
+  92%{ transform:rotate(0deg); }
+  100%{ transform:rotate(0deg); }
+}
+@keyframes labelFlaccid{
+  0%,14%{ opacity:1; } 28%{ opacity:0; }
+  76%{ opacity:0; } 90%,100%{ opacity:1; }
+}
+@keyframes labelErect{
+  0%,20%{ opacity:0; } 34%{ opacity:1; }
+  72%{ opacity:1; } 86%{ opacity:0; } 100%{ opacity:0; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .fig-anim .cyl-fluid,.fig-anim .res-fluid,.fig-anim .pump,
+  .fig-anim .flow,.fig-anim .rod-move,
+  .fig-anim .lbl-flaccid,.fig-anim .lbl-erect{ animation:none; }
+  /* nieruchoma, ale informacyjna klatka: stan aktywny */
+  .fig-hydro .cyl-fluid{ transform:scaleY(1); }
+  .fig-hydro .cyl-fluid.dir-right,.fig-hydro .cyl-fluid.dir-left{ transform:scaleX(1); }
+  .fig-hydro .res-fluid{ transform:scaleY(.3); }
+  .fig-hydro .penis-move{ transform:rotate(-16deg); }
+  .fig-hydro .flow{ opacity:0; }
+  .fig-hydro .lbl-flaccid{ opacity:0; }
+  .fig-hydro .lbl-erect{ opacity:1; }
+  .fig-semi .rod-move{ transform:rotate(-36deg); }
+  .fig-semi .lbl-flaccid{ opacity:0; }
+  .fig-semi .lbl-erect{ opacity:1; }
+}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Przejdź do treści</a>
+<div class="topbar">
+  <div class="wrap">
+    <span>Praktyka Lekarska Anna Bonder&#8209;Nowicka</span>
+    <span class="tb-right"><span>Warszawa · ul. Żelazna 67/29</span><span class="tb-mail"><a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a></span></span>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Implant prącia — strona główna">
+      <span class="b-name">Implant prącia</span>
+      <span class="b-sub">dr Anna Bonder&#8209;Nowicka</span>
+    </a>
+    <button class="burger" aria-expanded="false" aria-controls="site-nav" aria-label="Otwórz menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="site-nav" aria-label="Nawigacja główna">
+      <a href="rodzaje-implantow.html">Rodzaje implantów</a>
+      <a href="przebieg-leczenia.html">Przebieg leczenia</a>
+      <a href="zycie-z-implantem.html">Życie z implantem</a>
+      <a href="o-lekarce.html">O lekarce</a>
+      <a href="fakty-i-mity.html">Fakty i mity</a>
+      <a href="kontakt.html" aria-current="page">Kontakt</a>
+      <a class="btn btn--primary nav-cta" href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Umów konsultację</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero hero--sub">
+  <div class="wrap">
+    <div class="hero-copy" data-reveal>
+      <p class="eyebrow" data-ef="kontakt.html" data-eo="S29udGFrdA==">Kontakt</p>
+      <h1 data-ef="kontakt.html" data-eo="VW3Ds3cga29uc3VsdGFjasSZLiBSZXN6dGEgdG8ganXFvCByb3ptb3dhLg==">Umów konsultację. Reszta to już rozmowa.</h1>
+      <p class="lead mt-1" data-ef="kontakt.html" data-eo="TmFqcHJvxZtjaWVqIHVtw7N3acSHIHNpxJkgb25saW5lOiB3eWJpZXJhc3ogdGVybWluLCBwcnp5Y2hvZHppc3osIHJvem1hd2lhbXkuIE5pZSBtdXNpc3ogZG8gbmlrb2dvIGR6d29uacSHIGFuaSBuaWN6ZWdvIHTFgnVtYWN6ecSHIHJlY2VwY2ppLiBBIGplxZtsaSBtYXN6IHB5dGFuaWUgamVzemN6ZSBwcnplZCB3aXp5dMSFLCBwbyBwcm9zdHUgbmFwaXN6LiBPZHBvd2lhZGFtIHNhbWEu">Najprościej umówić się online: wybierasz termin, przychodzisz, rozmawiamy. Nie musisz do nikogo dzwonić ani niczego tłumaczyć recepcji. A jeśli masz pytanie jeszcze przed wizytą, po prostu napisz. Odpowiadam sama.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAKT ================= -->
+<section class="section" id="dane">
+  <div class="wrap split" style="align-items:start;">
+
+    <div class="sp-copy" data-reveal>
+      <div class="card">
+        <span class="c-tag">Najszybsza droga</span>
+        <h3 data-ef="kontakt.html" data-eo="UmV6ZXJ3YWNqYSB0ZXJtaW51IG9ubGluZQ==">Rezerwacja terminu online</h3>
+        <p data-ef="kontakt.html" data-eo="S2FsZW5kYXJ6IHdpenl0IHByb3dhZHrEmSB3IHNlcndpc2llIFpuYW55TGVrYXJ6LiBXaWR6aXN6IHdvbG5lIHRlcm1pbnkgdyBjemFzaWUgcnplY3p5d2lzdHltIGkgd3liaWVyYXN6IHRlbiwga3TDs3J5IENpIHBhc3VqZSwgbyBkb3dvbG5laiBwb3J6ZSBkbmlhIGkgbm9jeS4=">Kalendarz wizyt prowadzę w serwisie ZnanyLekarz. Widzisz wolne terminy w czasie rzeczywistym i wybierasz ten, który Ci pasuje, o dowolnej porze dnia i nocy.</p>
+        <a class="btn btn--primary mt-1" href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Umów konsultację przez ZnanyLekarz</a>
+        <p class="btn-note" data-ef="kontakt.html" data-eo="VGVybWlueSBvbmxpbmUgMjQvNyDCtyBXYXJzemF3YSDCtyByb3ptb3dhIG5pY3plZ28gbmllIHByemVzxIVkemE=">Terminy online 24/7 · Warszawa · rozmowa niczego nie przesądza</p>
+      </div>
+
+      <ul class="info-list mt-3">
+        <li data-ef="kontakt.html" data-eo="PHNwYW4gY2xhc3M9ImktayI+R2FiaW5ldDwvc3Bhbj48c3Bhbj5QcmFrdHlrYSBMZWthcnNrYSBBbm5hIEJvbmRlciYjODIwOTtOb3dpY2thPGJyPnVsLiDFu2VsYXpuYSA2Ny8yOSwgMDAmIzgyMDk7ODcxIFdhcnN6YXdhPC9zcGFuPg=="><span class="i-k">Gabinet</span><span>Praktyka Lekarska Anna Bonder&#8209;Nowicka<br>ul. Żelazna 67/29, 00&#8209;871 Warszawa</span></li>
+        <li data-ef="kontakt.html" data-eo="PHNwYW4gY2xhc3M9ImktayI+RS1tYWlsPC9zcGFuPjxzcGFuPjxhIGhyZWY9Im1haWx0bzprb250YWt0QHR1cmJvdXJvbG9nLnBsIj5rb250YWt0QHR1cmJvdXJvbG9nLnBsPC9hPjwvc3Bhbj4="><span class="i-k">E-mail</span><span><a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a></span></li>
+        <li data-ef="kontakt.html" data-eo="PHNwYW4gY2xhc3M9ImktayI+U3Ryb25hIHByYWt0eWtpPC9zcGFuPjxzcGFuPjxhIGhyZWY9Imh0dHBzOi8vdHVyYm91cm9sb2cucGwvIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciI+dHVyYm91cm9sb2cucGw8L2E+IChwZcWCbnkgemFrcmVzIHVyb2xvZ2lpIGkmbmJzcDtzZWtzdW9sb2dpaSk8L3NwYW4+"><span class="i-k">Strona praktyki</span><span><a href="https://turbourolog.pl/" target="_blank" rel="noopener">turbourolog.pl</a> (pełny zakres urologii i&nbsp;seksuologii)</span></li>
+        <li data-ef="kontakt.html" data-eo="PHNwYW4gY2xhc3M9ImktayI+U29jaWFsIG1lZGlhPC9zcGFuPjxzcGFuIGNsYXNzPSJpbmxpbmUtbGlua3MiPjxhIGhyZWY9Imh0dHBzOi8vd3d3Lmluc3RhZ3JhbS5jb20vdHVyYm91cm9sb2cvIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciI+SW5zdGFncmFtPC9hPiDCtyA8YSBocmVmPSJodHRwczovL3d3dy5mYWNlYm9vay5jb20vcHJvZmlsZS5waHA/aWQ9NjE1Njk4MTQ3MjM2NzAmYW1wO2xvY2FsZT1wbF9QTCIgdGFyZ2V0PSJfYmxhbmsiIHJlbD0ibm9vcGVuZXIiPkZhY2Vib29rPC9hPiDCtyA8YSBocmVmPSJodHRwczovL3d3dy5saW5rZWRpbi5jb20vaW4vYW5uYS1ib25kZXItbm93aWNrYS1hNzMxOTMzNDQvIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciI+TGlua2VkSW48L2E+PC9zcGFuPg=="><span class="i-k">Social media</span><span class="inline-links"><a href="https://www.instagram.com/turbourolog/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/profile.php?id=61569814723670&amp;locale=pl_PL" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.linkedin.com/in/anna-bonder-nowicka-a73193344/" target="_blank" rel="noopener">LinkedIn</a></span></li>
+      </ul>
+
+      <p class="note mt-3" data-ef="kontakt.html" data-eo="PGI+RHlza3JlY2phIGplc3QgdSBtbmllIG9jenl3aXN0YS48L2I+IFdpenl0eSBvZGJ5d2FqxIUgc2nEmSB3IHByeXdhdG55bSBnYWJpbmVjaWUsIGplZGVuIG5hIGplZGVuLiBUbywgbyBjenltIHJvem1hd2lhbXksIHpvc3RhamUgbWnEmWR6eSBuYW1pLiBPYm93acSFenVqZSBtbmllIHRhamVtbmljYSBsZWthcnNrYS4="><b>Dyskrecja jest u mnie oczywista.</b> Wizyty odbywają się w prywatnym gabinecie, jeden na jeden. To, o czym rozmawiamy, zostaje między nami. Obowiązuje mnie tajemnica lekarska.</p>
+    </div>
+
+    <div data-reveal="2">
+      <form class="form-card" id="contact-form" novalidate>
+        <!-- DEV: formularz działa obecnie w trybie mailto (otwiera program pocztowy użytkownika).
+             Przy wdrożeniu podłącz własny endpoint (np. wtyczka formularza, Formspree) i usuń obsługę mailto ze skryptu. -->
+        <h3 class="mb-1" data-ef="kontakt.html" data-eo="TmFwaXN6IHByemVkIHdpenl0xIU=">Napisz przed wizytą</h3>
+        <p class="small muted mb-2" data-ef="kontakt.html" data-eo="V3lwZcWCbmlqIGZvcm11bGFyeiwgYSB3aWFkb21vxZvEhyB0cmFmaSBiZXpwb8WbcmVkbmlvIGRvIG1uaWUuIE9kcG93aWFkYW0gb3NvYmnFm2NpZS4=">Wypełnij formularz, a wiadomość trafi bezpośrednio do mnie. Odpowiadam osobiście.</p>
+        <div class="f-row">
+          <div class="f-field">
+            <label for="f-name">Imię</label>
+            <input type="text" id="f-name" name="imie" placeholder="np. Marek" autocomplete="given-name" required>
+          </div>
+          <div class="f-field">
+            <label for="f-mail">E-mail do odpowiedzi</label>
+            <input type="email" id="f-mail" name="email" placeholder="np. marek@poczta.pl" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="f-field">
+          <label for="f-topic">Temat</label>
+          <select id="f-topic" name="temat">
+            <option>Konsultacja w sprawie implantu prącia</option>
+            <option>Pytanie przed umówieniem wizyty</option>
+            <option>Jestem lekarzem i kieruję pacjenta</option>
+            <option>Inna sprawa</option>
+          </select>
+        </div>
+        <div class="f-field">
+          <label for="f-msg">Wiadomość</label>
+          <textarea id="f-msg" name="wiadomosc" placeholder="Napisz w kilku zdaniach, w czym mogę pomóc. Szczegóły medyczne zostaw na wizytę." required></textarea>
+        </div>
+        <div class="f-consent">
+          <input type="checkbox" id="f-rodo" required>
+          <label for="f-rodo">Wyrażam zgodę na przetwarzanie podanych danych w celu udzielenia odpowiedzi na moją wiadomość. Administratorem danych jest Praktyka Lekarska Anna Bonder&#8209;Nowicka, ul. Żelazna 67/29, 00&#8209;871 Warszawa. Szczegóły w <a href="https://turbourolog.pl/doc/polityka_prywatnosci_i_plikow_cookies.pdf" target="_blank" rel="noopener">polityce prywatności</a>.</label>
+        </div>
+        <button type="submit" class="btn btn--primary" style="width:100%">Wyślij wiadomość</button>
+        <p class="btn-note center" data-ef="kontakt.html" data-eo="Rm9ybXVsYXJ6IG90d29yenkgVHfDs2ogcHJvZ3JhbSBwb2N6dG93eS4gV29saXN6IG5hcGlzYcSHIGJlenBvxZtyZWRuaW8/IDxhIGhyZWY9Im1haWx0bzprb250YWt0QHR1cmJvdXJvbG9nLnBsIj5rb250YWt0QHR1cmJvdXJvbG9nLnBsPC9hPg==">Formularz otworzy Twój program pocztowy. Wolisz napisać bezpośrednio? <a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DLA LEKARZY ================= -->
+<section class="section section--tight section--paper2">
+  <div class="wrap">
+    <p class="note" data-reveal data-ef="kontakt.html" data-eo="PGI+SmVzdGXFmyBsZWthcnplbSBpIHByb3dhZHppc3ogcGFjamVudGEgeiBjacSZxbxraW1pIHphYnVyemVuaWFtaSBlcmVrY2ppPzwvYj4gQ2jEmXRuaWUgcHJ6ZWptxJkgZGlhZ25vc3R5a8SZIGt3YWxpZmlrYWN5am7EhSBpIGxlY3plbmllIG9wZXJhY3lqbmUsIGEgcG8gemFiaWVndSBvZGXFm2zEmSBwYWNqZW50YSB6IHBlxYJuxIUgaW5mb3JtYWNqxIUgendyb3RuxIUuIE5hcGlzeiBuYSA8YSBocmVmPSJtYWlsdG86a29udGFrdEB0dXJib3Vyb2xvZy5wbCI+a29udGFrdEB0dXJib3Vyb2xvZy5wbDwvYT4geiBkb3Bpc2tpZW0g4oCec2tpZXJvd2FuaWUmcmRxdW87Lg=="><b>Jesteś lekarzem i prowadzisz pacjenta z ciężkimi zaburzeniami erekcji?</b> Chętnie przejmę diagnostykę kwalifikacyjną i leczenie operacyjne, a po zabiegu odeślę pacjenta z pełną informacją zwrotną. Napisz na <a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a> z dopiskiem „skierowanie&rdquo;.</p>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <div class="b-name">Implant prącia</div>
+        <div class="b-sub">dr Anna Bonder&#8209;Nowicka</div>
+        <p>Serwis informacyjny o leczeniu ciężkich zaburzeń erekcji metodą wszczepienia implantu. Część praktyki <a href="https://turbourolog.pl/" target="_blank" rel="noopener">turbourolog.pl</a>.</p>
+      </div>
+      <div>
+        <h4>Na tej stronie</h4>
+        <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="rodzaje-implantow.html">Rodzaje implantów</a></li>
+        <li><a href="przebieg-leczenia.html">Przebieg leczenia</a></li>
+        <li><a href="zycie-z-implantem.html">Życie z implantem</a></li>
+        <li><a href="o-lekarce.html">O lekarce</a></li>
+        <li><a href="fakty-i-mity.html">Fakty i mity</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Praktyka</h4>
+        <ul>
+          <li>ul. Żelazna 67/29<br>00&#8209;871 Warszawa</li>
+          <li><a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a></li>
+          <li><a href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Rejestracja online (ZnanyLekarz)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Obserwuj</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/turbourolog/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/profile.php?id=61569814723670&amp;locale=pl_PL" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://www.linkedin.com/in/anna-bonder-nowicka-a73193344/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-legal">
+      <span>© 2026 Praktyka Lekarska Anna Bonder&#8209;Nowicka · NIP 5252152491</span>
+      <span><a href="https://turbourolog.pl/doc/polityka_prywatnosci_i_plikow_cookies.pdf" target="_blank" rel="noopener">Polityka prywatności i plików cookies</a></span>
+    </div>
+    <p class="f-disclaimer">Treści na tej stronie mają charakter informacyjny i edukacyjny. Nie zastępują konsultacji lekarskiej ani indywidualnej kwalifikacji do zabiegu; decyzja o leczeniu operacyjnym zawsze zapada podczas wizyty, po badaniu i omówieniu ryzyka. Dane o satysfakcji pacjentów pochodzą z badań dotyczących nowoczesnych implantów prącia. Indywidualne wyniki leczenia mogą się różnić.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var h=document.querySelector('.site-header');
+  var onScroll=function(){ h.classList.toggle('scrolled', window.scrollY>8); };
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  var b=document.querySelector('.burger'), n=document.getElementById('site-nav');
+  if(b&&n){ b.addEventListener('click', function(){
+    var open=n.classList.toggle('open');
+    b.setAttribute('aria-expanded', open);
+    b.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+  }); }
+
+  var items=document.querySelectorAll('[data-reveal]');
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:.12});
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Formularz kontaktowy: tryb mailto. DEV: przy wdrożeniu podłącz własny endpoint. */
+  var f=document.getElementById('contact-form');
+  if(f){ f.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if(!f.reportValidity()) return;
+    var v=function(id){ var el=document.getElementById(id); return el?el.value:''; };
+    var subject='Wiadomość ze strony: '+v('f-topic');
+    var body='Imię: '+v('f-name')+'\nE-mail: '+v('f-mail')+'\n\n'+v('f-msg');
+    location.href='mailto:kontakt@turbourolog.pl?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  }); }
+})();
+</script>
+<style>
+#ed-bar{position:fixed;right:16px;bottom:16px;z-index:9999;display:none;gap:8px;
+  align-items:center;background:#0E413B;color:#EDEFE8;padding:8px 10px;border-radius:6px;
+  font-family:system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
+body.ed-ready #ed-bar{display:flex}
+#ed-bar button{background:#A97B22;color:#0F211E;border:0;border-radius:4px;padding:7px 12px;
+  font-weight:600;cursor:pointer;font-size:14px}
+#ed-bar button#ed-cancel{background:transparent;color:#EDEFE8;text-decoration:underline;padding:7px 6px}
+#ed-msg{opacity:.9;font-size:13px;max-width:240px}
+body.ed-on [data-ef]{outline:2px dashed rgba(169,123,34,.7);outline-offset:3px;cursor:text}
+body.ed-on [data-ef]:focus{outline:2px solid #A97B22;background:rgba(169,123,34,.08)}
+</style>
+<div id="ed-bar" aria-hidden="true">
+  <button id="ed-toggle" type="button">&#9998; Edytuj tre&#347;&#263;</button>
+  <span id="ed-actions" hidden>
+    <button id="ed-save" type="button">&#128190; Zapisz</button>
+    <button id="ed-cancel" type="button">Anuluj</button>
+  </span>
+  <span id="ed-msg"></span>
+</div>
+<script>
+(function(){
+  fetch('/__ping').then(function(r){if(r.ok)init();}).catch(function(){});
+  function init(){
+    document.body.classList.add('ed-ready');
+    var nodes=[].slice.call(document.querySelectorAll('[data-ef]'));
+    var editing=false;
+    var toggle=document.getElementById('ed-toggle');
+    var actions=document.getElementById('ed-actions');
+    var msgEl=document.getElementById('ed-msg');
+    function msg(t){msgEl.textContent=t||'';}
+    function mark(e){e.currentTarget.setAttribute('data-dirty','1');}
+    function setEdit(on){
+      editing=on;
+      document.body.classList.toggle('ed-on',on);
+      actions.hidden=!on; toggle.hidden=on;
+      nodes.forEach(function(n){
+        n.contentEditable=on?'true':'false';
+        if(on)n.addEventListener('input',mark);
+      });
+      msg(on?'Klikaj w teksty i pisz. Potem Zapisz.':'');
+    }
+    toggle.onclick=function(){setEdit(true);};
+    document.getElementById('ed-cancel').onclick=function(){location.reload();};
+    document.getElementById('ed-save').onclick=function(){
+      var dirty=nodes.filter(function(n){return n.getAttribute('data-dirty');});
+      if(!dirty.length){msg('Nic nie zmieniono.');return;}
+      msg('Zapisywanie…');
+      fetch('/__save',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({edits:dirty.map(function(n){
+          return {file:n.getAttribute('data-ef'),eo:n.getAttribute('data-eo'),html:n.innerHTML};
+        })})})
+        .then(function(r){return r.json();})
+        .then(function(res){
+          if(res.failed&&res.failed.length)
+            msg('Zapisano '+res.saved+', nie udało się '+res.failed.length+'. Przeładuj i spróbuj ponownie.');
+          else{msg('Zapisano ✓ przeładowuję…');setTimeout(function(){location.reload();},700);}
+        })
+        .catch(function(){msg('Błąd zapisu.');});
+    };
+  }
+})();
+</script>
+</body>
+</html>
