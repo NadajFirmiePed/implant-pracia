@@ -156,21 +156,21 @@
    ============================================================ */
 
 :root{
-  /* Paleta z oficjalnej strony klientki: turbourolog.pl */
-  --paper:      #FEFBF9;
-  --paper-2:    #F3EEE9;
-  --paper-3:    #E8E0D9;
-  --ink:        #012A31;
-  --ink-2:      #3C5960;
-  --petrol:     #0D6D86;
-  --petrol-2:   #003D47;
-  --petrol-3:   #021419;
-  --ochre:      #3EABF0;
-  --ochre-2:    #1E86C7;
-  --line:       rgba(0,61,71,.16);
-  --line-soft:  rgba(0,61,71,.09);
-  --line-inv:   rgba(251,247,244,.22);
-  --paper-inv:  #FBF7F4;
+  /* Premium, jasny; akcent = głęboki błękit z rodziny turbourolog. Zero zieleni. */
+  --paper:      #FCFBF9;
+  --paper-2:    #F4F1EC;
+  --paper-3:    #EAE5DD;
+  --ink:        #14212E;
+  --ink-2:      #586472;
+  --petrol:     #134E86;
+  --petrol-2:   #0E3D69;
+  --petrol-3:   #0A2E50;
+  --ochre:      #134E86;
+  --ochre-2:    #0E3D69;
+  --line:       rgba(20,33,46,.12);
+  --line-soft:  rgba(20,33,46,.07);
+  --line-inv:   rgba(252,251,249,.18);
+  --paper-inv:  #F4F6F8;
 
   --serif: "STIX Two Text", "Georgia", "Times New Roman", serif;
   --sans:  "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
@@ -240,75 +240,63 @@ h1 em, h2 em{ font-style:italic; font-weight:600; color:var(--petrol); }
 .muted{ color:var(--ink-2); }
 .small{ font-size:14.5px; }
 
-/* ---------- pasek górny + nagłówek ---------- */
-.topbar{
-  background:var(--petrol-3); color:var(--paper-inv);
-  font-family:var(--mono); font-size:11.5px; letter-spacing:.06em;
-}
-.topbar .wrap{
-  display:flex; justify-content:space-between; align-items:center; gap:16px;
-  padding-block:8px;
-}
-.topbar a{ color:var(--paper-inv); opacity:.85; }
-.topbar a:hover{ opacity:1; }
-.topbar .tb-right{ display:flex; gap:22px; }
-@media (max-width:760px){ .topbar .tb-right span.tb-mail{ display:none; } }
-
+/* ---------- nagłówek (jeden jasny pas) ---------- */
 .site-header{
   position:sticky; top:0; z-index:100;
-  background:var(--petrol-2); color:var(--paper-inv);
-  border-bottom:1px solid transparent;
+  background:color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter:saturate(1.3) blur(10px); -webkit-backdrop-filter:saturate(1.3) blur(10px);
+  border-bottom:1px solid var(--line-soft);
   transition:border-color .25s ease, box-shadow .25s ease;
 }
-.site-header.scrolled{ border-bottom-color:rgba(255,255,255,.10); box-shadow:0 10px 30px -20px rgba(0,0,0,.55); }
+.site-header.scrolled{ border-bottom-color:var(--line); box-shadow:0 14px 34px -30px rgba(20,33,46,.55); }
 .site-header .wrap{
-  display:flex; align-items:center; justify-content:space-between; gap:24px;
-  padding-block:14px;
+  display:flex; align-items:center; justify-content:space-between; gap:32px;
+  padding-block:17px;
 }
 
-.brand{ display:flex; flex-direction:column; line-height:1.12; color:var(--paper-inv); }
+.brand{ display:flex; flex-direction:column; line-height:1.1; color:var(--ink); flex:none; }
 .brand:hover{ text-decoration:none; }
-.brand .b-name{ font-family:var(--serif); font-weight:600; font-size:21px; letter-spacing:-.01em; }
-.brand .b-sub{ font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ochre); margin-top:3px; }
+.brand .b-name{ font-family:var(--serif); font-weight:600; font-size:20px; letter-spacing:-.01em; }
+.brand .b-sub{ font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-2); margin-top:4px; }
 
-.main-nav{ display:flex; align-items:center; gap:6px; }
+.main-nav{ display:flex; align-items:center; gap:2px; }
 .main-nav a{
-  color:rgba(237,239,232,.82); font-size:15px; font-weight:500;
-  padding:9px 12px; border-radius:var(--r);
-  transition:color .15s ease, background .15s ease;
+  color:var(--ink-2); font-size:14.5px; font-weight:500; white-space:nowrap;
+  padding:8px 11px; border-radius:var(--r);
+  transition:color .15s ease;
 }
-.main-nav a:hover{ color:var(--paper-inv); background:rgba(255,255,255,.08); text-decoration:none; }
-.main-nav a[aria-current="page"]{ color:var(--paper-inv); position:relative; }
+.main-nav a:hover{ color:var(--ink); text-decoration:none; }
+.main-nav a[aria-current="page"]{ color:var(--ink); position:relative; }
 .main-nav a[aria-current="page"]::after{
-  content:""; position:absolute; left:12px; right:12px; bottom:4px;
-  height:2px; background:var(--ochre);
+  content:""; position:absolute; left:11px; right:11px; bottom:1px;
+  height:2px; background:var(--petrol);
 }
-.nav-cta{ margin-left:10px; }
-.site-header .nav-cta.btn--primary{ background:var(--ochre); color:var(--ink); box-shadow:none; }
-.site-header .nav-cta.btn--primary:hover{ background:var(--ochre-2); color:var(--ink); }
+.nav-cta{ margin-left:14px; flex:none; }
+.site-header .nav-cta.btn--primary{ background:var(--petrol); color:#fff; box-shadow:none; }
+.site-header .nav-cta.btn--primary:hover{ background:var(--petrol-2); color:#fff; }
 
 .burger{
   display:none; flex-direction:column; gap:5px; padding:10px; border-radius:var(--r);
 }
-.burger span{ width:24px; height:2px; background:var(--paper-inv); transition:transform .25s ease, opacity .2s ease; }
+.burger span{ width:24px; height:2px; background:var(--ink); transition:transform .25s ease, opacity .2s ease; }
 .burger[aria-expanded="true"] span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
 .burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
 .burger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
-@media (max-width:980px){
+@media (max-width:1080px){
   .burger{ display:flex; }
   .main-nav{
     position:absolute; top:100%; left:0; right:0;
     flex-direction:column; align-items:stretch; gap:2px;
-    background:var(--petrol-2); border-bottom:1px solid rgba(255,255,255,.10);
+    background:var(--paper); border-bottom:1px solid var(--line);
     padding:12px var(--pad) 22px;
-    box-shadow:0 30px 50px -20px rgba(0,0,0,.55);
+    box-shadow:0 30px 50px -30px rgba(20,33,46,.4);
     display:none;
   }
   .main-nav.open{ display:flex; }
-  .main-nav a{ padding:13px 12px; font-size:16px; border-bottom:1px solid rgba(255,255,255,.08); }
+  .main-nav a{ padding:14px 12px; font-size:16px; border-bottom:1px solid var(--line-soft); }
   .main-nav a[aria-current="page"]::after{ display:none; }
-  .main-nav a[aria-current="page"]{ color:var(--paper-inv); background:rgba(255,255,255,.06); }
+  .main-nav a[aria-current="page"]{ color:var(--petrol); background:var(--paper-2); }
   .nav-cta{ margin:12px 0 0; }
 }
 
@@ -422,27 +410,27 @@ h1 em, h2 em{ font-style:italic; font-weight:600; color:var(--petrol); }
 .section--dark .fig .fig-cap b{ color:var(--ochre); }
 
 /* ---------- pasek liczb ---------- */
-.statband{ border-block:1px solid var(--petrol-3); background:var(--petrol-2); color:var(--paper-inv); }
+.statband{ border-block:1px solid var(--line); background:var(--paper-2); }
 .statband .wrap{
   display:grid; grid-template-columns:repeat(4, 1fr);
   padding-block:0;
 }
-.stat{ padding:clamp(22px, 3vw, 34px) clamp(10px, 2vw, 28px); border-left:1px solid rgba(255,255,255,.12); }
+.stat{ padding:clamp(24px, 3vw, 38px) clamp(10px, 2vw, 30px); border-left:1px solid var(--line); }
 .stat:first-child{ border-left:0; padding-left:0; }
 .stat .s-num{
   font-family:var(--serif); font-weight:600;
-  font-size:clamp(30px, 3.6vw, 46px); line-height:1; color:var(--paper-inv);
+  font-size:clamp(32px, 3.8vw, 48px); line-height:1; color:var(--ink);
 }
-.stat .s-num sup{ font-size:.45em; color:var(--ochre); }
+.stat .s-num sup{ font-size:.45em; color:var(--petrol); }
 .stat .s-lab{
-  margin-top:10px; font-family:var(--mono); font-size:11.5px;
-  letter-spacing:.1em; text-transform:uppercase; color:rgba(237,239,232,.72); line-height:1.5;
+  margin-top:12px; font-family:var(--mono); font-size:11.5px;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); line-height:1.5;
 }
-.stat .s-src{ margin-top:6px; font-size:12px; color:rgba(237,239,232,.6); }
+.stat .s-src{ margin-top:6px; font-size:12px; color:var(--ink-2); opacity:.75; }
 @media (max-width:820px){
   .statband .wrap{ grid-template-columns:1fr 1fr; }
   .stat:nth-child(3){ border-left:0; padding-left:0; }
-  .stat{ border-top:1px solid rgba(255,255,255,.12); }
+  .stat{ border-top:1px solid var(--line); }
   .stat:nth-child(-n+2){ border-top:0; }
 }
 
@@ -912,12 +900,6 @@ blockquote.pull footer{
 </head>
 <body>
 <a class="skip-link" href="#main">Przejdź do treści</a>
-<div class="topbar">
-  <div class="wrap">
-    <span>Praktyka Lekarska Anna Bonder&#8209;Nowicka</span>
-    <span class="tb-right"><span>Warszawa · ul. Żelazna 67/29</span><span class="tb-mail"><a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a></span></span>
-  </div>
-</div>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Implant prącia — strona główna">

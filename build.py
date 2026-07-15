@@ -643,12 +643,6 @@ def header(page):
         for href, label, nid in NAV
         for aria in (' aria-current="page"' if page["nav"] == nid else '',))
     return f"""
-<div class="topbar">
-  <div class="wrap">
-    <span>Praktyka Lekarska Anna Bonder&#8209;Nowicka</span>
-    <span class="tb-right"><span>Warszawa · ul. Żelazna 67/29</span><span class="tb-mail"><a href="mailto:{MAIL}">{MAIL}</a></span></span>
-  </div>
-</div>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Implant prącia — strona główna">
