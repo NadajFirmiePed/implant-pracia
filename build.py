@@ -596,8 +596,8 @@ NAV = [
 ]
 
 FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E"
-           "%3Crect width='64' height='64' rx='9' fill='%230E413B'/%3E"
-           "%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='32' fill='%23F1F2ED' "
+           "%3Crect width='64' height='64' rx='9' fill='%23003D47'/%3E"
+           "%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='32' fill='%23FEFBF9' "
            "text-anchor='middle'%3EiP%3C/text%3E%3C/svg%3E")
 
 FONTS = ('https://fonts.googleapis.com/css2?'
@@ -617,7 +617,7 @@ def head(page):
 <title>{page['title']}</title>
 <meta name="description" content="{page['desc']}">
 <meta name="robots" content="{robots}">
-<meta name="theme-color" content="#0F211E">
+<meta name="theme-color" content="#003D47">
 <!-- TODO przy wdrożeniu: uzupełnij docelową domenę i odkomentuj -->
 <!-- <link rel="canonical" href="https://TWOJA-DOMENA.pl/{page['file']}"> -->
 <!-- <meta property="og:locale" content="pl_PL"><meta property="og:type" content="website">
@@ -867,10 +867,10 @@ def make_editable(fragment, src_file):
 # ------------------------------------------------------------------
 EDITOR_ASSETS = r'''<style>
 #ed-bar{position:fixed;right:16px;bottom:16px;z-index:9999;display:none;gap:8px;
-  align-items:center;background:#0E413B;color:#EDEFE8;padding:8px 10px;border-radius:6px;
+  align-items:center;background:#003D47;color:#FBF7F4;padding:8px 10px;border-radius:6px;
   font-family:system-ui,sans-serif;font-size:14px;box-shadow:0 10px 30px -10px rgba(0,0,0,.5)}
 body.ed-ready #ed-bar{display:flex}
-#ed-bar button{background:#A97B22;color:#0F211E;border:0;border-radius:4px;padding:7px 12px;
+#ed-bar button{background:#3EABF0;color:#012A31;border:0;border-radius:4px;padding:7px 12px;
   font-weight:600;cursor:pointer;font-size:14px}
 #ed-bar button#ed-cancel{background:transparent;color:#EDEFE8;text-decoration:underline;padding:7px 6px}
 #ed-msg{opacity:.9;font-size:13px;max-width:240px}
