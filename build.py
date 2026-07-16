@@ -105,12 +105,12 @@ FIG2 = """<svg viewBox="0 0 560 380" class="fig-anim fig-semi" role="img" aria-l
   </g>
   <g fill="currentColor"><circle cx="232" cy="250" r="3"/></g>
 
-  <g fill="currentColor" font-family="'Spline Sans Mono', monospace" font-size="12.5" letter-spacing="1.5">
-    <text x="24" y="350">1 / GIĘTKI RDZEŃ<tspan x="24" dy="16" font-size="10.5" opacity=".7" letter-spacing="1">w powłoce hydrofilowej</tspan></text>
+  <g fill="currentColor" font-family="'Spline Sans Mono', monospace" font-size="15" letter-spacing="1">
+    <text x="24" y="350">1 / GIĘTKI RDZEŃ<tspan x="24" dy="18" font-size="12.5" opacity=".7" letter-spacing=".8">w powłoce hydrofilowej</tspan></text>
   </g>
 
   <!-- WSKAŹNIK STANU -->
-  <g font-family="'Spline Sans Mono', monospace" font-size="13.5" font-weight="500" letter-spacing="2" text-anchor="middle">
+  <g font-family="'Spline Sans Mono', monospace" font-size="18" font-weight="500" letter-spacing="1" text-anchor="middle">
     <text class="lbl-flaccid" x="300" y="40" fill="currentColor">&#9679; NA CO DZIEŃ</text>
     <text class="lbl-erect" x="300" y="40" style="fill: var(--ochre)">&#9679; DO WSP&Oacute;ŁŻYCIA</text>
   </g>
@@ -551,7 +551,7 @@ PAGES = [
  dict(file='index.html', nav=None, cta=True, schema=[PHYSICIAN_JSONLD],
       title='Implant prącia Warszawa | dr Anna Bonder-Nowicka',
       desc='Ciężkie zaburzenia erekcji? Implant prącia to metoda o najwyższej satysfakcji pacjentów (do 98%). Operuje urolog i seksuolog dr Anna Bonder-Nowicka.'),
- dict(file='rodzaje-implantow.html', nav='rodzaje', cta=True, schema=[],
+ dict(file='rodzaje-implantow.html', nav='rodzaje', cta=False, schema=[],
       title='Rodzaje implantów prącia: hydrauliczny i półsztywny',
       desc='Implant hydrauliczny trzyczęściowy czy półsztywny? Porównanie budowy, obsługi, dyskrecji i kosztów oraz to, jak dobieram implant do pacjenta.'),
  dict(file='implant-hydrauliczny.html', nav='rodzaje', cta=True, schema=[],

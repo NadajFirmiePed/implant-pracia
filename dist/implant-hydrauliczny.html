@@ -235,9 +235,10 @@ h1 em, h2 em{ font-style:italic; font-weight:600; color:var(--petrol); }
 }
 .hero-trust .dot{ width:7px; height:7px; border-radius:50%; background:var(--ochre); flex:none; }
 
-.hero--sub .wrap{ padding-block:clamp(28px, 4vw, 52px); }
+.hero--sub .wrap{ padding-block:clamp(28px, 4vw, 52px) clamp(8px, 1.5vw, 16px); }
 .hero--sub .hero-head{ margin-bottom:0; }
 .hero--sub h1{ max-width:none; }
+.hero--sub + .section{ padding-top:clamp(18px, 3vw, 34px); }
 
 @media (max-width:900px){
   .hero-lower{ grid-template-columns:1fr; }
@@ -477,6 +478,18 @@ details.qa summary:hover{ color:var(--petrol-2); }
 .split .sp-copy p + p{ margin-top:12px; }
 .split .sp-copy ul.ticks{ margin-top:18px; }
 @media (max-width:880px){ .split{ grid-template-columns:1fr; } }
+
+/* #wybor: FAQ pod treścią (nie w kolumnie); treść w czytelnej szerokości */
+#wybor .sp-copy{ max-width:760px; }
+#wybor .sp-copy h2{ margin-bottom:18px; }
+#wybor .sp-copy p{ color:var(--ink-2); }
+#wybor .sp-copy p + p{ margin-top:12px; }
+#wybor .sp-copy ul.ticks{ margin-top:18px; }
+#wybor .faq-list{ margin-top:clamp(30px, 4vw, 48px); }
+
+/* #dla-kogo (półsztywny): FAQ + „porównaj" pod treścią, nie w kolumnie */
+#dla-kogo .sp-copy{ max-width:760px; }
+#dla-kogo .info-list{ margin-top:clamp(30px, 4vw, 48px); max-width:760px; }
 
 ul.ticks li{
   position:relative; padding-left:30px; margin-bottom:12px; color:var(--ink-2);
@@ -743,12 +756,12 @@ blockquote.pull footer{
   100%{ transform:rotate(0deg); }
 }
 @keyframes labelFlaccid{
-  0%,14%{ opacity:1; } 28%{ opacity:0; }
-  76%{ opacity:0; } 90%,100%{ opacity:1; }
+  0%,20%{ opacity:1; } 25%{ opacity:0; }
+  79%{ opacity:0; } 84%,100%{ opacity:1; }
 }
 @keyframes labelErect{
-  0%,20%{ opacity:0; } 34%{ opacity:1; }
-  72%{ opacity:1; } 86%{ opacity:0; } 100%{ opacity:0; }
+  0%,29%{ opacity:0; } 34%{ opacity:1; }
+  73%{ opacity:1; } 78%{ opacity:0; } 100%{ opacity:0; }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -898,7 +911,7 @@ blockquote.pull footer{
     <div class="sp-copy" data-reveal="2">
       <p class="eyebrow" data-ef="implant-hydrauliczny.html" data-eo="SmFrIHRvIGR6aWHFgmE=">Jak to działa</p>
       <h2 data-ef="implant-hydrauliczny.html" data-eo="VHJ6eSBlbGVtZW50eSwgcGXFgm5hIGtvbnRyb2xh">Trzy elementy, pełna kontrola</h2>
-      <p data-ef="implant-hydrauliczny.html" data-eo="VHJ6eSBlbGVtZW50eSBwcmFjdWrEhSByYXplbTogZHdhIHJvenByxJnFvGFsbmUgY3lsaW5kcnkgdyBjaWHFgmFjaCBqYW1pc3R5Y2gsIG1hxYJ5IHpiaW9ybmlrIHogcMWCeW5lbSBzY2hvd2FueSBwb2QgbWnEmcWbbmlhbWkgYnJ6dWNoYSBpIHBvbXBrYSB3aWVsa2/Fm2NpIG9saXdraSB3IG1vc3puaWUuIFphc3Rhd2tpIG1pxJlkenkgbmltaSBwaWxudWrEhSwgxbxlYnkgbmljIG5pZSBuYXBlxYJuacWCbyBzacSZIHNhbW8uIEtvbnRyb2zEmSBtYXN6IHR5bGtvIFR5Lg==">Trzy elementy pracują razem: dwa rozprężalne cylindry w ciałach jamistych, mały zbiornik z płynem schowany pod mięśniami brzucha i pompka wielkości oliwki w mosznie. Zastawki między nimi pilnują, żeby nic nie napełniło się samo. Kontrolę masz tylko Ty.</p>
+      <p data-ef="implant-hydrauliczny.html" data-eo="VHJ6eSBlbGVtZW50eSBwcmFjdWrEhSByYXplbTogZHdhIHJvenByxJnFvGFsbmUgY3lsaW5kcnkgdyBjaWHFgmFjaCBqYW1pc3R5Y2gsIG1hxYJ5IHpiaW9ybmlrIHogcMWCeW5lbSBzY2hvd2FueSBwb2QgbWnEmcWbbmlhbWkgYnJ6dWNoYSBpIHBvbXBrYSB3aWVsa2/Fm2NpIG9saXdraSB3IG1vc3puaWUuIFphc3Rhd2tpIG1pxJlkenkgbmltaSBwaWxudWrEhSwgxbxlYnkgbmljIG5pZSBuYXBlxYJuacWCbyBzacSZIHNhbW8uIEtvbnRyb2zEmSBuYWQgbmFwZcWCbmlhbmllbSBtYXN6IHR5bGtvIFR5Lg==">Trzy elementy pracują razem: dwa rozprężalne cylindry w ciałach jamistych, mały zbiornik z płynem schowany pod mięśniami brzucha i pompka wielkości oliwki w mosznie. Zastawki między nimi pilnują, żeby nic nie napełniło się samo. Kontrolę nad napełnianiem masz tylko Ty.</p>
       <p data-ef="implant-hydrauliczny.html" data-eo="S2llZHkgY2hjZXN6IHd6d29kdSwga2lsa2FuYcWbY2llIHJhenkgbmFjaXNrYXN6IHBvbXBrxJkgcHJ6ZXogc2vDs3LEmSBtb3N6bnkuIEN5bGluZHJ5IHd5cGXFgm5pYWrEhSBzacSZIHDFgnluZW0sIGEgcHLEhWNpZSByb2JpIHNpxJkgdyBwZcWCbmkgc3p0eXduZSwgZMWCdcW8c3plIGkgZ3J1YnN6ZS4gUG8gd3N6eXN0a2ltIHdjaXNrYXN6IHphd8OzciBpIHByxIVjaWUgd3JhY2EgZG8gend5a8WCZWdvLCBtacSZa2tpZWdvIHN0YW51Lg==">Kiedy chcesz wzwodu, kilkanaście razy naciskasz pompkę przez skórę moszny. Cylindry wypełniają się płynem, a prącie robi się w pełni sztywne, dłuższe i grubsze. Po wszystkim wciskasz zawór i prącie wraca do zwykłego, miękkiego stanu.</p>
       <ul class="ticks mt-2">
         <li data-ef="implant-hydrauliczny.html" data-eo="PGI+TmFqYmFyZHppZWogbmF0dXJhbG55IGVmZWt0OjwvYj4gdyBzcG9jenlua3UgcHLEhWNpZSB3eWdsxIVkYSBpIHVrxYJhZGEgc2nEmSB6d3ljemFqbmllLCBuaWt0IG5pY3plZ28gbmllIHphdXdhxbx5Lg=="><b>Najbardziej naturalny efekt:</b> w spoczynku prącie wygląda i układa się zwyczajnie, nikt niczego nie zauważy.</li>
@@ -906,7 +919,6 @@ blockquote.pull footer{
         <li data-ef="implant-hydrauliczny.html" data-eo="PGI+Um96c3plcnphIG9id8OzZCBpIGTFgnVnb8WbxIc8L2I+IHByenkgYWt0eXdhY2ppLCB3acSZYyByeXp5a28gc2tyw7NjZW5pYSBwcsSFY2lhIHBvIG9wZXJhY2ppIGplc3QgYmFyZHpvIG1hxYJlLg=="><b>Rozszerza obwód i długość</b> przy aktywacji, więc ryzyko skrócenia prącia po operacji jest bardzo małe.</li>
         <li data-ef="implant-hydrauliczny.html" data-eo="PGI+OTglIHphZG93b2xvbnljaCBwYWNqZW50w7N3LjwvYj4gTmFqd3nFvHN6eSB3eW5payB6ZSB3c3p5c3RraWNoIG1ldG9kIGxlY3plbmlhIHphYnVyemXFhCBlcmVrY2ppLg=="><b>98% zadowolonych pacjentów.</b> Najwyższy wynik ze wszystkich metod leczenia zaburzeń erekcji.</li>
       </ul>
-      <p class="note mt-2" data-ef="implant-hydrauliczny.html" data-eo="PGI+SmVzdCBqZXN6Y3plIHdlcnNqYSBkd3VjesSZxZtjaW93YS48L2I+IFpiaW9ybmljemVrIG1pZcWbY2kgc2nEmSB3dGVkeSB3IG1vc3puaWUuIFNpxJlnYW0gcG8gbmnEhSByemFka28sIGJvIGRhamUgbW5pZWpzesSFIHN6dHl3bm/Fm8SHIGkgbmllIHBvZ3J1YmlhIHByxIVjaWEgdGFrIGphayB1a8WCYWQgdHJ6eWN6xJnFm2Npb3d5LiBQcm9wb251asSZIGrEhSB0eWxrbyB3IHN6Y3plZ8OzbG55Y2ggc3l0dWFjamFjaCBhbmF0b21pY3pueWNoLg=="><b>Jest jeszcze wersja dwuczęściowa.</b> Zbiorniczek mieści się wtedy w mosznie. Sięgam po nią rzadko, bo daje mniejszą sztywność i nie pogrubia prącia tak jak układ trzyczęściowy. Proponuję ją tylko w szczególnych sytuacjach anatomicznych.</p>
     </div>
   </div>
 </section>
