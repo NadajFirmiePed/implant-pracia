@@ -235,9 +235,10 @@ h1 em, h2 em{ font-style:italic; font-weight:600; color:var(--petrol); }
 }
 .hero-trust .dot{ width:7px; height:7px; border-radius:50%; background:var(--ochre); flex:none; }
 
-.hero--sub .wrap{ padding-block:clamp(28px, 4vw, 52px); }
+.hero--sub .wrap{ padding-block:clamp(28px, 4vw, 52px) clamp(8px, 1.5vw, 16px); }
 .hero--sub .hero-head{ margin-bottom:0; }
 .hero--sub h1{ max-width:none; }
+.hero--sub + .section{ padding-top:clamp(18px, 3vw, 34px); }
 
 @media (max-width:900px){
   .hero-lower{ grid-template-columns:1fr; }
@@ -477,6 +478,18 @@ details.qa summary:hover{ color:var(--petrol-2); }
 .split .sp-copy p + p{ margin-top:12px; }
 .split .sp-copy ul.ticks{ margin-top:18px; }
 @media (max-width:880px){ .split{ grid-template-columns:1fr; } }
+
+/* #wybor: FAQ pod treścią (nie w kolumnie); treść w czytelnej szerokości */
+#wybor .sp-copy{ max-width:760px; }
+#wybor .sp-copy h2{ margin-bottom:18px; }
+#wybor .sp-copy p{ color:var(--ink-2); }
+#wybor .sp-copy p + p{ margin-top:12px; }
+#wybor .sp-copy ul.ticks{ margin-top:18px; }
+#wybor .faq-list{ margin-top:clamp(30px, 4vw, 48px); }
+
+/* #dla-kogo (półsztywny): FAQ + „porównaj" pod treścią, nie w kolumnie */
+#dla-kogo .sp-copy{ max-width:760px; }
+#dla-kogo .info-list{ margin-top:clamp(30px, 4vw, 48px); max-width:760px; }
 
 ul.ticks li{
   position:relative; padding-left:30px; margin-bottom:12px; color:var(--ink-2);
@@ -743,12 +756,12 @@ blockquote.pull footer{
   100%{ transform:rotate(0deg); }
 }
 @keyframes labelFlaccid{
-  0%,14%{ opacity:1; } 28%{ opacity:0; }
-  76%{ opacity:0; } 90%,100%{ opacity:1; }
+  0%,20%{ opacity:1; } 25%{ opacity:0; }
+  79%{ opacity:0; } 84%,100%{ opacity:1; }
 }
 @keyframes labelErect{
-  0%,20%{ opacity:0; } 34%{ opacity:1; }
-  72%{ opacity:1; } 86%{ opacity:0; } 100%{ opacity:0; }
+  0%,29%{ opacity:0; } 34%{ opacity:1; }
+  73%{ opacity:1; } 78%{ opacity:0; } 100%{ opacity:0; }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -798,8 +811,8 @@ blockquote.pull footer{
   <div class="wrap">
     <div class="hero-copy" data-reveal>
       <p class="eyebrow" data-ef="rodzaje-implantow.html" data-eo="Um9kemFqZSBpbXBsYW50w7N3IHByxIVjaWE=">Rodzaje implantów prącia</p>
-      <h1 data-ef="rodzaje-implantow.html" data-eo="SHlkcmF1bGljem55IGN6eSBww7PFgnN6dHl3bnk/IFBvem5haiBtb8W8bGl3b8WbY2kgb2J1IGltcGxhbnTDs3cu">Hydrauliczny czy półsztywny? Poznaj możliwości obu implantów.</h1>
-      <p class="lead mt-1" data-ef="rodzaje-implantow.html" data-eo="U8SFIGR3YSByb2R6YWplIGltcGxhbnTDs3cuIFLDs8W8bmnEhSBzacSZIGJ1ZG93xIUsIG9ic8WCdWfEhSwgZHlza3JlY2rEhSBpIGNlbsSFLCBhbGUgcm9iacSFIHRvIHNhbW86IGRhasSFIHN6dHl3bm/Fm8SHIHd5c3RhcmN6YWrEhWPEhSBkbyB3c3DDs8WCxbx5Y2lhLCB3dGVkeSBraWVkeSBqZWogcG90cnplYnVqZXN6LiBQb25pxbxlaiBrcsOzdGtvIG9iYSwgdGFiZWxhIHBvcsOzd25hd2N6YSBpIHRvLCBqYWsgd3Nww7NsbmllIHd5YmllcmFteSB3xYJhxZtjaXd5Lg==">Są dwa rodzaje implantów. Różnią się budową, obsługą, dyskrecją i ceną, ale robią to samo: dają sztywność wystarczającą do współżycia, wtedy kiedy jej potrzebujesz. Poniżej krótko oba, tabela porównawcza i to, jak wspólnie wybieramy właściwy.</p>
+      <h1 data-ef="rodzaje-implantow.html" data-eo="SHlkcmF1bGljem55IGN6eSBww7PFgnN6dHl3bnk/IDxicj5Qb3puYWogbW/FvGxpd2/Fm2NpIG9idSBpbXBsYW50w7N3Lg==">Hydrauliczny czy półsztywny? <br>Poznaj możliwości obu implantów.</h1>
+      <p class="lead mt-1" data-ef="rodzaje-implantow.html" data-eo="U8SFIGR3YSByb2R6YWplIGltcGxhbnTDs3cuIFLDs8W8bmnEhSBzacSZIG9uZSBidWRvd8SFLCBvYnPFgnVnxIUsIHBvemlvbWVtIGR5c2tyZWNqaSBvcmF6IGNlbsSFLiBGaW5hbG5pZSBvYmEgZGFqxIUgc3p0eXdub8WbxIcgd3lzdGFyY3phasSFY8SFIGRvIHdzcMOzxYLFvHljaWEsIHd0ZWR5IGtpZWR5IGplaiBwb3RyemVidWplc3ouIFBvbmnFvGVqIHpuYWpkemllc3ogb3BpcyBrYcW8ZGVnbyB6IG5pY2gu">Są dwa rodzaje implantów. Różnią się one budową, obsługą, poziomem dyskrecji oraz ceną. Finalnie oba dają sztywność wystarczającą do współżycia, wtedy kiedy jej potrzebujesz. Poniżej znajdziesz opis każdego z nich.</p>
     </div>
   </div>
 </section>
@@ -818,7 +831,7 @@ blockquote.pull footer{
       <article class="card" data-reveal="2">
         <span class="c-tag">Prostota i niższy koszt</span>
         <h3 data-ef="rodzaje-implantow.html" data-eo="SW1wbGFudCBww7PFgnN6dHl3bnk=">Implant półsztywny</h3>
-        <p data-ef="rodzaje-implantow.html" data-eo="R2nEmXRraWUgcHLEmXR5IHcgcHLEhWNpdSwga3TDs3JlIHByemVkIHdzcMOzxYLFvHljaWVtIHVub3Npc3osIGEgcG8gbmltIG9wdXN6Y3phc3ouIE5pZSBtYSB0dSDFvGFkbmVqIG1lY2hhbmlraSwgd2nEmWMgamVzdCB0ZcW8IG5ham1uaWVqIHJ6ZWN6eSwga3TDs3JlIG1vZ8WCeWJ5IHphd2llxZvEhy4gRG9icmUgcm96d2nEhXphbmllIHRha8W8ZSB3dGVkeSwgZ2R5IGTFgm9uaWUgbmllIHPEhSBqdcW8IHRhayBzcHJhd25lLg==">Giętkie pręty w prąciu, które przed współżyciem unosisz, a po nim opuszczasz. Nie ma tu żadnej mechaniki, więc jest też najmniej rzeczy, które mogłyby zawieść. Dobre rozwiązanie także wtedy, gdy dłonie nie są już tak sprawne.</p>
+        <p data-ef="rodzaje-implantow.html" data-eo="R2nEmXRraWUgcHLEmXR5IHcgcHLEhWNpdSwga3TDs3JlIHByemVkIHdzcMOzxYLFvHljaWVtIHVub3Npc3osIGEgcG8gbmltIG9wdXN6Y3phc3ouIE5pZSBtYSB0dSDFvGFkbmVqIG1lY2hhbmlraS4gRG9icmUgcm96d2nEhXphbmllIHRha8W8ZSB3dGVkeSwgZ2R5IGTFgm9uaWUgbmllIHPEhSBqdcW8IHRhayBzcHJhd25lLg==">Giętkie pręty w prąciu, które przed współżyciem unosisz, a po nim opuszczasz. Nie ma tu żadnej mechaniki. Dobre rozwiązanie także wtedy, gdy dłonie nie są już tak sprawne.</p>
         <p class="mono small" style="color:var(--petrol-2)" data-ef="rodzaje-implantow.html" data-eo="U0FUWVNGQUtDSkEgUEFDSkVOVMOTVzogNzYl">SATYSFAKCJA PACJENTÓW: 76%</p>
         <a class="c-more" href="implant-polsztywny.html">Poznaj szczegóły <span class="arr">&#8594;</span></a>
       </article>
@@ -831,7 +844,7 @@ blockquote.pull footer{
   <div class="wrap">
     <div class="sec-head" data-reveal>
       <p class="eyebrow" data-ef="rodzaje-implantow.html" data-eo="WmVzdGF3aWVuaWU=">Zestawienie</p>
-      <h2 data-ef="rodzaje-implantow.html" data-eo="UG9yw7N3bmFuaWUgdyBzemXFm2NpdSBwdW5rdGFjaA==">Porównanie w sześciu punktach</h2>
+      <h2 data-ef="rodzaje-implantow.html" data-eo="UG9yw7N3bmFuaWUgcGFyZW10ZXLDs3cgaW1wbGFudMOzdw==">Porównanie paremterów implantów</h2>
     </div>
     <div class="cmp-wrap" data-reveal>
       <table class="cmp">
@@ -839,12 +852,12 @@ blockquote.pull footer{
           <tr><th scope="col" data-ef="rodzaje-implantow.html" data-eo="S3J5dGVyaXVt">Kryterium</th><th scope="col" data-ef="rodzaje-implantow.html" data-eo="SHlkcmF1bGljem55IHRyenljesSZxZtjaW93eQ==">Hydrauliczny trzyczęściowy</th><th scope="col" data-ef="rodzaje-implantow.html" data-eo="UMOzxYJzenR5d255">Półsztywny</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="V3lnbMSFZCB3IHNwb2N6eW5rdQ==">Wygląd w spoczynku</th><td data-ef="rodzaje-implantow.html" data-eo="PGI+TmF0dXJhbG55LjwvYj4gQ3lsaW5kcnkgb3Byw7PFvG5pb25lLCBwcsSFY2llIG1pxJlra2llLg=="><b>Naturalny.</b> Cylindry opróżnione, prącie miękkie.</td><td data-ef="rodzaje-implantow.html" data-eo="U3RhxYJhIHN6dHl3bm/Fm8SHLCBwcsSFY2llIHXFgm/FvG9uZSB3emTFgnXFvCB1ZGEu">Stała sztywność, prącie ułożone wzdłuż uda.</td></tr>
-          <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="T2JzxYJ1Z2E=">Obsługa</th><td data-ef="rodzaje-implantow.html" data-eo="UG9tcGthIHcgbW9zem5pZToga2lsa2FuYcWbY2llIG5hY2nFm25pxJnEhywgcG90ZW0gemF3w7NyIHNwdXN0b3d5Lg==">Pompka w mosznie: kilkanaście naciśnięć, potem zawór spustowy.</td><td data-ef="rodzaje-implantow.html" data-eo="PGI+TmFqcHJvc3RzemEgbW/FvGxpd2E6PC9iPiB1bmllxZsgZG8gd3Nww7PFgsW8eWNpYSwgb3B1xZvEhyBwbyBuaW0u"><b>Najprostsza możliwa:</b> unieś do współżycia, opuść po nim.</td></tr>
-          <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="T2J3w7NkIHByenkgd3p3b2R6aWU=">Obwód przy wzwodzie</th><td data-ef="rodzaje-implantow.html" data-eo="PGI+WndpxJlrc3phIHNpxJk8L2I+IHdyYXogeiB3eXBlxYJuaWVuaWVtIGN5bGluZHLDs3cu"><b>Zwiększa się</b> wraz z wypełnieniem cylindrów.</td><td data-ef="rodzaje-implantow.html" data-eo="QmV6IHptaWFuLCBzdGHFgmEgxZtyZWRuaWNhIHByxJl0w7N3Lg==">Bez zmian, stała średnica prętów.</td></tr>
+          <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="V3lnbMSFZCB3IHNwb2N6eW5rdQ==">Wygląd w spoczynku</th><td data-ef="rodzaje-implantow.html" data-eo="PGI+TmF0dXJhbG55LjwvYj4gQ3lsaW5kcnkgb3Byw7PFvG5pb25lLCBwcsSFY2llIGNhxYJrb3djaWUgbWnEmWtraWUu"><b>Naturalny.</b> Cylindry opróżnione, prącie całkowcie miękkie.</td><td data-ef="rodzaje-implantow.html" data-eo="U3RhxYJhIHN6dHl3bm/Fm8SHLCBwcsSFY2llIHXFgm/FvG9uZSB3emTFgnXFvCB1ZGEu">Stała sztywność, prącie ułożone wzdłuż uda.</td></tr>
+          <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="T2JzxYJ1Z2E=">Obsługa</th><td data-ef="rodzaje-implantow.html" data-eo="UG9tcGthIHcgbW9zem5pZToga2lsa2FuYcWbY2llIG5hY2nFm25pxJnEhyBhYnkgdXN6dHl3bmnEhyBwZW5pc2Eu">Pompka w mosznie: kilkanaście naciśnięć aby usztywnić penisa.</td><td data-ef="rodzaje-implantow.html" data-eo="V3lzdGFyY3p5IHLEmWvEhSBwb2RuaWXFm8SHJm5ic3A7IHByxIVjaWUgYSBwbyBzdG9zdW5rdSBvYm5pxbx5xIcu">Wystarczy ręką podnieść&nbsp; prącie a po stosunku obniżyć.</td></tr>
+          <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="T2J3w7NkIHByenkgd3p3b2R6aWU=">Obwód przy wzwodzie</th><td data-ef="rodzaje-implantow.html" data-eo="PGI+WndpxJlrc3phIHNpxJk8L2I+IHdyYXogeiB3eXBlxYJuaWVuaWVtIGN5bGluZHLDs3cu"><b>Zwiększa się</b> wraz z wypełnieniem cylindrów.</td><td data-ef="rodzaje-implantow.html" data-eo="QmV6IHptaWFuLCBzdGHFgmEgxZtyZWRuaWNhLg==">Bez zmian, stała średnica.</td></tr>
           <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="RHlza3JlY2phIHBvZCB1YnJhbmllbQ==">Dyskrecja pod ubraniem</th><td data-ef="rodzaje-implantow.html" data-eo="PGI+UGXFgm5hLjwvYj4="><b>Pełna.</b></td><td data-ef="rodzaje-implantow.html" data-eo="V3ltYWdhIHdwcmF3eSwgdHJ1ZG5pZWpzemEgcHJ6eSBrcsOzdHN6eW0gcHLEhWNpdS4=">Wymaga wprawy, trudniejsza przy krótszym prąciu.</td></tr>
           <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="Unl6eWtvIGF3YXJpaSBpIHpha2HFvGVuaWE=">Ryzyko awarii i zakażenia</th><td data-ef="rodzaje-implantow.html" data-eo="QmFyZHpvIG5pc2tpZSBwcnp5IG5vd29jemVzbnljaCBrb25zdHJ1a2NqYWNoLg==">Bardzo niskie przy nowoczesnych konstrukcjach.</td><td data-ef="rodzaje-implantow.html" data-eo="PGI+U2tyYWpuaWUgbmlza2llOjwvYj4gYnJhayBjesSZxZtjaSBydWNob215Y2gu"><b>Skrajnie niskie:</b> brak części ruchomych.</td></tr>
-          <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="S29zenQgaSBzYXR5c2Zha2NqYQ==">Koszt i satysfakcja</th><td data-ef="rodzaje-implantow.html" data-eo="V3nFvHN6eSBrb3N6dCAmbWlkZG90OyBzYXR5c2Zha2NqYSA8Yj45OCU8L2I+">Wyższy koszt &middot; satysfakcja <b>98%</b></td><td data-ef="rodzaje-implantow.html" data-eo="PGI+TmnFvHN6eSBrb3N6dDwvYj4gJm1pZGRvdDsgc2F0eXNmYWtjamEgNzYl"><b>Niższy koszt</b> &middot; satysfakcja 76%</td></tr>
+          <tr><th scope="row" data-ef="rodzaje-implantow.html" data-eo="S29zenQgaSBzYXR5c2Zha2NqYQ==">Koszt i satysfakcja</th><td data-ef="rodzaje-implantow.html" data-eo="V3nFvHN6eSBrb3N6dCAmbWlkZG90OyBzYXR5c2Zha2NqYSA8Yj45OCU8L2I+">Wyższy koszt &middot; satysfakcja <b>98%</b></td><td data-ef="rodzaje-implantow.html" data-eo="TmnFvHN6eSBrb3N6IHNhdHlzZmFrY2phIDc2JS4=">Niższy kosz satysfakcja 76%.</td></tr>
         </tbody>
       </table>
     </div>
@@ -854,7 +867,7 @@ blockquote.pull footer{
 
 <!-- ================= JAK WYBIERAMY ================= -->
 <section class="section" id="wybor">
-  <div class="wrap split">
+  <div class="wrap">
     <div class="sp-copy" data-reveal>
       <p class="eyebrow" data-ef="rodzaje-implantow.html" data-eo="RGVjeXpqYQ==">Decyzja</p>
       <h2 data-ef="rodzaje-implantow.html" data-eo="SmFrIHd5YmllcmFteSBUd8OzaiBpbXBsYW50">Jak wybieramy Twój implant</h2>
@@ -864,12 +877,10 @@ blockquote.pull footer{
         <li data-ef="rodzaje-implantow.html" data-eo="PGI+QW5hdG9taWE6PC9iPiBkxYJ1Z2/Fm8SHIHByxIVjaWEsIHByemVieXRlIG9wZXJhY2plLCBibGl6bnksIGNob3JvYmEgUGV5cm9uaWVnby4="><b>Anatomia:</b> długość prącia, przebyte operacje, blizny, choroba Peyroniego.</li>
         <li data-ef="rodzaje-implantow.html" data-eo="PGI+T2N6ZWtpd2FuaWE6PC9iPiBqYWsgd2HFvG5hIGplc3QgZGxhIENpZWJpZSBkeXNrcmVjamEgdyBzcG9jenlua3UgaSBuYXR1cmFsbnkgd3lnbMSFZD8="><b>Oczekiwania:</b> jak ważna jest dla Ciebie dyskrecja w spoczynku i naturalny wygląd?</li>
         <li data-ef="rodzaje-implantow.html" data-eo="PGI+WmRyb3dpZSBvZ8OzbG5lOjwvYj4gY3Vrcnp5Y2EsIG9kcG9ybm/Fm8SHLCBwcnplYnl0ZSB1cmF6eSByZHplbmlhIHptaWVuaWFqxIUgYmlsYW5zIHJ5enlrYS4="><b>Zdrowie ogólne:</b> cukrzyca, odporność, przebyte urazy rdzenia zmieniają bilans ryzyka.</li>
-        <li data-ef="rodzaje-implantow.html" data-eo="PGI+QnVkxbxldDo8L2I+IHLDs8W8bmljYSB3IGNlbmllIG1pxJlkenkgdHlwYW1pIGplc3QgcmVhbG5hIGkgbcOzd2nEmSBvIG5pZWogd3Byb3N0LCB6IHBlxYJuxIUgd3ljZW7EhS4="><b>Budżet:</b> różnica w cenie między typami jest realna i mówię o niej wprost, z pełną wyceną.</li>
       </ul>
-      <p class="mt-2" data-ef="rodzaje-implantow.html" data-eo="RGVjeXpqxJkgaSB0YWsgcG9kZWptdWplc3ogVHkuIEphIG1hbSBkYcSHIENpIHdzenlzdGtpZSBpbmZvcm1hY2plIGkgZG9yYWR6acSHIHRhaywgamFrIGRvcmFkemnFgmFieW0ga29tdcWbIGJsaXNraWVtdS4gSmXFm2xpIGNoY2Vzeiwgd2XFuiBuYSB0xJkgcm96bW93xJkgcGFydG5lcmvEmSBhbGJvIHBhcnRuZXJhLiBUbyB6d3lrbGUgc3ByYXdhIGR3b2pnYSBsdWR6aSwgbmllIGplZG5lZ28u">Decyzję i tak podejmujesz Ty. Ja mam dać Ci wszystkie informacje i doradzić tak, jak doradziłabym komuś bliskiemu. Jeśli chcesz, weź na tę rozmowę partnerkę albo partnera. To zwykle sprawa dwojga ludzi, nie jednego.</p>
       <div class="mt-2">
-        <a class="btn btn--primary" href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Umów rozmowę o wyborze implantu</a>
-        <p class="btn-note" data-ef="rodzaje-implantow.html" data-eo="TmEgdGVqIHJvem1vd2llIG5pZSBtdXNpc3ogbmljIHBvc3RhbmF3aWHEhy4gTmFqcGllcncgd2llZHphLCBkb3BpZXJvIHBvdGVtIGRlY3l6amEu">Na tej rozmowie nie musisz nic postanawiać. Najpierw wiedza, dopiero potem decyzja.</p>
+        <a class="btn btn--primary" href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Umów się na konsultację</a>
+        <p class="btn-note" data-ef="rodzaje-implantow.html" data-eo="S29uc3VsdGFjamEgamVzdCBiZXpwxYJhdG5hIGkgbmllem9ib3dpxIV6dWrEhWNhIGRvIGRhbHN6ZWogd3Nww7PFgnByYWN5Lg==">Konsultacja jest bezpłatna i niezobowiązująca do dalszej współpracy.</p>
       </div>
     </div>
     <div data-reveal="2">
@@ -891,20 +902,7 @@ blockquote.pull footer{
   </div>
 </section>
 
-
-<section class="cta-band">
-  <div class="wrap">
-    <div data-reveal>
-      <p class="eyebrow eyebrow--inv" style="margin-bottom:14px">Następny krok</p>
-      <h2>Pierwsza rozmowa niczego nie przesądza.</h2>
-      <p>Na konsultacji po prostu porozmawiamy. Zrobię wywiad, zbadam Cię i powiem, jakie masz realne opcje i skąd bierze się problem. Niczego nie musisz od razu postanawiać. Decyzję o operacji zostawiamy na później.</p>
-    </div>
-    <div class="cta-actions" data-reveal="2">
-      <a class="btn btn--inv" href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Umów konsultację przez ZnanyLekarz</a>
-      <p class="btn-note">Terminy online 24/7 · Warszawa · pełna dyskrecja</p>
-    </div>
-  </div>
-</section></main>
+</main>
 <footer class="site-footer">
   <div class="wrap">
     <div class="f-grid">

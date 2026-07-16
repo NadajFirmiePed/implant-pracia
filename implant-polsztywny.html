@@ -235,9 +235,10 @@ h1 em, h2 em{ font-style:italic; font-weight:600; color:var(--petrol); }
 }
 .hero-trust .dot{ width:7px; height:7px; border-radius:50%; background:var(--ochre); flex:none; }
 
-.hero--sub .wrap{ padding-block:clamp(28px, 4vw, 52px); }
+.hero--sub .wrap{ padding-block:clamp(28px, 4vw, 52px) clamp(8px, 1.5vw, 16px); }
 .hero--sub .hero-head{ margin-bottom:0; }
 .hero--sub h1{ max-width:none; }
+.hero--sub + .section{ padding-top:clamp(18px, 3vw, 34px); }
 
 @media (max-width:900px){
   .hero-lower{ grid-template-columns:1fr; }
@@ -477,6 +478,18 @@ details.qa summary:hover{ color:var(--petrol-2); }
 .split .sp-copy p + p{ margin-top:12px; }
 .split .sp-copy ul.ticks{ margin-top:18px; }
 @media (max-width:880px){ .split{ grid-template-columns:1fr; } }
+
+/* #wybor: FAQ pod treścią (nie w kolumnie); treść w czytelnej szerokości */
+#wybor .sp-copy{ max-width:760px; }
+#wybor .sp-copy h2{ margin-bottom:18px; }
+#wybor .sp-copy p{ color:var(--ink-2); }
+#wybor .sp-copy p + p{ margin-top:12px; }
+#wybor .sp-copy ul.ticks{ margin-top:18px; }
+#wybor .faq-list{ margin-top:clamp(30px, 4vw, 48px); }
+
+/* #dla-kogo (półsztywny): FAQ + „porównaj" pod treścią, nie w kolumnie */
+#dla-kogo .sp-copy{ max-width:760px; }
+#dla-kogo .info-list{ margin-top:clamp(30px, 4vw, 48px); max-width:760px; }
 
 ul.ticks li{
   position:relative; padding-left:30px; margin-bottom:12px; color:var(--ink-2);
@@ -743,12 +756,12 @@ blockquote.pull footer{
   100%{ transform:rotate(0deg); }
 }
 @keyframes labelFlaccid{
-  0%,14%{ opacity:1; } 28%{ opacity:0; }
-  76%{ opacity:0; } 90%,100%{ opacity:1; }
+  0%,20%{ opacity:1; } 25%{ opacity:0; }
+  79%{ opacity:0; } 84%,100%{ opacity:1; }
 }
 @keyframes labelErect{
-  0%,20%{ opacity:0; } 34%{ opacity:1; }
-  72%{ opacity:1; } 86%{ opacity:0; } 100%{ opacity:0; }
+  0%,29%{ opacity:0; } 34%{ opacity:1; }
+  73%{ opacity:1; } 78%{ opacity:0; } 100%{ opacity:0; }
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -811,12 +824,11 @@ blockquote.pull footer{
       <p class="eyebrow" data-ef="implant-polsztywny.html" data-eo="SmFrIHRvIGR6aWHFgmE=">Jak to działa</p>
       <h2 data-ef="implant-polsztywny.html" data-eo="UHJvc3RvdGEgemFtaWFzdCBtZWNoYW5pa2k=">Prostota zamiast mechaniki</h2>
       <p data-ef="implant-polsztywny.html" data-eo="RHdhIGdpxJl0a2llIHByxJl0eSwgend5a2xlIHplIHNyZWJybnltIHJkemVuaWVtIHcgxZtsaXNraWVqIHBvd8WCb2NlLCBuYSBzdGHFgmUgdW1pZXN6Y3pvbmUgdyBwcsSFY2l1LiBQcsSFY2llIGplc3QgcHJ6ZXogY2HFgnkgY3phcyB1c3p0eXduaW9uZTogZG8gd3Nww7PFgsW8eWNpYSBwbyBwcm9zdHUgamUgdW5vc2lzeiwgYSBuYSBjbyBkemllxYQgb3B1c3pjemFzeiB3emTFgnXFvCB1ZGEuIENhxYJhIG9ic8WCdWdhIHRvIGplZGVuIHJ1Y2ggcsSZa2ku">Dwa giętkie pręty, zwykle ze srebrnym rdzeniem w śliskiej powłoce, na stałe umieszczone w prąciu. Prącie jest przez cały czas usztywnione: do współżycia po prostu je unosisz, a na co dzień opuszczasz wzdłuż uda. Cała obsługa to jeden ruch ręki.</p>
-      <p data-ef="implant-polsztywny.html" data-eo="TmllIG1hIHR1IHBvbXBraSwgemJpb3JuaWthIGFuaSB6YXN0YXdlaywgd2nEmWMgbmllIG1hIHNpxJkgY28gemVwc3XEhy4gRGxhdGVnbyBww7PFgnN6dHl3bnkgbWEgbmFqbW5pZWpzemUgemUgd3N6eXN0a2ljaCBpbXBsYW50w7N3IHJ5enlrbyBhd2FyaWkgaSB6YWthxbxlbmlhLCBhIGRvIHRlZ28gbmFqbmnFvHN6xIUgY2VuxJku">Nie ma tu pompki, zbiornika ani zastawek, więc nie ma się co zepsuć. Dlatego półsztywny ma najmniejsze ze wszystkich implantów ryzyko awarii i zakażenia, a do tego najniższą cenę.</p>
+      <p data-ef="implant-polsztywny.html" data-eo="TmllIG1hIHR1IHBvbXBraSwgemJpb3JuaWthIGFuaSB6YXN0YXdlay4gRGxhdGVnbyBpbXBhbG50IHDDs8WCc3p0eXdueSBtYSBuYWptbmllanN6ZSB6ZSB3c3p5c3RraWNoIGltcGxhbnTDs3cgcnl6eWtvIGF3YXJpaSBpIHpha2HFvGVuaWEsIGEgZG8gdGVnbyBuYWpuacW8c3rEhSBjZW7EmS4=">Nie ma tu pompki, zbiornika ani zastawek. Dlatego impalnt półsztywny ma najmniejsze ze wszystkich implantów ryzyko awarii i zakażenia, a do tego najniższą cenę.</p>
       <ul class="ticks mt-2">
         <li data-ef="implant-polsztywny.html" data-eo="PGI+TWFrc3ltYWxuYSBwcm9zdG90YTo8L2I+IMWbd2lldG55IHd5YsOzciBwcnp5IG9ncmFuaWN6b25laiBzcHJhd25vxZtjaSBkxYJvbmksIG5wLiBwbyB1ZGFyemUgY3p5IHByenkgY2hvcm9iYWNoIHN0YXfDs3cu"><b>Maksymalna prostota:</b> świetny wybór przy ograniczonej sprawności dłoni, np. po udarze czy przy chorobach stawów.</li>
         <li data-ef="implant-polsztywny.html" data-eo="PGI+TmFqbmnFvHN6eSBrb3N6dDwvYj4gaSBuYWprcsOzdHN6YSBrcnp5d2EgbmF1a2ksIGJvIG5pZSBtYSBjemVnbyBzacSZIHVjennEhy4="><b>Najniższy koszt</b> i najkrótsza krzywa nauki, bo nie ma czego się uczyć.</li>
         <li data-ef="implant-polsztywny.html" data-eo="PGI+RG8gcHJ6ZW15xZtsZW5pYTo8L2I+IHN0YcWCYSBzenR5d25vxZvEhyBieXdhIHRydWRuYSBkbyB6YW1hc2tvd2FuaWEgcG9kIHVicmFuaWVtLCB6d8WCYXN6Y3phIHByenkga3LDs3RzenltIHByxIVjaXUu"><b>Do przemyślenia:</b> stała sztywność bywa trudna do zamaskowania pod ubraniem, zwłaszcza przy krótszym prąciu.</li>
-        <li data-ef="implant-polsztywny.html" data-eo="PGI+VWN6Y2l3aWUgbyByeXp5a3U6PC9iPiB1IHBhY2plbnTDs3cgcG8gdXJhemFjaCByZHplbmlhIGtyxJlnb3dlZ28gemRhcnphIHNpxJkgcHJ6ZXdsZWvFgnkgYsOzbCwgYSByemFka28gZXJvemphLCBjenlsaSBwcnplYmlqYW5pZSBzacSZIGltcGxhbnR1IHByemV6IHNrw7NyxJkuIE9tYXdpYW0gdG8gaW5keXdpZHVhbG5pZS4="><b>Uczciwie o ryzyku:</b> u pacjentów po urazach rdzenia kręgowego zdarza się przewlekły ból, a rzadko erozja, czyli przebijanie się implantu przez skórę. Omawiam to indywidualnie.</li>
       </ul>
       <p class="mono small mt-2" style="color:var(--petrol-2)" data-ef="implant-polsztywny.html" data-eo="U0FUWVNGQUtDSkEgUEFDSkVOVMOTVzogNzYl">SATYSFAKCJA PACJENTÓW: 76%</p>
     </div>
@@ -847,12 +859,12 @@ blockquote.pull footer{
   </g>
   <g fill="currentColor"><circle cx="232" cy="250" r="3"/></g>
 
-  <g fill="currentColor" font-family="'Spline Sans Mono', monospace" font-size="12.5" letter-spacing="1.5">
-    <text x="24" y="350">1 / GIĘTKI RDZEŃ<tspan x="24" dy="16" font-size="10.5" opacity=".7" letter-spacing="1">w powłoce hydrofilowej</tspan></text>
+  <g fill="currentColor" font-family="'Spline Sans Mono', monospace" font-size="15" letter-spacing="1">
+    <text x="24" y="350">1 / GIĘTKI RDZEŃ<tspan x="24" dy="18" font-size="12.5" opacity=".7" letter-spacing=".8">w powłoce hydrofilowej</tspan></text>
   </g>
 
   <!-- WSKAŹNIK STANU -->
-  <g font-family="'Spline Sans Mono', monospace" font-size="13.5" font-weight="500" letter-spacing="2" text-anchor="middle">
+  <g font-family="'Spline Sans Mono', monospace" font-size="18" font-weight="500" letter-spacing="1" text-anchor="middle">
     <text class="lbl-flaccid" x="300" y="40" fill="currentColor">&#9679; NA CO DZIEŃ</text>
     <text class="lbl-erect" x="300" y="40" style="fill: var(--ochre)">&#9679; DO WSP&Oacute;ŁŻYCIA</text>
   </g>
@@ -864,7 +876,7 @@ blockquote.pull footer{
 
 <!-- ================= DLA KOGO / FAQ / DALEJ ================= -->
 <section class="section section--paper2" id="dla-kogo">
-  <div class="wrap split">
+  <div class="wrap">
     <div class="sp-copy" data-reveal>
       <p class="eyebrow" data-ef="implant-polsztywny.html" data-eo="RGxhIGtvZ28=">Dla kogo</p>
       <h2 data-ef="implant-polsztywny.html" data-eo="S2llZHkgcHJvcG9udWrEmSBww7PFgnN6dHl3bnk=">Kiedy proponuję półsztywny</h2>
@@ -878,21 +890,6 @@ blockquote.pull footer{
           <summary data-ef="implant-polsztywny.html" data-eo="PHNwYW4gY2xhc3M9InEtaSI+US8wMjwvc3Bhbj48c3Bhbj5DenkgbW9nxJkgcMOzxbpuaWVqIHptaWVuacSHIGdvIG5hIGh5ZHJhdWxpY3pueT88L3NwYW4+PHNwYW4gY2xhc3M9InEtbSI+Kzwvc3Bhbj4="><span class="q-i">Q/02</span><span>Czy mogę później zmienić go na hydrauliczny?</span><span class="q-m">+</span></summary>
           <div class="qa-body"><p data-ef="implant-polsztywny.html" data-eo="Wnd5a2xlIHRhay4gV3ltaWFuYSBpbXBsYW50dSBuYSBpbm55IHR5cCBqZXN0IHRlY2huaWN6bmllIG1vxbxsaXdhIGkgYmV6cGllY3puYSwgY2hvxIcgd3ltYWdhIGtvbGVqbmVqIG9wZXJhY2ppLiBEbGF0ZWdvIHdvbMSZLCDFvGViecWbbXkgcGllcndzenkgd3liw7NyIHRyYWZpbGkgb2QgcmF6dS4=">Zwykle tak. Wymiana implantu na inny typ jest technicznie możliwa i bezpieczna, choć wymaga kolejnej operacji. Dlatego wolę, żebyśmy pierwszy wybór trafili od razu.</p></div>
         </details>
-      </div>
-    </div>
-    <div data-reveal="2">
-      <div class="info-list">
-        <h3 data-ef="implant-polsztywny.html" data-eo="Q2hjZXN6IHBvcsOzd25hxIcgeiBoeWRyYXVsaWN6bnltPw==">Chcesz porównać z hydraulicznym?</h3>
-        <p class="muted" data-ef="implant-polsztywny.html" data-eo="Wm9iYWN6IG9iYSB0eXB5IG9ib2sgc2llYmllIGkgc3ByYXdkxbosIGphayBkb2JpZXJhbSBpbXBsYW50IGRvIGtvbmtyZXRuZWdvIHBhY2plbnRhLg==">Zobacz oba typy obok siebie i sprawdź, jak dobieram implant do konkretnego pacjenta.</p>
-        <ul class="ticks mt-2">
-          <li data-ef="implant-polsztywny.html" data-eo="PGEgaHJlZj0iaW1wbGFudC1oeWRyYXVsaWN6bnkuaHRtbCI+SW1wbGFudCBoeWRyYXVsaWN6bnkg4oCUIG5hamJhcmR6aWVqIG5hdHVyYWxueSBlZmVrdCA8c3BhbiBhcmlhLWhpZGRlbj0idHJ1ZSI+4oaSPC9zcGFuPjwvYT4="><a href="implant-hydrauliczny.html">Implant hydrauliczny — najbardziej naturalny efekt <span aria-hidden="true">→</span></a></li>
-          <li data-ef="implant-polsztywny.html" data-eo="PGEgaHJlZj0icm9kemFqZS1pbXBsYW50b3cuaHRtbCNwb3Jvd25hbmllIj5Qb3LDs3duYW5pZSBvYnUgdHlww7N3IHcgdGFiZWxpIDxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj7ihpI8L3NwYW4+PC9hPg=="><a href="rodzaje-implantow.html#porownanie">Porównanie obu typów w tabeli <span aria-hidden="true">→</span></a></li>
-          <li data-ef="implant-polsztywny.html" data-eo="PGEgaHJlZj0icm9kemFqZS1pbXBsYW50b3cuaHRtbCN3eWJvciI+SmFrIHdzcMOzbG5pZSB3eWJpZXJhbXkgaW1wbGFudCA8c3BhbiBhcmlhLWhpZGRlbj0idHJ1ZSI+4oaSPC9zcGFuPjwvYT4="><a href="rodzaje-implantow.html#wybor">Jak wspólnie wybieramy implant <span aria-hidden="true">→</span></a></li>
-        </ul>
-        <div class="mt-3">
-          <a class="btn btn--primary" href="https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa" target="_blank" rel="noopener">Umów konsultację</a>
-          <p class="btn-note" data-ef="implant-polsztywny.html" data-eo="TmFqcGllcncgd2llZHphLCBkb3BpZXJvIHBvdGVtIGRlY3l6amEu">Najpierw wiedza, dopiero potem decyzja.</p>
-        </div>
       </div>
     </div>
   </div>
