@@ -604,22 +604,39 @@ ul.ticks li b{ color:var(--ink); }
 .center{ text-align:center; }
 
 /* ---------- oś czasu (mini) ---------- */
-.tl{ display:flex; margin-top:36px; border-top:1px solid var(--line); }
-.tl li{ flex:1; padding:18px 18px 0 0; position:relative; }
-.tl li::before{
-  content:""; position:absolute; top:-5px; left:0;
-  width:9px; height:9px; border-radius:50%; background:var(--ochre);
+.tl{ display:flex; gap:22px; margin-top:44px; }
+.tl li{ flex:1; padding:32px 8px 0 0; position:relative; }
+.tl li::before{                                   /* węzeł */
+  content:""; position:absolute; top:0; left:0;
+  width:22px; height:22px; border-radius:50%; background:var(--petrol);
+  border:4px solid var(--paper); z-index:2;
+  box-shadow:0 0 0 3px var(--petrol);
+  animation:tlNode 4.8s ease-in-out infinite;
+}
+.tl li:nth-child(1)::before{ animation-delay:0s; }
+.tl li:nth-child(2)::before{ animation-delay:.55s; }
+.tl li:nth-child(3)::before{ animation-delay:1.1s; }
+.tl li:nth-child(4)::before{ animation-delay:1.65s; }
+.tl li:not(:last-child)::after{                   /* linia do następnego węzła */
+  content:""; position:absolute; top:9px; left:11px; right:-33px;
+  height:4px; background:var(--petrol); z-index:1;
+}
+@keyframes tlNode{
+  0%   { box-shadow:0 0 0 3px var(--petrol), 0 0 0 3px color-mix(in srgb, var(--petrol) 45%, transparent); }
+  16%  { box-shadow:0 0 0 3px var(--petrol), 0 0 0 17px color-mix(in srgb, var(--petrol) 0%, transparent); }
+  100% { box-shadow:0 0 0 3px var(--petrol), 0 0 0 17px color-mix(in srgb, var(--petrol) 0%, transparent); }
 }
 .tl .tl-k{
-  display:block; margin-bottom:4px;
-  font-family:var(--mono); font-size:10.5px; letter-spacing:.12em;
-  text-transform:uppercase; color:var(--petrol-2);
+  display:block; margin-bottom:7px;
+  font-family:var(--mono); font-size:13px; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--petrol); font-weight:700;
 }
-.tl .tl-v{ font-size:14px; color:var(--ink-2); line-height:1.5; }
+.tl .tl-v{ font-size:16.5px; color:var(--ink); line-height:1.5; font-weight:600; }
 @media (max-width:720px){
-  .tl{ flex-direction:column; border-top:0; border-left:1px solid var(--line); margin-left:4px; }
-  .tl li{ padding:0 0 20px 20px; }
-  .tl li::before{ top:3px; left:-5px; }
+  .tl{ flex-direction:column; gap:0; margin-left:9px; }
+  .tl li{ padding:2px 0 30px 30px; }
+  .tl li::before{ top:2px; left:-13px; }
+  .tl li:not(:last-child)::after{ top:15px; left:-2px; right:auto; width:4px; height:calc(100% - 6px); }
 }
 
 /* ---------- ikony liniowe ---------- */
@@ -768,6 +785,7 @@ blockquote.pull footer{
   .fig-anim .cyl-fluid,.fig-anim .res-fluid,.fig-anim .pump,
   .fig-anim .flow,.fig-anim .rod-move,
   .fig-anim .lbl-flaccid,.fig-anim .lbl-erect{ animation:none; }
+  .tl li::before{ animation:none; }
   /* nieruchoma, ale informacyjna klatka: stan aktywny */
   .fig-hydro .cyl-fluid{ transform:scaleY(1); }
   .fig-hydro .cyl-fluid.dir-right,.fig-hydro .cyl-fluid.dir-left{ transform:scaleX(1); }
@@ -811,8 +829,8 @@ blockquote.pull footer{
   <div class="wrap">
     <div class="hero-copy" data-reveal>
       <p class="eyebrow" data-ef="przebieg-leczenia.html" data-eo="UHJ6ZWJpZWcgbGVjemVuaWE=">Przebieg leczenia</p>
-      <h1 data-ef="przebieg-leczenia.html" data-eo="T2QgcGllcndzemVqIHJvem1vd3kgZG8gcGXFgm5laiBzcHJhd25vxZtjaS4gU3plxZvEhyBldGFww7N3LCBqZWRlbiBsZWthcnou">Od pierwszej rozmowy do pełnej sprawności. Sześć etapów, jeden lekarz.</h1>
-      <p class="lead mt-1" data-ef="przebieg-leczenia.html" data-eo="V3N6Y3plcGllbmllIGltcGxhbnR1IHJvemvFgmFkYSBzacSZIG5hIGtpbGthIHR5Z29kbmkgaSBraWxrYSBldGFww7N3LiBQcm93YWR6xJkgQ2nEmSBwcnpleiB3c3p5c3RraWUgc2FtYTogZGlhZ25vc3R5a2EsIGt3YWxpZmlrYWNqYSwgb3BlcmFjamEsIGFrdHl3YWNqYSBpIGtvbnRyb2xlIHBvIG5pZWouIFBvbmnFvGVqIG1hc3ogZG9rxYJhZG5pZSB0bywgY28gQ2nEmSBjemVrYSwga3JvayBwbyBrcm9rdS4=">Wszczepienie implantu rozkłada się na kilka tygodni i kilka etapów. Prowadzę Cię przez wszystkie sama: diagnostyka, kwalifikacja, operacja, aktywacja i kontrole po niej. Poniżej masz dokładnie to, co Cię czeka, krok po kroku.</p>
+      <h1 data-ef="przebieg-leczenia.html" data-eo="Q2HFgnkgcHJvY2VzIHNrxYJhZGEgc2nEmSB6IDYgZXRhcMOzdyBpIGplc3QgcHJvd2Fkem9ueSBwcnplemUgbW5pZSBvc29iacWbY2llLg==">Cały proces składa się z 6 etapów i jest prowadzony przeze mnie osobiście.</h1>
+      <p class="lead mt-1" data-ef="przebieg-leczenia.html" data-eo="V3N6Y3plcGllbmllIGltcGxhbnR1IHJvemvFgmFkYSBzacSZIG5hIGtpbGthIHR5Z29kbmkgaSBraWxrYSBldGFww7N3LiBQcm93YWR6xJkgQ2nEmSBwcnpleiB3c3p5c3RraWUgZXRhcHkgb3NvYmnFm2NpZTogZGlhZ25vc3R5a2EsIGt3YWxpZmlrYWNqYSwgb3BlcmFjamEsIGFrdHl3YWNqYSBpIGtvbnRyb2xhIHBvIHphYmllZ3UuIFBvbmnFvGVqIG1hc3ogZG9rxYJhZG5pZSB0bywgY28gQ2nEmSBjemVrYSwga3JvayBwbyBrcm9rdS4=">Wszczepienie implantu rozkłada się na kilka tygodni i kilka etapów. Prowadzę Cię przez wszystkie etapy osobiście: diagnostyka, kwalifikacja, operacja, aktywacja i kontrola po zabiegu. Poniżej masz dokładnie to, co Cię czeka, krok po kroku.</p>
       <ol class="tl" data-reveal="2">
         <li data-ef="przebieg-leczenia.html" data-eo="PHNwYW4gY2xhc3M9InRsLWsiPlN0YXJ0PC9zcGFuPjxzcGFuIGNsYXNzPSJ0bC12Ij5Lb25zdWx0YWNqYSBpIGRpYWdub3N0eWthPC9zcGFuPg=="><span class="tl-k">Start</span><span class="tl-v">Konsultacja i diagnostyka</span></li>
         <li data-ef="przebieg-leczenia.html" data-eo="PHNwYW4gY2xhc3M9InRsLWsiPkR6aWXFhCDigJ4wJnJkcXVvOzwvc3Bhbj48c3BhbiBjbGFzcz0idGwtdiI+T3BlcmFjamE6IDYw4oCTOTAgbWludXQ8L3NwYW4+"><span class="tl-k">Dzień „0&rdquo;</span><span class="tl-v">Operacja: 60–90 minut</span></li>
@@ -842,8 +860,8 @@ blockquote.pull footer{
         <div class="st-no"><span class="n">02</span><span>Etap drugi</span></div>
         <div>
           <h3 data-ef="przebieg-leczenia.html" data-eo="S3dhbGlmaWthY2phIGkgd3liw7NyIGltcGxhbnR1">Kwalifikacja i wybór implantu</h3>
-          <p data-ef="przebieg-leczenia.html" data-eo="S2llZHkgd2llbXkganXFvCwgxbxlIHRyemVjaWEgbGluaWEgbGVjemVuaWEgdG8gd8WCYcWbY2l3YSBkcm9nYSwgd3liaWVyYW15IHR5cCBpbXBsYW50dTogaHlkcmF1bGljem55IGFsYm8gcMOzxYJzenR5d255LiBSb3ptYXdpYW15IG8gVHdvamVqIGFuYXRvbWlpLCBzcHJhd25vxZtjaSBkxYJvbmksIG9jemVraXdhbmlhY2ggaSBidWTFvGVjaWUuIE3Ds3dpxJkgQ2kgdGXFvCBzemN6ZXJ6ZSwgY3plZ28gaW1wbGFudCBuaWUgenJvYmkuIFdvbMSZIHBvd2llZHppZcSHIENpIHdzenlzdGtvIHdjemXFm25pZWosIMW8ZWJ5xZsgcG90ZW0gbmllIGJ5xYIgemFza29jem9ueS4=">Kiedy wiemy już, że trzecia linia leczenia to właściwa droga, wybieramy typ implantu: hydrauliczny albo półsztywny. Rozmawiamy o Twojej anatomii, sprawności dłoni, oczekiwaniach i budżecie. Mówię Ci też szczerze, czego implant nie zrobi. Wolę powiedzieć Ci wszystko wcześniej, żebyś potem nie był zaskoczony.</p>
-          <p data-ef="przebieg-leczenia.html" data-eo="TmEgdMSZIHdpenl0xJkgbW/FvGVzeiBwcnp5asWbxIcgeiBwYXJ0bmVya8SFIGx1YiBwYXJ0bmVyZW0uIFdpZWxlIHBhciBtw7N3aSBwb3RlbSwgxbxlIHdzcMOzbG5hIHJvem1vd2EgemRqxJnFgmEgeiB0ZW1hdHUgd2nEmWNlaiBuYXBpxJljaWEgbmnFvCBjb2tvbHdpZWsgd2N6ZcWbbmllai4=">Na tę wizytę możesz przyjść z partnerką lub partnerem. Wiele par mówi potem, że wspólna rozmowa zdjęła z tematu więcej napięcia niż cokolwiek wcześniej.</p>
+          <p data-ef="przebieg-leczenia.html" data-eo="S2llZHkgd2llbXkganXFvCwgxbxlIHRyemVjaWEgbGluaWEgbGVjemVuaWEgdG8gd8WCYcWbY2l3YSBkcm9nYSwgd3liaWVyYW15IHR5cCBpbXBsYW50dTogaHlkcmF1bGljem55IGFsYm8gcMOzxYJzenR5d255LiBSb3ptYXdpYW15IG8gVHdvamVqIGFuYXRvbWlpLCBzcHJhd25vxZtjaSBkxYJvbmksIG9jemVraXdhbmlhY2ggaSBidWTFvGVjaWUuIE9tYXdpYW15IGtvbnNla3dlbmNqZSB3c3pjemVwdSBpbXBsYW50dSB6IGthxbxkZWogbW/FvGxpd2VqIHN0b3JueS4mbmJzcDs=">Kiedy wiemy już, że trzecia linia leczenia to właściwa droga, wybieramy typ implantu: hydrauliczny albo półsztywny. Rozmawiamy o Twojej anatomii, sprawności dłoni, oczekiwaniach i budżecie. Omawiamy konsekwencje wszczepu implantu z każdej możliwej storny.&nbsp;</p>
+          <p data-ef="przebieg-leczenia.html" data-eo="TmEgdMSZIHdpenl0xJkgbW/FvGVzeiBwcnp5asWbxIcgeiBwYXJ0bmVya8SFIGx1YiBwYXJ0bmVyZW0uIFdpZWxlIHBhciBtw7N3aSBwb3RlbSwgxbxlIHdzcMOzbG5hIHJvem1vd2EgbyBpbXBsYW5jaWUgdyBiZXpwaWVjem5laiBhdG1vc3dlcnplIHpkasSZxYJhIHdpxJljZWogbmFwacSZY2lhIG5pxbwgY29rb2x3aWVrIHdjemXFm25pZWou">Na tę wizytę możesz przyjść z partnerką lub partnerem. Wiele par mówi potem, że wspólna rozmowa o implancie w bezpiecznej atmoswerze zdjęła więcej napięcia niż cokolwiek wcześniej.</p>
           <div class="st-meta"><span>Decyzja wspólna</span><span>Pełna wycena, bez ukrytych pozycji</span></div>
         </div>
       </article>
@@ -852,7 +870,7 @@ blockquote.pull footer{
         <div class="st-no"><span class="n">03</span><span>Etap trzeci</span></div>
         <div>
           <h3 data-ef="przebieg-leczenia.html" data-eo="UHJ6eWdvdG93YW5pZSBkbyBvcGVyYWNqaQ==">Przygotowanie do operacji</h3>
-          <p data-ef="przebieg-leczenia.html" data-eo="S29tcGxldCBiYWRhxYQgcHJ6ZWRvcGVyYWN5am55Y2gsIGtvbnN1bHRhY2phIGFuZXN0ZXpqb2xvZ2ljem5hIGkgZG9rdW1lbnRhY2phLiBXYXJ1bmVrIGJlend6Z2zEmWRueTogdyBkbml1IHphYmllZ3UgbmllIG1vxbxlIGJ5xIcgxbxhZG5laiBha3R5d25laiBpbmZla2NqaSB1a8WCYWR1IG1vY3pvd2VnbyBhbmkgem1pYW4gemFwYWxueWNoIHNrw7NyeSB3IHBvbHUgb3BlcmFjeWpueW0uIEplxZtsaSBjb8WbIHRha2llZ28gem5hamR6aWVteSwgbmFqcGllcncgbGVjenlteSwgcG90ZW0gb3BlcnVqZW15Lg==">Komplet badań przedoperacyjnych, konsultacja anestezjologiczna i dokumentacja. Warunek bezwzględny: w dniu zabiegu nie może być żadnej aktywnej infekcji układu moczowego ani zmian zapalnych skóry w polu operacyjnym. Jeśli coś takiego znajdziemy, najpierw leczymy, potem operujemy.</p>
+          <p data-ef="przebieg-leczenia.html" data-eo="S29tcGxldCBiYWRhxYQgcHJ6ZWRvcGVyYWN5am55Y2gsIGtvbnN1bHRhY2phIGFuZXN0ZXpqb2xvZ2ljem5hIGkgZG9rdW1lbnRhY2phbWVkeWN6bmEuIFdhcnVuZWsgYmV6d3pnbMSZZG55OiB3IGRuaXUgemFiaWVndSBuaWUgbW/FvGUgYnnEhyDFvGFkbmVqIGFrdHl3bmVqIGluZmVrY2ppIHVrxYJhZHUgbW9jem93ZWdvIGFuaSB6bWlhbiB6YXBhbG55Y2ggc2vDs3J5IHcgcG9sdSBvcGVyYWN5am55bS4gSmXFm2xpIGNvxZsgdGFraWVnbyB6bmFqZHppZW15LCBuYWpwaWVydyBsZWN6eW15LCBwb3RlbSBvcGVydWplbXku">Komplet badań przedoperacyjnych, konsultacja anestezjologiczna i dokumentacjamedyczna. Warunek bezwzględny: w dniu zabiegu nie może być żadnej aktywnej infekcji układu moczowego ani zmian zapalnych skóry w polu operacyjnym. Jeśli coś takiego znajdziemy, najpierw leczymy, potem operujemy.</p>
           <p data-ef="przebieg-leczenia.html" data-eo="UGFjamVudMOzdyB6IGN1a3J6eWPEhSwgcG8gdXJhemFjaCByZHplbmlhIGtyxJlnb3dlZ28gaSB6IG9ibmnFvG9uxIUgb2Rwb3Jub8WbY2nEhSBwcnp5Z290b3d1asSZIHdlZMWCdWcgcm96c3plcnpvbmVnbyBzY2hlbWF0dSwgYm8gaWNoIHJ5enlrbyBpbmZla2NqaSBqZXN0IHd5xbxzemUu">Pacjentów z cukrzycą, po urazach rdzenia kręgowego i z obniżoną odpornością przygotowuję według rozszerzonego schematu, bo ich ryzyko infekcji jest wyższe.</p>
           <div class="st-meta"><span>Badania + anestezjolog</span><span>Zero aktywnych infekcji</span></div>
         </div>
@@ -873,7 +891,7 @@ blockquote.pull footer{
         <div>
           <h3 data-ef="przebieg-leczenia.html" data-eo="R29qZW5pZTogM+KAkzQgdHlnb2RuaWU=">Gojenie: 3–4 tygodnie</h3>
           <p data-ef="przebieg-leczenia.html" data-eo="T2JyesSZaywgemFzaW5pZW5pZSBpIHVjenVjaWUgdWNpc2t1IHcgcGllcndzenljaCBkbmlhY2ggc8SFIG5vcm1hbG5lLCB1cHJ6ZWR6YW0gbyBuaWNoIHphd2N6YXN1LiBJbXBsYW50IHBvem9zdGFqZSB3IHR5bSBjemFzaWUgbmllYWt0eXdueSwgYSBUd29pbSB6YWRhbmllbSBqZXN0IGfFgsOzd25pZSBvc3pjesSZZHphasSFY3kgdHJ5YiDFvHljaWEsIGhpZ2llbmEgcmFueSBpIHByenlqbW93YW5pZSB6YWxlY29ueWNoIGxla8Ozdy4=">Obrzęk, zasinienie i uczucie ucisku w pierwszych dniach są normalne, uprzedzam o nich zawczasu. Implant pozostaje w tym czasie nieaktywny, a Twoim zadaniem jest głównie oszczędzający tryb życia, higiena rany i przyjmowanie zaleconych leków.</p>
-          <p data-ef="przebieg-leczenia.html" data-eo="SmVzdGXFm215IHcga29udGFrY2llLiBKZcWbbGkgY29rb2x3aWVrIENpxJkgemFuaWVwb2tvaSwgbmllIGN6ZWthc3ogZG8gd2l6eXR5IGtvbnRyb2xuZWosIHR5bGtvIHBpc3plc3ogbHViIGR6d29uaXN6Lg==">Jesteśmy w kontakcie. Jeśli cokolwiek Cię zaniepokoi, nie czekasz do wizyty kontrolnej, tylko piszesz lub dzwonisz.</p>
+          <p data-ef="przebieg-leczenia.html" data-eo="SmVzdGXFm215IHcgc3RhxYJ5bSBrb250YWtjaWUuIEplxZtsaSBjb2tvbHdpZWsgQ2nEmSB6YW5pZXBva29pLCBuaWUgY3pla2FzeiBkbyB3aXp5dHkga29udHJvbG5laiwgdHlsa28gcGlzemVzeiBsdWIgZHp3b25pc3ou">Jesteśmy w stałym kontakcie. Jeśli cokolwiek Cię zaniepokoi, nie czekasz do wizyty kontrolnej, tylko piszesz lub dzwonisz.</p>
           <div class="st-meta"><span>Kontrola gojenia</span><span>Implant nieaktywny</span></div>
         </div>
       </article>
@@ -883,7 +901,7 @@ blockquote.pull footer{
         <div>
           <h3 data-ef="przebieg-leczenia.html" data-eo="QWt0eXdhY2phIGkgcG93csOzdCBkbyB3c3DDs8WCxbx5Y2lh">Aktywacja i powrót do współżycia</h3>
           <p data-ef="przebieg-leczenia.html" data-eo="UG8gM+KAkzQgdHlnb2RuaWFjaCBzcG90eWthbXkgc2nEmSB3IGdhYmluZWNpZSBuYSBha3R5d2FjamkuIFBva2F6dWrEmSBDaSwgamFrIG9ic8WCdWdpd2HEhyBpbXBsYW50LCBpIMSHd2ljenlteSByYXplbSwgYcW8IGLEmWR6aWVzeiByb2JpxIcgdG8gcGV3bmllLiBQcnpleiBrb2xlam5lIG9rb8WCbyAzIHR5Z29kbmllIGFrdHl3dWplc3ogaW1wbGFudCBjb2R6aWVubmllLCDFvGVieSB0a2Fua2kgcm96cHLEmcW8ecWCeSBzacSZIGRvIHBlxYJuZWogcG9qZW1ub8WbY2kgY3lsaW5kcsOzdy4=">Po 3–4 tygodniach spotykamy się w gabinecie na aktywacji. Pokazuję Ci, jak obsługiwać implant, i ćwiczymy razem, aż będziesz robić to pewnie. Przez kolejne około 3 tygodnie aktywujesz implant codziennie, żeby tkanki rozprężyły się do pełnej pojemności cylindrów.</p>
-          <p data-ef="przebieg-leczenia.html" data-eo="RG8gd3Nww7PFgsW8eWNpYSB3cmFjYXN6IHN0b3BuaW93bywgend5a2xlIG9rb8WCbyA2LiB0eWdvZG5pYSBvZCBvcGVyYWNqaS4gT2QgdGVqIHBvcnkgdG8gVHkgZGVjeWR1amVzeiwga2llZHkgbWFzeiB3enfDs2Qu">Do współżycia wracasz stopniowo, zwykle około 6. tygodnia od operacji. Od tej pory to Ty decydujesz, kiedy masz wzwód.</p>
+          <p data-ef="przebieg-leczenia.html" data-eo="RG8gd3Nww7PFgsW8eWNpYSB3cmFjYXN6IHN0b3BuaW93bywgend5a2xlIG9rb8WCbyA2LiB0eWdvZG5pYSBvZCBvcGVyYWNqaS4gT2QgdGVqIHBvcnkgdG8gVHkgZGVjeWR1amVzeiwga2llZHkgbWFzeiB3enfDs2QgaSBqYWsgZMWCdWdvIGLEmWR6aWUgdG8gdHJ3YcWCby4=">Do współżycia wracasz stopniowo, zwykle około 6. tygodnia od operacji. Od tej pory to Ty decydujesz, kiedy masz wzwód i jak długo będzie to trwało.</p>
           <div class="st-meta"><span>Aktywacja w gabinecie</span><span>≈ 6. tydzień: pełna aktywność</span></div>
         </div>
       </article>
@@ -938,7 +956,7 @@ blockquote.pull footer{
       </details>
       <details class="qa">
         <summary data-ef="przebieg-leczenia.html" data-eo="PHNwYW4gY2xhc3M9InEtaSI+US8wMzwvc3Bhbj48c3Bhbj5LdG8gc2nEmSBtbsSFIG9waWVrdWplIHBvIHphYmllZ3U/PC9zcGFuPjxzcGFuIGNsYXNzPSJxLW0iPis8L3NwYW4+"><span class="q-i">Q/03</span><span>Kto się mną opiekuje po zabiegu?</span><span class="q-m">+</span></summary>
-        <div class="qa-body"><p data-ef="przebieg-leczenia.html" data-eo="SmEuIE9wZXJ1asSZLCBha3R5d3VqxJkgaW1wbGFudCBpIHByb3dhZHrEmSBrb250cm9sZSBvc29iacWbY2llLCBhIG1pxJlkenkgd2l6eXRhbWkgamVzdGXFm215IHcga29udGFrY2llLiBOaWUgdHJhZmlhc3ogZG8gYW5vbmltb3dlaiDigJ5vcGlla2kgcG9vcGVyYWN5am5laiZyZHF1bzssIHR5bGtvIGRvIGxla2FyemEsIGt0w7NyeSB6bmEgVHdvasSFIGhpc3RvcmnEmSBvZCBwaWVyd3N6ZWogcm96bW93eS4=">Ja. Operuję, aktywuję implant i prowadzę kontrole osobiście, a między wizytami jesteśmy w kontakcie. Nie trafiasz do anonimowej „opieki pooperacyjnej&rdquo;, tylko do lekarza, który zna Twoją historię od pierwszej rozmowy.</p></div>
+        <div class="qa-body"><p data-ef="przebieg-leczenia.html" data-eo="SmEuIE9wZXJ1asSZLCBha3R5d3VqxJkgaW1wbGFudCBpIHByb3dhZHrEmSBrb250cm9sZSBvc29iacWbY2llLCBhIG1pxJlkenkgd2l6eXRhbWkgamVzdGXFm215IHcga29udGFrY2llLiBOaWUgdHJhZmlhc3ogZG8gYW5vbmltb3dlaiDigJ5vcGlla2kgcG9vcGVyYWN5am5lauKAnSwgdHlsa28gZG8gbGVrYXJ6YSwga3TDs3J5IHpuYSBUd29qxIUgaGlzdG9yacSZLg==">Ja. Operuję, aktywuję implant i prowadzę kontrole osobiście, a między wizytami jesteśmy w kontakcie. Nie trafiasz do anonimowej „opieki pooperacyjnej”, tylko do lekarza, który zna Twoją historię.</p></div>
       </details>
     </div>
   </div>
