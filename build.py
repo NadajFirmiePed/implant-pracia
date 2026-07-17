@@ -531,8 +531,6 @@ PHYSICIAN_JSONLD = json.dumps({
     "email": f"mailto:{MAIL}",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "ul. Żelazna 67/29",
-        "postalCode": "00-871",
         "addressLocality": "Warszawa",
         "addressCountry": "PL"
     },
@@ -574,7 +572,7 @@ PAGES = [
       desc='Czy implant powiększa prącie? Czy partnerka go wyczuje? Czy decyzja jest odwracalna? 15 najczęstszych pytań i mitów o implantach prącia, bez owijania.'),
  dict(file='kontakt.html', nav='kontakt', cta=False, schema=[PHYSICIAN_JSONLD],
       title='Kontakt i umawianie konsultacji | Implant prącia',
-      desc='Umów konsultację w sprawie implantu prącia w Warszawie: rejestracja online przez ZnanyLekarz, ul. Żelazna 67/29. Pełna dyskrecja, odpowiedź osobista.'),
+      desc='Umów konsultację w sprawie implantu prącia w Warszawie: rejestracja online przez ZnanyLekarz. Pełna dyskrecja, odpowiedź osobista.'),
  dict(file='warianty-animacji.html', nav=None, cta=False, schema=[], noindex=True,
       title='Warianty animacji implantu (do wyboru)',
       desc='Robocza strona z pięcioma wersjami animacji implantu do wyboru.'),
@@ -692,7 +690,7 @@ def footer():
       <div>
         <h4>Praktyka</h4>
         <ul>
-          <li>ul. Żelazna 67/29<br>00&#8209;871 Warszawa</li>
+          <li>Warszawa</li>
           <li><a href="mailto:{MAIL}">{MAIL}</a></li>
           <li><a href="{ZL}" target="_blank" rel="noopener">Rejestracja online (ZnanyLekarz)</a></li>
         </ul>

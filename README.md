@@ -93,5 +93,5 @@ Cennik zawsze „wycena na konsultacji", bez konkretnych kwot.
 
 ## Dane praktyki
 
-Praktyka Lekarska Anna Bonder-Nowicka, ul. Żelazna 67/29, 00-871 Warszawa, NIP 5252152491.
+Praktyka Lekarska Anna Bonder-Nowicka, Warszawa, NIP 5252152491.
 Kontakt: kontakt@turbourolog.pl. Rejestracja: ZnanyLekarz. Strona-matka: turbourolog.pl.
