@@ -7,13 +7,23 @@
 <meta name="description" content="Robocza strona z pięcioma wersjami animacji implantu do wyboru.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#003D47">
-<!-- TODO przy wdrożeniu: uzupełnij docelową domenę i odkomentuj -->
-<!-- <link rel="canonical" href="https://TWOJA-DOMENA.pl/warianty-animacji.html"> -->
-<!-- <meta property="og:locale" content="pl_PL"><meta property="og:type" content="website">
-     <meta property="og:title" content="Warianty animacji implantu (do wyboru)">
-     <meta property="og:description" content="Robocza strona z pięcioma wersjami animacji implantu do wyboru.">
-     <meta property="og:url" content="https://TWOJA-DOMENA.pl/warianty-animacji.html"> -->
+<link rel="canonical" href="https://implant.turbourolog.pl/warianty-animacji.html">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Implant prącia — dr Anna Bonder-Nowicka">
+<meta property="og:title" content="Warianty animacji implantu (do wyboru)">
+<meta property="og:description" content="Robocza strona z pięcioma wersjami animacji implantu do wyboru.">
+<meta property="og:url" content="https://implant.turbourolog.pl/warianty-animacji.html">
+<meta property="og:image" content="https://implant.turbourolog.pl/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Implant prącia — leczenie ciężkich zaburzeń erekcji. dr Anna Bonder-Nowicka, Warszawa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Warianty animacji implantu (do wyboru)">
+<meta name="twitter:description" content="Robocza strona z pięcioma wersjami animacji implantu do wyboru.">
+<meta name="twitter:image" content="https://implant.turbourolog.pl/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='9' fill='%23003D47'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='32' fill='%23FEFBF9' text-anchor='middle'%3EiP%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&family=Schibsted+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1196,15 +1206,22 @@ blockquote.pull footer{
     items.forEach(function(el){ io.observe(el); });
   }
 
-  /* Formularz kontaktowy: tryb mailto. DEV: przy wdrożeniu podłącz własny endpoint. */
+  /* Formularz kontaktowy: wysyłka na webhook Zapiera -> arkusz Google. */
   var f=document.getElementById('contact-form');
   if(f){ f.addEventListener('submit', function(ev){
     ev.preventDefault();
     if(!f.reportValidity()) return;
     var v=function(id){ var el=document.getElementById(id); return el?el.value:''; };
-    var subject='Wiadomość ze strony: '+v('f-topic');
-    var body='Imię: '+v('f-name')+'\nE-mail: '+v('f-mail')+'\n\n'+v('f-msg');
-    location.href='mailto:kontakt@turbourolog.pl?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    var btn=f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='Wysyłam…'; }
+    fetch('https://hooks.zapier.com/hooks/catch/REPLACE_ME', {
+      method:'POST', mode:'no-cors',
+      body:new URLSearchParams({
+        imie:v('f-name'), email:v('f-mail'), temat:v('f-topic'),
+        wiadomosc:v('f-msg'), strona:location.href
+      })
+    }).finally(function(){
+      f.innerHTML='<div class="form-sent" role="status"><h3>Dziękuję za wiadomość</h3><p>Odezwę się osobiście, najszybciej jak to możliwe. W pilnej sprawie napisz na <a href="mailto:kontakt@turbourolog.pl">kontakt@turbourolog.pl</a>.</p></div>';
+    });
   }); }
 })();
 </script>

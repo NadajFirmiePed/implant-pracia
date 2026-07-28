@@ -12,6 +12,11 @@ ZL  = 'https://www.znanylekarz.pl/anna-bonder-nowicka/urolog/warszawa'
 MAIL = 'kontakt@turbourolog.pl'
 PDF_PRIV = 'https://turbourolog.pl/doc/polityka_prywatnosci_i_plikow_cookies.pdf'
 
+# --- Wdrożenie (2026-07-28) ---
+DOMAIN = 'https://implant.turbourolog.pl'            # docelowa domena (Netlify + SSL)
+OG_IMAGE = DOMAIN + '/og-image.jpg'                  # grafika podglądu linku (1200x630)
+ZAPIER_HOOK = 'https://hooks.zapier.com/hooks/catch/REPLACE_ME'  # TODO: wklej webhook Catch Hook
+
 # ------------------------------------------------------------------
 # FIGURY „PATENTOWE" (SVG inline, stroke = currentColor)
 # ------------------------------------------------------------------
@@ -610,13 +615,23 @@ def head(page):
 <meta name="description" content="{page['desc']}">
 <meta name="robots" content="{robots}">
 <meta name="theme-color" content="#003D47">
-<!-- TODO przy wdrożeniu: uzupełnij docelową domenę i odkomentuj -->
-<!-- <link rel="canonical" href="https://TWOJA-DOMENA.pl/{page['file']}"> -->
-<!-- <meta property="og:locale" content="pl_PL"><meta property="og:type" content="website">
-     <meta property="og:title" content="{page['title']}">
-     <meta property="og:description" content="{page['desc']}">
-     <meta property="og:url" content="https://TWOJA-DOMENA.pl/{page['file']}"> -->
+<link rel="canonical" href="{DOMAIN}/{page['file']}">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Implant prącia — dr Anna Bonder-Nowicka">
+<meta property="og:title" content="{page['title']}">
+<meta property="og:description" content="{page['desc']}">
+<meta property="og:url" content="{DOMAIN}/{page['file']}">
+<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Implant prącia — leczenie ciężkich zaburzeń erekcji. dr Anna Bonder-Nowicka, Warszawa">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{page['title']}">
+<meta name="twitter:description" content="{page['desc']}">
+<meta name="twitter:image" content="{OG_IMAGE}">
 <link rel="icon" href="{FAVICON}">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{FONTS}" rel="stylesheet">
@@ -734,15 +749,22 @@ def footer():
     items.forEach(function(el){{ io.observe(el); }});
   }}
 
-  /* Formularz kontaktowy: tryb mailto. DEV: przy wdrożeniu podłącz własny endpoint. */
+  /* Formularz kontaktowy: wysyłka na webhook Zapiera -> arkusz Google. */
   var f=document.getElementById('contact-form');
   if(f){{ f.addEventListener('submit', function(ev){{
     ev.preventDefault();
     if(!f.reportValidity()) return;
     var v=function(id){{ var el=document.getElementById(id); return el?el.value:''; }};
-    var subject='Wiadomość ze strony: '+v('f-topic');
-    var body='Imię: '+v('f-name')+'\\nE-mail: '+v('f-mail')+'\\n\\n'+v('f-msg');
-    location.href='mailto:{MAIL}?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    var btn=f.querySelector('button[type=submit]'); if(btn){{ btn.disabled=true; btn.textContent='Wysyłam…'; }}
+    fetch('{ZAPIER_HOOK}', {{
+      method:'POST', mode:'no-cors',
+      body:new URLSearchParams({{
+        imie:v('f-name'), email:v('f-mail'), temat:v('f-topic'),
+        wiadomosc:v('f-msg'), strona:location.href
+      }})
+    }}).finally(function(){{
+      f.innerHTML='<div class="form-sent" role="status"><h3>Dziękuję za wiadomość</h3><p>Odezwę się osobiście, najszybciej jak to możliwe. W pilnej sprawie napisz na <a href="mailto:{MAIL}">{MAIL}</a>.</p></div>';
+    }});
   }}); }}
 }})();
 </script>
@@ -939,6 +961,20 @@ for page in PAGES:
     (OUT / page['file']).write_text(doc, encoding='utf-8')
     ROUTE_HTML[page['file']] = frag + '\n' + (CTA_BAND if page['cta'] else '')
     print(f"OK  {page['file']:26s} {len(doc)/1024:6.1f} kB")
+
+# --- Zasoby statyczne (zdjęcia, grafika OG, ikony) -> dist/ ---
+import shutil
+ASSETS = ROOT / 'assets'
+if ASSETS.is_dir():
+    (OUT / 'assets').mkdir(exist_ok=True)
+    for a in ASSETS.iterdir():
+        if a.is_file():
+            shutil.copy2(a, OUT / 'assets' / a.name)          # zdjęcia: assets/... (względne we frag)
+    for root_asset in ('og-image.jpg', 'apple-touch-icon.png', 'favicon-32.png'):
+        src = ASSETS / root_asset
+        if src.is_file():
+            shutil.copy2(src, OUT / root_asset)               # OG/ikony: w roocie (odwołania absolutne/roota)
+    print("OK  assets -> dist/ (zdjęcia, OG, ikony)")
 
 zip_path = ROOT / 'implant-pracia-strona.zip'
 with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as z:
